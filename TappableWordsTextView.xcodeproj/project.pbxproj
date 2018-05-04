@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3372F9209CFF4C0025195B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */; };
 		3DE5DD83209CE651008ED794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD82209CE651008ED794 /* AppDelegate.swift */; };
 		3DE5DD85209CE651008ED794 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD84209CE651008ED794 /* ViewController.swift */; };
 		3DE5DD88209CE651008ED794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD86209CE651008ED794 /* Main.storyboard */; };
 		3DE5DD8A209CE654008ED794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD89209CE654008ED794 /* Assets.xcassets */; };
 		3DE5DD8D209CE654008ED794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD8B209CE654008ED794 /* LaunchScreen.storyboard */; };
+		3DE5DD95209CE7EB008ED794 /* TappableWordsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD94209CE7EB008ED794 /* TappableWordsTextView.swift */; };
+		3DE5DD99209CFDDB008ED794 /* TappableWordsTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD98209CFDDB008ED794 /* TappableWordsTextView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3DE5DD7F209CE651008ED794 /* TappableWordsTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappableWordsTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE5DD82209CE651008ED794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE5DD84209CE651008ED794 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		3DE5DD89209CE654008ED794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE5DD8C209CE654008ED794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE5DD8E209CE654008ED794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE5DD94209CE7EB008ED794 /* TappableWordsTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableWordsTextView.swift; sourceTree = "<group>"; };
+		3DE5DD98209CFDDB008ED794 /* TappableWordsTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TappableWordsTextView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +60,15 @@
 		3DE5DD81209CE651008ED794 /* TappableWordsTextView */ = {
 			isa = PBXGroup;
 			children = (
+				3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */,
 				3DE5DD82209CE651008ED794 /* AppDelegate.swift */,
 				3DE5DD84209CE651008ED794 /* ViewController.swift */,
 				3DE5DD86209CE651008ED794 /* Main.storyboard */,
 				3DE5DD89209CE654008ED794 /* Assets.xcassets */,
 				3DE5DD8B209CE654008ED794 /* LaunchScreen.storyboard */,
 				3DE5DD8E209CE654008ED794 /* Info.plist */,
+				3DE5DD94209CE7EB008ED794 /* TappableWordsTextView.swift */,
+				3DE5DD98209CFDDB008ED794 /* TappableWordsTextView.xib */,
 			);
 			path = TappableWordsTextView;
 			sourceTree = "<group>";
@@ -124,6 +133,7 @@
 			files = (
 				3DE5DD8D209CE654008ED794 /* LaunchScreen.storyboard in Resources */,
 				3DE5DD8A209CE654008ED794 /* Assets.xcassets in Resources */,
+				3DE5DD99209CFDDB008ED794 /* TappableWordsTextView.xib in Resources */,
 				3DE5DD88209CE651008ED794 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +146,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE5DD85209CE651008ED794 /* ViewController.swift in Sources */,
+				3DE5DD95209CE7EB008ED794 /* TappableWordsTextView.swift in Sources */,
+				3D3372F9209CFF4C0025195B /* UIView+Extensions.swift in Sources */,
 				3DE5DD83209CE651008ED794 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
