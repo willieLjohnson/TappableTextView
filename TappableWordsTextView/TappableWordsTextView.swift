@@ -49,11 +49,16 @@ private extension TappableWordsTextView {
     }
     // Grab the word.
     guard let word = getWordAt(point: recognizer.location(in: textView), textView: textView) else { return }
-    // Do something with the word.
+    // Animate the word being tapped by highlighting it in red.
     mutableText.addAttribute(.backgroundColor, value: UIColor.red, range: word.range)
-    UIView.transition(with: textView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+    UIView.transition(with: textView, duration: 0.1, options: .transitionCrossDissolve, animations: {
       textView.attributedText = mutableText
-    }, completion: nil)
+    }, completion: { _ in
+      UIView.transition(with: textView, duration: 0.3, options: .transitionCrossDissolve, animations: {
+        mutableText.removeAttribute(.backgroundColor, range: word.range)
+        textView.attributedText = mutableText
+      }, completion: nil)
+    })
 
     print(word)
   }
