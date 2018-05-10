@@ -7,3 +7,9 @@
 //
 
 import Foundation
+import UIKit
+
+struct Word {
+  var text: String
+  var range: NSRange
+}

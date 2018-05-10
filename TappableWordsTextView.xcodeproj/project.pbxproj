@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D3372F9209CFF4C0025195B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */; };
+		3D67E28420A4F2BB00C31625 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67E28320A4F2BB00C31625 /* Word.swift */; };
 		3DE5DD83209CE651008ED794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD82209CE651008ED794 /* AppDelegate.swift */; };
 		3DE5DD85209CE651008ED794 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD84209CE651008ED794 /* ViewController.swift */; };
 		3DE5DD88209CE651008ED794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD86209CE651008ED794 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		3D67E28320A4F2BB00C31625 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 		3DE5DD7F209CE651008ED794 /* TappableWordsTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappableWordsTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE5DD82209CE651008ED794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE5DD84209CE651008ED794 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				3DE5DD8E209CE654008ED794 /* Info.plist */,
 				3DE5DD94209CE7EB008ED794 /* TappableWordsTextView.swift */,
 				3DE5DD98209CFDDB008ED794 /* TappableWordsTextView.xib */,
+				3D67E28320A4F2BB00C31625 /* Word.swift */,
 			);
 			path = TappableWordsTextView;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			files = (
 				3DE5DD85209CE651008ED794 /* ViewController.swift in Sources */,
 				3DE5DD95209CE7EB008ED794 /* TappableWordsTextView.swift in Sources */,
+				3D67E28420A4F2BB00C31625 /* Word.swift in Sources */,
 				3D3372F9209CFF4C0025195B /* UIView+Extensions.swift in Sources */,
 				3DE5DD83209CE651008ED794 /* AppDelegate.swift in Sources */,
 			);

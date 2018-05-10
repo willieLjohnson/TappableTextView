@@ -36,42 +36,44 @@ private extension TappableWordsTextView {
     contentView.addGestureRecognizer(textTapGesture)
   }
 
+  /// Handle taps on the UITextView.
   ///
+  /// - Parameter recognizer: The UITapGestureRecognizer that triggered this handler.
   @objc func textTapped(recognizer: UITapGestureRecognizer) {
-    print("HAPPEN")
+    // Grab UITextView and its content.
     guard let textView = recognizer.view as? UITextView else {
       return
     }
-    let layoutManager = textView.layoutManager
-    var location = recognizer.location(in: textView)
-//    location.x -= textView.textContainerInset.left
-//    location.y -= textView.textContainerInset.top
-
-    let charIndex = layoutManager.characterIndex(for: location, in: textView.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-
-    guard charIndex < textView.textStorage.length else {
+    guard let mutableText = textView.attributedText.mutableCopy() as? NSMutableAttributedString else {
       return
     }
-    print(getWordAtPosition(location, textView: textView, charIndex: charIndex))
+    // Grab the word.
+    guard let word = getWordAt(point: recognizer.location(in: textView), textView: textView) else { return }
+    // Do something with the word.
+    mutableText.addAttribute(.backgroundColor, value: UIColor.red, range: word.range)
+    UIView.transition(with: textView, duration: 0.2, options: .transitionCrossDissolve, animations: {
+      textView.attributedText = mutableText
+    }, completion: nil)
+
+    print(word)
   }
 
-  func getWordAtPosition(_ point: CGPoint, textView: UITextView, charIndex: Int) -> String? {
+  /// Return the word that was tapped within the textview.
+  ///
+  /// - Paremeters:
+  ///   - point: A position within the tapped UITextView.
+  ///   - textView: The textView that was tappped.
+  ///   - charIndex:
+  func getWordAt(point: CGPoint, textView: UITextView) -> Word? {
     if let textPosition = textView.closestPosition(to: point)
     {
-      if let range = textView.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: 1)
+      if let textRange = textView.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: 1)
       {
-        guard let mutableText = textView.attributedText.mutableCopy() as? NSMutableAttributedString else {
-          return nil
-        }
-        let location = textView.offset(from: textView.beginningOfDocument, to: range.start)
-        let length = textView.offset(from: range.start, to: range.end)
-        let nsRange = NSRange(location: location, length: length)
-        mutableText.addAttribute(.backgroundColor, value: UIColor.red, range: nsRange)
-
-        UIView.transition(with: textView, duration: 0.2, options: .transitionCrossDissolve, animations: {
-          textView.attributedText = mutableText
-        }, completion: nil)
-        return textView.text(in: range)
+        let location = textView.offset(from: textView.beginningOfDocument, to: textRange.start)
+        let length = textView.offset(from: textRange.start, to: textRange.end)
+        guard let wordText = textView.text(in: textRange) else { return nil }
+        let wordRange = NSRange(location: location, length: length)
+        return Word(text: wordText, range: wordRange)
       }
     }
     return nil
