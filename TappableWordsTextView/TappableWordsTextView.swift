@@ -14,6 +14,7 @@ class TappableWordsTextView: UIView {
 
   override init(frame: CGRect) {
     super.init(frame: frame)
+    backgroundColor = .white
     setupView()
   }
 
@@ -28,6 +29,7 @@ private extension TappableWordsTextView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
     contentView = loadNib(viewType: UITextView.self)
+    contentView.backgroundColor = .clear
     addSubview(contentView)
     constrain(to: contentView)
     
@@ -44,23 +46,31 @@ private extension TappableWordsTextView {
     guard let textView = recognizer.view as? UITextView else {
       return
     }
-    guard let mutableText = textView.attributedText.mutableCopy() as? NSMutableAttributedString else {
-      return
-    }
     // Grab the word.
     guard let word = getWordAt(point: recognizer.location(in: textView), textView: textView) else { return }
+    let highlight = UIView(frame: word.rect)
+    highlight.layer.cornerRadius = word.rect.height / 4
+    highlight.layer.shadowOpacity = 0.5
+    let randomHue = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
+    highlight.layer.shadowColor = UIColor(hue: randomHue, saturation: 0.5, brightness: 0.6, alpha: 1).cgColor
+    highlight.layer.shadowRadius = 2
+    highlight.layer.shadowOffset = CGSize(width: 0, height: 2)
+    highlight.backgroundColor = UIColor(hue: randomHue, saturation: 0.5, brightness: 0.9, alpha: 1)
+    highlight.alpha = 0.2
+    highlight.transform = .init(scaleX: 0.01, y: 1)
+    insertSubview(highlight, belowSubview: textView)
+    UIView.animate(withDuration: 0.2, animations: {
+      highlight.alpha = 1
+      highlight.transform = .identity
+    }) { _ in
+      UIView.animate(withDuration: 0.6, delay: 0.5, options: [], animations: {
+        highlight.alpha = 0
+        highlight.transform = .init(scaleX: 1, y: 0.01)
+      }, completion: ({ _ in
+        highlight.removeFromSuperview()
+      }))
+    }
     // Animate the word being tapped by highlighting it in red.
-    mutableText.addAttribute(.backgroundColor, value: UIColor.red, range: word.range)
-    UIView.transition(with: textView, duration: 0.1, options: .transitionCrossDissolve, animations: {
-      textView.attributedText = mutableText
-    }, completion: { _ in
-      UIView.transition(with: textView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-        mutableText.removeAttribute(.backgroundColor, range: word.range)
-        textView.attributedText = mutableText
-      }, completion: nil)
-    })
-
-    print(word)
   }
 
   /// Return the word that was tapped within the textview.
@@ -78,7 +88,8 @@ private extension TappableWordsTextView {
         let length = textView.offset(from: textRange.start, to: textRange.end)
         guard let wordText = textView.text(in: textRange) else { return nil }
         let wordRange = NSRange(location: location, length: length)
-        return Word(text: wordText, range: wordRange)
+        var wordRect = textView.firstRect(for: textRange)
+        return Word(text: wordText, range: wordRange, rect: wordRect)
       }
     }
     return nil

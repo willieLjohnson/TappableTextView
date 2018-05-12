@@ -15,12 +15,13 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     view.backgroundColor = .black
 
-    tappableTextView = TappableWordsTextView(frame: view.bounds.insetBy(dx: 10, dy: 10))
-    tappableTextView.backgroundColor = .gray
+    tappableTextView = TappableWordsTextView(frame: view.bounds)
     view.addSubview(tappableTextView)
     tappableTextView.translatesAutoresizingMaskIntoConstraints = false
-    tappableTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    tappableTextView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    tappableTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    tappableTextView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    tappableTextView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+    tappableTextView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
   }
 
   override func didReceiveMemoryWarning() {

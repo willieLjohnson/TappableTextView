@@ -12,4 +12,6 @@ import UIKit
 struct Word {
   var text: String
   var range: NSRange
+  var rect: CGRect
 }
+
