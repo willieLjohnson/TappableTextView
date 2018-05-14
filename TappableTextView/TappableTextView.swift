@@ -1,6 +1,6 @@
 //
-//  TappableWordsTextView.swift
-//  TappableWordsTextView
+//  TappableTextView.swift
+//  TappableTextView
 //
 //  Created by Willie Johnson on 5/4/18.
 //  Copyright © 2018 Willie Johnson. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class TappableWordsTextView: UIView {
+class TappableTextView: UIView {
   @IBOutlet var contentView: UITextView!
 
   override init(frame: CGRect) {
@@ -25,7 +25,7 @@ class TappableWordsTextView: UIView {
 }
 
 // MARK: - Helper methods
-private extension TappableWordsTextView {
+private extension TappableTextView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
     contentView = loadNib(viewType: UITextView.self)
@@ -78,20 +78,15 @@ private extension TappableWordsTextView {
   /// - Paremeters:
   ///   - point: A position within the tapped UITextView.
   ///   - textView: The textView that was tappped.
-  ///   - charIndex:
   func getWordAt(point: CGPoint, textView: UITextView) -> Word? {
-    if let textPosition = textView.closestPosition(to: point)
-    {
-      if let textRange = textView.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: 1)
-      {
-        let location = textView.offset(from: textView.beginningOfDocument, to: textRange.start)
-        let length = textView.offset(from: textRange.start, to: textRange.end)
-        guard let wordText = textView.text(in: textRange) else { return nil }
-        let wordRange = NSRange(location: location, length: length)
-        var wordRect = textView.firstRect(for: textRange)
-        return Word(text: wordText, range: wordRange, rect: wordRect)
-      }
-    }
-    return nil
+    guard let textPosition = textView.closestPosition(to: point) else { return nil }
+    guard let textRange = textView.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: 1) else { return nil }
+
+    let location = textView.offset(from: textView.beginningOfDocument, to: textRange.start)
+    let length = textView.offset(from: textRange.start, to: textRange.end)
+    guard let wordText = textView.text(in: textRange) else { return nil }
+    let wordRange = NSRange(location: location, length: length)
+    let wordRect = textView.firstRect(for: textRange)
+    return Word(text: wordText, range: wordRange, rect: wordRect)
   }
 }

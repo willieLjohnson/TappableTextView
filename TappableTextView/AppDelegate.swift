@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  TappableWordsTextView
+//  TappableTextView
 //
 //  Created by Willie Johnson on 5/4/18.
 //  Copyright © 2018 Willie Johnson. All rights reserved.

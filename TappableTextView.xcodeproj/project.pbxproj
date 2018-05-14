@@ -14,22 +14,22 @@
 		3DE5DD88209CE651008ED794 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD86209CE651008ED794 /* Main.storyboard */; };
 		3DE5DD8A209CE654008ED794 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD89209CE654008ED794 /* Assets.xcassets */; };
 		3DE5DD8D209CE654008ED794 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD8B209CE654008ED794 /* LaunchScreen.storyboard */; };
-		3DE5DD95209CE7EB008ED794 /* TappableWordsTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD94209CE7EB008ED794 /* TappableWordsTextView.swift */; };
-		3DE5DD99209CFDDB008ED794 /* TappableWordsTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD98209CFDDB008ED794 /* TappableWordsTextView.xib */; };
+		3DE5DD95209CE7EB008ED794 /* TappableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD94209CE7EB008ED794 /* TappableTextView.swift */; };
+		3DE5DD99209CFDDB008ED794 /* TappableTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DE5DD98209CFDDB008ED794 /* TappableTextView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3D67E28320A4F2BB00C31625 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
-		3DE5DD7F209CE651008ED794 /* TappableWordsTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappableWordsTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DE5DD7F209CE651008ED794 /* TappableTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappableTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE5DD82209CE651008ED794 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE5DD84209CE651008ED794 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3DE5DD87209CE651008ED794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3DE5DD89209CE654008ED794 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE5DD8C209CE654008ED794 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE5DD8E209CE654008ED794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3DE5DD94209CE7EB008ED794 /* TappableWordsTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableWordsTextView.swift; sourceTree = "<group>"; };
-		3DE5DD98209CFDDB008ED794 /* TappableWordsTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TappableWordsTextView.xib; sourceTree = "<group>"; };
+		3DE5DD94209CE7EB008ED794 /* TappableTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableTextView.swift; sourceTree = "<group>"; };
+		3DE5DD98209CFDDB008ED794 /* TappableTextView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TappableTextView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 		3DE5DD76209CE651008ED794 = {
 			isa = PBXGroup;
 			children = (
-				3DE5DD81209CE651008ED794 /* TappableWordsTextView */,
+				3DE5DD81209CE651008ED794 /* TappableTextView */,
 				3DE5DD80209CE651008ED794 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,12 +54,12 @@
 		3DE5DD80209CE651008ED794 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3DE5DD7F209CE651008ED794 /* TappableWordsTextView.app */,
+				3DE5DD7F209CE651008ED794 /* TappableTextView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3DE5DD81209CE651008ED794 /* TappableWordsTextView */ = {
+		3DE5DD81209CE651008ED794 /* TappableTextView */ = {
 			isa = PBXGroup;
 			children = (
 				3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */,
@@ -69,19 +69,19 @@
 				3DE5DD89209CE654008ED794 /* Assets.xcassets */,
 				3DE5DD8B209CE654008ED794 /* LaunchScreen.storyboard */,
 				3DE5DD8E209CE654008ED794 /* Info.plist */,
-				3DE5DD94209CE7EB008ED794 /* TappableWordsTextView.swift */,
-				3DE5DD98209CFDDB008ED794 /* TappableWordsTextView.xib */,
+				3DE5DD94209CE7EB008ED794 /* TappableTextView.swift */,
+				3DE5DD98209CFDDB008ED794 /* TappableTextView.xib */,
 				3D67E28320A4F2BB00C31625 /* Word.swift */,
 			);
-			path = TappableWordsTextView;
+			path = TappableTextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3DE5DD7E209CE651008ED794 /* TappableWordsTextView */ = {
+		3DE5DD7E209CE651008ED794 /* TappableTextView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3DE5DD91209CE654008ED794 /* Build configuration list for PBXNativeTarget "TappableWordsTextView" */;
+			buildConfigurationList = 3DE5DD91209CE654008ED794 /* Build configuration list for PBXNativeTarget "TappableTextView" */;
 			buildPhases = (
 				3DE5DD7B209CE651008ED794 /* Sources */,
 				3DE5DD7C209CE651008ED794 /* Frameworks */,
@@ -91,9 +91,9 @@
 			);
 			dependencies = (
 			);
-			name = TappableWordsTextView;
+			name = TappableTextView;
 			productName = TappableWordsTextView;
-			productReference = 3DE5DD7F209CE651008ED794 /* TappableWordsTextView.app */;
+			productReference = 3DE5DD7F209CE651008ED794 /* TappableTextView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3DE5DD7A209CE651008ED794 /* Build configuration list for PBXProject "TappableWordsTextView" */;
+			buildConfigurationList = 3DE5DD7A209CE651008ED794 /* Build configuration list for PBXProject "TappableTextView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3DE5DD7E209CE651008ED794 /* TappableWordsTextView */,
+				3DE5DD7E209CE651008ED794 /* TappableTextView */,
 			);
 		};
 /* End PBXProject section */
@@ -136,7 +136,7 @@
 			files = (
 				3DE5DD8D209CE654008ED794 /* LaunchScreen.storyboard in Resources */,
 				3DE5DD8A209CE654008ED794 /* Assets.xcassets in Resources */,
-				3DE5DD99209CFDDB008ED794 /* TappableWordsTextView.xib in Resources */,
+				3DE5DD99209CFDDB008ED794 /* TappableTextView.xib in Resources */,
 				3DE5DD88209CE651008ED794 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE5DD85209CE651008ED794 /* ViewController.swift in Sources */,
-				3DE5DD95209CE7EB008ED794 /* TappableWordsTextView.swift in Sources */,
+				3DE5DD95209CE7EB008ED794 /* TappableTextView.swift in Sources */,
 				3D67E28420A4F2BB00C31625 /* Word.swift in Sources */,
 				3D3372F9209CFF4C0025195B /* UIView+Extensions.swift in Sources */,
 				3DE5DD83209CE651008ED794 /* AppDelegate.swift in Sources */,
@@ -298,12 +298,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RFQY6T2L4D;
-				INFOPLIST_FILE = TappableWordsTextView/Info.plist;
+				INFOPLIST_FILE = TappableTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.articulate.TappableWordsTextView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.articulate.TappableTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -316,12 +316,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RFQY6T2L4D;
-				INFOPLIST_FILE = TappableWordsTextView/Info.plist;
+				INFOPLIST_FILE = TappableTextView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.articulate.TappableWordsTextView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.articulate.TappableTextView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -331,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3DE5DD7A209CE651008ED794 /* Build configuration list for PBXProject "TappableWordsTextView" */ = {
+		3DE5DD7A209CE651008ED794 /* Build configuration list for PBXProject "TappableTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3DE5DD8F209CE654008ED794 /* Debug */,
@@ -340,7 +340,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3DE5DD91209CE654008ED794 /* Build configuration list for PBXNativeTarget "TappableWordsTextView" */ = {
+		3DE5DD91209CE654008ED794 /* Build configuration list for PBXNativeTarget "TappableTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3DE5DD92209CE654008ED794 /* Debug */,

@@ -1,6 +1,6 @@
 //
 //  ViewController.swift
-//  TappableWordsTextView
+//  TappableTextView
 //
 //  Created by Willie Johnson on 5/4/18.
 //  Copyright © 2018 Willie Johnson. All rights reserved.
@@ -9,13 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-  var tappableTextView: TappableWordsTextView!
+  var tappableTextView: TappableTextView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .black
 
-    tappableTextView = TappableWordsTextView(frame: view.bounds)
+    tappableTextView = TappableTextView(frame: view.bounds)
     view.addSubview(tappableTextView)
     tappableTextView.translatesAutoresizingMaskIntoConstraints = false
     tappableTextView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
