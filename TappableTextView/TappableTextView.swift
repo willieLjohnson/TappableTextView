@@ -31,7 +31,7 @@ private extension TappableTextView {
     contentView = loadNib(viewType: UITextView.self)
     contentView.backgroundColor = .clear
     addSubview(contentView)
-    constrain(to: contentView)
+    contentView.constrain(to: self)
     
     let textTapGesture = UITapGestureRecognizer(target: self, action: #selector(textTapped(recognizer:)))
     textTapGesture.numberOfTapsRequired = 1
@@ -47,28 +47,24 @@ private extension TappableTextView {
       return
     }
     // Grab the word.
-    guard let word = getWordAt(point: recognizer.location(in: textView), textView: textView) else { return }
-    let highlight = UIView(frame: word.rect)
-    highlight.layer.cornerRadius = word.rect.height / 4
-    highlight.layer.shadowOpacity = 0.5
-    let randomHue = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-    highlight.layer.shadowColor = UIColor(hue: randomHue, saturation: 0.5, brightness: 0.6, alpha: 1).cgColor
-    highlight.layer.shadowRadius = 2
-    highlight.layer.shadowOffset = CGSize(width: 0, height: 2)
-    highlight.backgroundColor = UIColor(hue: randomHue, saturation: 0.5, brightness: 0.9, alpha: 1)
+    var tapLocation = recognizer.location(in: textView)
+    guard let word = getWordAt(point: tapLocation, textView: textView) else { return }
+    let highlight = HighlightView(word: word)
+    textView.addSubview(highlight)
+    // Animate highlight
     highlight.alpha = 0.2
     highlight.transform = .init(scaleX: 0.01, y: 1)
-    insertSubview(highlight, belowSubview: textView)
     UIView.animate(withDuration: 0.2, animations: {
       highlight.alpha = 1
       highlight.transform = .identity
     }) { _ in
-      UIView.animate(withDuration: 0.6, delay: 0.5, options: [], animations: {
-        highlight.alpha = 0
-        highlight.transform = .init(scaleX: 1, y: 0.01)
-      }, completion: ({ _ in
-        highlight.removeFromSuperview()
-      }))
+//      UIView.animate(withDuration: 0.6, delay: 0.5, options: [], animations: {
+//        highlight.alpha = 0
+//        highlight.transform = .init(scaleX: 1, y: 0.01)
+//      }, completion: ({ _ in
+//        guard highlight.tapped else { return }
+//        highlight.removeFromSuperview()
+//      }))
     }
     // Animate the word being tapped by highlighting it in red.
   }
