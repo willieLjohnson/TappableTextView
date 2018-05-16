@@ -47,6 +47,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DC7BB7B20ABB85F0079D2F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3DE5DD94209CE7EB008ED794 /* TappableTextView.swift */,
+				3DE5DD98209CFDDB008ED794 /* TappableTextView.xib */,
+				3DC7BB7720AB79740079D2F4 /* HighlightView.xib */,
+				3DC7BB7920AB7A170079D2F4 /* HighlightView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3DE5DD76209CE651008ED794 = {
 			isa = PBXGroup;
 			children = (
@@ -66,18 +77,15 @@
 		3DE5DD81209CE651008ED794 /* TappableTextView */ = {
 			isa = PBXGroup;
 			children = (
+				3DC7BB7B20ABB85F0079D2F4 /* Views */,
 				3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */,
+				3D67E28320A4F2BB00C31625 /* Word.swift */,
 				3DE5DD82209CE651008ED794 /* AppDelegate.swift */,
 				3DE5DD84209CE651008ED794 /* ViewController.swift */,
 				3DE5DD86209CE651008ED794 /* Main.storyboard */,
 				3DE5DD89209CE654008ED794 /* Assets.xcassets */,
 				3DE5DD8B209CE654008ED794 /* LaunchScreen.storyboard */,
 				3DE5DD8E209CE654008ED794 /* Info.plist */,
-				3DE5DD94209CE7EB008ED794 /* TappableTextView.swift */,
-				3DE5DD98209CFDDB008ED794 /* TappableTextView.xib */,
-				3D67E28320A4F2BB00C31625 /* Word.swift */,
-				3DC7BB7720AB79740079D2F4 /* HighlightView.xib */,
-				3DC7BB7920AB7A170079D2F4 /* HighlightView.swift */,
 			);
 			path = TappableTextView;
 			sourceTree = "<group>";

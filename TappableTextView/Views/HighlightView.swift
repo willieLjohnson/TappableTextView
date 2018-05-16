@@ -38,11 +38,11 @@ private extension HighlightView {
 //    backgroundColor = .white
     clipsToBounds = false
     layer.cornerRadius = frame.height / 4
-    layer.shadowOpacity = 0.5
+//    layer.shadowOpacity = 0.5
     let randomHue = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-    layer.shadowColor = UIColor(hue: randomHue, saturation: 0.6, brightness: 0.6, alpha: 1).cgColor
-    layer.shadowRadius = 2
-    layer.shadowOffset = CGSize(width: 0, height: 2)
+//    layer.shadowColor = UIColor(hue: randomHue, saturation: 0.6, brightness: 0.6, alpha: 1).cgColor
+//    layer.shadowRadius = 2
+//    layer.shadowOffset = CGSize(width: 0, height: 2)
     backgroundColor = UIColor(hue: randomHue, saturation: 0.6, brightness: 0.9, alpha: 1)
 
     contentView = loadNib(viewType: UILabel.self)
@@ -50,13 +50,5 @@ private extension HighlightView {
     addSubview(contentView)
     contentView.constrain(to: self)
     contentView.textColor = UIColor(hue: randomHue, saturation: 0.9, brightness: 0.3, alpha: 1)
-  }
-
-  /// Handle taps on the contentView.
-  ///
-  /// - Parameter recognizer: The UITapGestureRecognizer that triggered this handler.
-  @objc func handleTap(recognizer: UITapGestureRecognizer) {
-    print("TAP")
-    tapped = true
   }
 }
