@@ -18,6 +18,9 @@
         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3ds-E4-Hyw">
             <rect key="frame" x="0.0" y="0.0" width="88" height="21"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+            </accessibility>
             <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="16"/>
             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="highlightedColor"/>

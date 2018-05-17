@@ -12,6 +12,8 @@ import UIKit
 class TappableTextView: UIView {
   @IBOutlet var contentView: UITextView!
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+  let heavyImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     backgroundColor = .white
@@ -44,6 +46,7 @@ private extension TappableTextView {
   @objc func textTapped(recognizer: UITapGestureRecognizer) {
     print("textTapped")
     impactFeedbackGenerator.prepare()
+    heavyImpactFeedbackGenerator.prepare()
     // Grab UITextView and its content.
     guard let textView = recognizer.view as? UITextView else {
       return
@@ -59,9 +62,9 @@ private extension TappableTextView {
     // Animate highlight
     highlight.alpha = 0.5
     highlight.transform = .init(scaleX: 0.01, y: 1)
-
+    textView.selectedTextRange = nil
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-      self.impactFeedbackGenerator.impactOccurred()
+//      self.impactFeedbackGenerator.impactOccurred()
       highlight.alpha = 1
       highlight.transform = .identity
     }) { _ in
@@ -91,6 +94,13 @@ private extension TappableTextView {
 
   @objc func handleTapOnHighlightView(recognizer: UIGestureRecognizer) {
     guard let highlightView = recognizer.view as? HighlightView else { return }
+    let wordView = WordView(frame: highlightView.word.rect, word: highlightView.word)
+    wordView.backgroundColor = highlightView.backgroundColor
+    contentView.addSubview(wordView)
+    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
+      self.heavyImpactFeedbackGenerator.impactOccurred()
+      wordView.frame = self.contentView.convert(self.frame.insetBy(dx: 25, dy: 25), from: self)
+    })
   }
 }
 

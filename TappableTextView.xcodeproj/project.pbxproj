@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		3D3372F9209CFF4C0025195B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */; };
 		3D67E28420A4F2BB00C31625 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D67E28320A4F2BB00C31625 /* Word.swift */; };
+		3D8AA01420AE2CAE00443D49 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8AA01320AE2CAE00443D49 /* WordView.swift */; };
+		3D8AA01620AE2CCD00443D49 /* WordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3D8AA01520AE2CCD00443D49 /* WordView.xib */; };
 		3DC7BB7820AB79740079D2F4 /* HighlightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DC7BB7720AB79740079D2F4 /* HighlightView.xib */; };
 		3DC7BB7A20AB7A170079D2F4 /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DC7BB7920AB7A170079D2F4 /* HighlightView.swift */; };
 		3DE5DD83209CE651008ED794 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5DD82209CE651008ED794 /* AppDelegate.swift */; };
@@ -23,6 +25,8 @@
 /* Begin PBXFileReference section */
 		3D3372F8209CFF4C0025195B /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		3D67E28320A4F2BB00C31625 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		3D8AA01320AE2CAE00443D49 /* WordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		3D8AA01520AE2CCD00443D49 /* WordView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordView.xib; sourceTree = "<group>"; };
 		3DC7BB7720AB79740079D2F4 /* HighlightView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightView.xib; sourceTree = "<group>"; };
 		3DC7BB7920AB7A170079D2F4 /* HighlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
 		3DE5DD7F209CE651008ED794 /* TappableTextView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TappableTextView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +58,8 @@
 				3DE5DD98209CFDDB008ED794 /* TappableTextView.xib */,
 				3DC7BB7720AB79740079D2F4 /* HighlightView.xib */,
 				3DC7BB7920AB7A170079D2F4 /* HighlightView.swift */,
+				3D8AA01320AE2CAE00443D49 /* WordView.swift */,
+				3D8AA01520AE2CCD00443D49 /* WordView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -150,6 +156,7 @@
 			files = (
 				3DE5DD8D209CE654008ED794 /* LaunchScreen.storyboard in Resources */,
 				3DC7BB7820AB79740079D2F4 /* HighlightView.xib in Resources */,
+				3D8AA01620AE2CCD00443D49 /* WordView.xib in Resources */,
 				3DE5DD8A209CE654008ED794 /* Assets.xcassets in Resources */,
 				3DE5DD99209CFDDB008ED794 /* TappableTextView.xib in Resources */,
 				3DE5DD88209CE651008ED794 /* Main.storyboard in Resources */,
@@ -165,6 +172,7 @@
 			files = (
 				3DE5DD85209CE651008ED794 /* ViewController.swift in Sources */,
 				3DE5DD95209CE7EB008ED794 /* TappableTextView.swift in Sources */,
+				3D8AA01420AE2CAE00443D49 /* WordView.swift in Sources */,
 				3D67E28420A4F2BB00C31625 /* Word.swift in Sources */,
 				3DC7BB7A20AB7A170079D2F4 /* HighlightView.swift in Sources */,
 				3D3372F9209CFF4C0025195B /* UIView+Extensions.swift in Sources */,
