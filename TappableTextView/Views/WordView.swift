@@ -71,6 +71,19 @@ extension WordView {
   func dismissAnimation() {
     guard let superview = superview else { return }
     superview.sendSubview(toBack: self)
+    /* Do Animations */
+    CATransaction.begin()
+    CATransaction.setAnimationDuration(0.2)
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+
+    // Layer animations
+    let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
+    cornerAnimation.fromValue = 0
+    cornerAnimation.toValue = frame.height / 4
+
+    contentView.layer.cornerRadius = frame.height / 2
+    contentView.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
       self.transform = .init(scaleX: self.word.rect.width / self.frame.width, y: self.word.rect.height / self.frame.height)
       self.center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
@@ -79,6 +92,7 @@ extension WordView {
       guard let highlightView = self.highlightView else { return }
       highlightView.dismissAnimation()
     }))
+    CATransaction.commit()
   }
 }
 

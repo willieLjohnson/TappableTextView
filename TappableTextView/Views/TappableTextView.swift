@@ -13,18 +13,18 @@ class TappableTextView: UIView {
   @IBOutlet var contentView: UITextView!
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
   var wordView: WordView?
-  @IBInspectable var color: UIColor? {
+  @IBInspectable var color: UIColor? = .white {
     didSet {
       contentView.backgroundColor = color
     }
   }
-
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     backgroundColor = .clear
     setupView()
   }
-
+  
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupView()
@@ -33,10 +33,10 @@ class TappableTextView: UIView {
 
 extension TappableTextView: UITextViewDelegate {
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-    //    guard let wordView = wordView else { return }
-    //    let distance = abs(wordView.frame.origin.y - scrollView.contentOffset.y)
-    //    guard distance > 20 else { return }
-    //    wordView.closeButtonPressed(self)
+    guard let wordView = wordView else { return }
+    let distance = abs(wordView.frame.origin.y - scrollView.contentOffset.y)
+    guard distance > 80 else { return }
+    wordView.closeButtonPressed(self)
   }
 }
 
@@ -53,12 +53,12 @@ private extension TappableTextView {
     textTapGesture.numberOfTapsRequired = 1
     contentView.addGestureRecognizer(textTapGesture)
   }
-
+  
   /// Handle taps on the UITextView.
   ///
   /// - Parameter recognizer: The UITapGestureRecognizer that triggered this handler.
   @objc func textTapped(recognizer: UITapGestureRecognizer) {
-//    guard wordView == nil else { return }
+    //    guard wordView == nil else { return }
     impactFeedbackGenerator.prepare()
     // Grab UITextView and its content.
     guard let textView = recognizer.view as? UITextView else {
@@ -78,7 +78,7 @@ private extension TappableTextView {
     impactFeedbackGenerator.impactOccurred()
     textView.selectedTextRange = nil
   }
-
+  
   /// Return the word that was tapped within the textview.
   ///
   /// - Paremeters:
@@ -94,7 +94,7 @@ private extension TappableTextView {
     let wordRect = textView.firstRect(for: textRange)
     return Word(text: wordText, range: wordRange, rect: wordRect)
   }
-
+  
   @objc func handleTapOnHighlightView(recognizer: UIGestureRecognizer) {
     guard let highlightView = recognizer.view as? HighlightView else { return }
     if let wordView = wordView {
@@ -103,21 +103,12 @@ private extension TappableTextView {
     wordView = WordView(highlightView: highlightView)
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeOnWordView(recognizer:)))
     panGesture.delegate = self
-    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchOnWordView(recognizer:)))
-    pinchGesture.delegate = self
     guard let wordView = wordView else { return }
     wordView.addGestureRecognizer(panGesture)
-    wordView.addGestureRecognizer(pinchGesture)
     wordView.delegate = self
     wordView.color = highlightView.color
     contentView.addSubview(wordView)
     wordView.expandTo(self)
-  }
-
-  @objc func handlePinchOnWordView(recognizer: UIPinchGestureRecognizer) {
-    guard let wordView = recognizer.view as? WordView else { return }
-    wordView.transform = wordView.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
-    recognizer.scale = 1
   }
 
   @objc func handleSwipeOnWordView(recognizer: UIPanGestureRecognizer) {
@@ -138,14 +129,14 @@ private extension TappableTextView {
         return
       }
       let slideMultiplier = magnitude / 400
-
+      
       let slideFactor = 0.1 * slideMultiplier
-
+      
       var finalPoint = CGPoint(x: wordView.center.x + (velocity.x * slideFactor),
                                y: wordView.center.y + (velocity.y * slideFactor))
-//
-//      finalPoint.x = min(max(finalPoint.x, 0), wordViewTextView.bounds.size.width)
-//      finalPoint.y = min(max(finalPoint.y, 0), wordViewTextView.bounds.size.height)
+      //
+      finalPoint.x = min(max(finalPoint.x, 0), wordViewTextView.bounds.size.width)
+      finalPoint.y = min(max(finalPoint.y, 0), wordViewTextView.bounds.size.height)
 
       UIView.animate(withDuration: Double(slideFactor * 2), delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
         wordView.center = finalPoint
