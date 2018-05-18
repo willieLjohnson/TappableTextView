@@ -12,7 +12,6 @@ import UIKit
 class TappableTextView: UIView {
   @IBOutlet var contentView: UITextView!
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-  let heavyImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
   var wordView: WordView?
   @IBInspectable var color: UIColor? {
     didSet {
@@ -61,7 +60,6 @@ private extension TappableTextView {
   @objc func textTapped(recognizer: UITapGestureRecognizer) {
 //    guard wordView == nil else { return }
     impactFeedbackGenerator.prepare()
-    heavyImpactFeedbackGenerator.prepare()
     // Grab UITextView and its content.
     guard let textView = recognizer.view as? UITextView else {
       return
@@ -77,18 +75,8 @@ private extension TappableTextView {
     // Animate highlight
     highlight.transform = .init(scaleX: 0.01, y: 1)
     highlight.expandAnimation()
+    impactFeedbackGenerator.impactOccurred()
     textView.selectedTextRange = nil
-    //    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-    ////      self.impactFeedbackGenerator.impactOccurred()
-    //      highlight.alpha = 1
-    //      highlight.transform = .identity
-    //    }) { _ in
-    //      UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
-    //        highlight.transform = .init(scaleX: 1.1, y: 0.01)
-    //      }, completion: ({ _ in
-    //        highlight.removeFromSuperview()
-    //      }))
-    //    }
   }
 
   /// Return the word that was tapped within the textview.
@@ -112,7 +100,7 @@ private extension TappableTextView {
     if let wordView = wordView {
       wordView.closeButtonPressed(self)
     }
-    wordView = WordView(frame: highlightView.frame, word: highlightView.word)
+    wordView = WordView(highlightView: highlightView)
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeOnWordView(recognizer:)))
     panGesture.delegate = self
     let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchOnWordView(recognizer:)))

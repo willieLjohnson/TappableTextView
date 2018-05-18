@@ -17,7 +17,7 @@ class WordView: UIView {
   @IBOutlet var contentView: UIView!
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var wordLabel: UILabel!
-  let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+  let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
 
   @IBInspectable var color: UIColor? {
     didSet {
@@ -26,6 +26,7 @@ class WordView: UIView {
   }
 
   weak var delegate: WordViewDelegate?
+  weak var highlightView: HighlightView?
   var word: Word!
 
   override init(frame: CGRect) {
@@ -33,9 +34,11 @@ class WordView: UIView {
     setupView()
   }
 
-  convenience init(frame: CGRect, word: Word) {
-    self.init(frame: frame)
-    self.word = word
+  convenience init(highlightView: HighlightView) {
+    self.init(frame: highlightView.frame)
+    self.highlightView = highlightView
+    highlightView.tapped = true
+    self.word = highlightView.word
     wordLabel.text = word.text
   }
 
@@ -59,17 +62,22 @@ extension WordView {
     center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
     transform = .init(scaleX: self.word.rect.width / self.frame.width, y: self.word.rect.height / self.frame.height)
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+      self.impactFeedbackGenerator.impactOccurred()
       self.transform = .identity
       self.center = superview.convert(view.center, from: view)
     })
   }
 
   func dismissAnimation() {
+    guard let superview = superview else { return }
+    superview.sendSubview(toBack: self)
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
       self.transform = .init(scaleX: self.word.rect.width / self.frame.width, y: self.word.rect.height / self.frame.height)
       self.center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
     }, completion: ({ _ in
       self.removeFromSuperview()
+      guard let highlightView = self.highlightView else { return }
+      highlightView.dismissAnimation()
     }))
   }
 }
