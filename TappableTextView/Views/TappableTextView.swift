@@ -13,10 +13,11 @@ class TappableTextView: UIView {
   @IBOutlet var contentView: UITextView!
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
   let heavyImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
+  var wordView: WordView?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-    backgroundColor = .white
+    backgroundColor = .clear
     setupView()
   }
 
@@ -26,15 +27,24 @@ class TappableTextView: UIView {
   }
 }
 
+extension TappableTextView: UITextViewDelegate {
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    guard let wordView = wordView else { return }
+    let distance = abs(wordView.frame.origin.y - scrollView.contentOffset.y)
+    guard distance > 20 else { return }
+    wordView.closeButtonPressed(self)
+  }
+}
+
 // MARK: - Helper methods
 private extension TappableTextView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
     contentView = loadNib(viewType: UITextView.self)
-    contentView.backgroundColor = .clear
     addSubview(contentView)
+    contentView.delegate = self
     contentView.constrain(to: self)
-    
+    contentView.backgroundColor = .white
     let textTapGesture = UITapGestureRecognizer(target: self, action: #selector(textTapped(recognizer:)))
     textTapGesture.numberOfTapsRequired = 1
     contentView.addGestureRecognizer(textTapGesture)
@@ -44,7 +54,7 @@ private extension TappableTextView {
   ///
   /// - Parameter recognizer: The UITapGestureRecognizer that triggered this handler.
   @objc func textTapped(recognizer: UITapGestureRecognizer) {
-    print("textTapped")
+    guard wordView == nil else { return }
     impactFeedbackGenerator.prepare()
     heavyImpactFeedbackGenerator.prepare()
     // Grab UITextView and its content.
@@ -60,20 +70,20 @@ private extension TappableTextView {
     textView.addSubview(highlight)
     highlight.addGestureRecognizer(tapGesture)
     // Animate highlight
-    highlight.alpha = 0.5
     highlight.transform = .init(scaleX: 0.01, y: 1)
+    highlight.expandAnimation()
     textView.selectedTextRange = nil
-    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-//      self.impactFeedbackGenerator.impactOccurred()
-      highlight.alpha = 1
-      highlight.transform = .identity
-    }) { _ in
-      UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
-        highlight.transform = .init(scaleX: 1.1, y: 0.01)
-      }, completion: ({ _ in
-        highlight.removeFromSuperview()
-      }))
-    }
+//    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+////      self.impactFeedbackGenerator.impactOccurred()
+//      highlight.alpha = 1
+//      highlight.transform = .identity
+//    }) { _ in
+//      UIView.animate(withDuration: 0.4, delay: 2, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+//        highlight.transform = .init(scaleX: 1.1, y: 0.01)
+//      }, completion: ({ _ in
+//        highlight.removeFromSuperview()
+//      }))
+//    }
   }
 
   /// Return the word that was tapped within the textview.
@@ -94,15 +104,23 @@ private extension TappableTextView {
 
   @objc func handleTapOnHighlightView(recognizer: UIGestureRecognizer) {
     guard let highlightView = recognizer.view as? HighlightView else { return }
-    let wordView = WordView(frame: highlightView.word.rect, word: highlightView.word)
-    wordView.backgroundColor = highlightView.backgroundColor
+    if let wordView = wordView {
+      wordView.removeFromSuperview()
+    }
+    wordView = WordView(frame: highlightView.frame, word: highlightView.word)
+    guard let wordView = wordView else { return }
+    wordView.delegate = self
+    wordView.color = highlightView.color
     contentView.addSubview(wordView)
-    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
-      self.heavyImpactFeedbackGenerator.impactOccurred()
-      wordView.frame = self.contentView.convert(self.frame.insetBy(dx: 25, dy: 25), from: self)
-    })
+    wordView.expandTo(self)
+  }
+}
+
+extension TappableTextView: WordViewDelegate {
+  func closeButtonPressed() {
+    wordView = nil
   }
 }
 
 extension TappableTextView: UIGestureRecognizerDelegate {
-  }
+}
