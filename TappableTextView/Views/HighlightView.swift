@@ -49,7 +49,17 @@ extension HighlightView {
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
       self.transform = .identity
       self.contentView.backgroundColor = self.color
-    }, completion: nil)
+    }, completion: { _ in
+      let queue = OperationQueue()
+      let autoDismiss = BlockOperation {
+        sleep(2)
+        DispatchQueue.main.async {
+          guard self.tapped == false else { return }
+          self.dismissAnimation()
+        }
+      }
+      queue.addOperation(autoDismiss)
+    })
 
     // Layer animations
     let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
@@ -61,6 +71,14 @@ extension HighlightView {
 
     CATransaction.commit()
   }
+
+  func dismissAnimation() {
+    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+      self.transform = .init(scaleX: 1.1, y: 0.01)
+    }, completion: ({ _ in
+      self.removeFromSuperview()
+    }))
+  }
 }
 
 // MARK: - Helper methods
@@ -68,12 +86,12 @@ private extension HighlightView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
     backgroundColor = .clear
-//    layer.cornerRadius = frame.height / 4
-//    layer.shadowOpacity = 0.5
+    //    layer.cornerRadius = frame.height / 4
+    //    layer.shadowOpacity = 0.5
     let randomHue = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-//    layer.shadowColor = UIColor(hue: randomHue, saturation: 0.6, brightness: 0.6, alpha: 1).cgColor
-//    layer.shadowRadius = 2
-//    layer.shadowOffset = CGSize(width: 0, height: 2)
+    //    layer.shadowColor = UIColor(hue: randomHue, saturation: 0.6, brightness: 0.6, alpha: 1).cgColor
+    //    layer.shadowRadius = 2
+    //    layer.shadowOffset = CGSize(width: 0, height: 2)
     contentView = loadNib(viewType: UILabel.self)
     addSubview(contentView)
     contentView.constrain(to: self)
