@@ -14,6 +14,11 @@ class TappableTextView: UIView {
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
   let heavyImpactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
   var wordView: WordView?
+  @IBInspectable var color: UIColor? {
+    didSet {
+      contentView.backgroundColor = color
+    }
+  }
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -54,7 +59,7 @@ private extension TappableTextView {
   ///
   /// - Parameter recognizer: The UITapGestureRecognizer that triggered this handler.
   @objc func textTapped(recognizer: UITapGestureRecognizer) {
-    guard wordView == nil else { return }
+//    guard wordView == nil else { return }
     impactFeedbackGenerator.prepare()
     heavyImpactFeedbackGenerator.prepare()
     // Grab UITextView and its content.
@@ -105,17 +110,26 @@ private extension TappableTextView {
   @objc func handleTapOnHighlightView(recognizer: UIGestureRecognizer) {
     guard let highlightView = recognizer.view as? HighlightView else { return }
     if let wordView = wordView {
-      wordView.removeFromSuperview()
+      wordView.closeButtonPressed(self)
     }
     wordView = WordView(frame: highlightView.frame, word: highlightView.word)
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeOnWordView(recognizer:)))
     panGesture.delegate = self
+    let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinchOnWordView(recognizer:)))
+    pinchGesture.delegate = self
     guard let wordView = wordView else { return }
     wordView.addGestureRecognizer(panGesture)
+    wordView.addGestureRecognizer(pinchGesture)
     wordView.delegate = self
     wordView.color = highlightView.color
     contentView.addSubview(wordView)
     wordView.expandTo(self)
+  }
+
+  @objc func handlePinchOnWordView(recognizer: UIPinchGestureRecognizer) {
+    guard let wordView = recognizer.view as? WordView else { return }
+    wordView.transform = wordView.transform.scaledBy(x: recognizer.scale, y: recognizer.scale)
+    recognizer.scale = 1
   }
 
   @objc func handleSwipeOnWordView(recognizer: UIPanGestureRecognizer) {
@@ -134,9 +148,9 @@ private extension TappableTextView {
         wordView.closeButtonPressed(self)
         return
       }
-      let slideMultiplier = magnitude / 200
+      let slideMultiplier = magnitude / 400
 
-      let slideFactor = 0.1 * slideMultiplier     //Increase for more of a slide
+      let slideFactor = 0.1 * slideMultiplier
 
       var finalPoint = CGPoint(x: wordView.center.x + (velocity.x * slideFactor),
                                y: wordView.center.y + (velocity.y * slideFactor))
@@ -146,7 +160,7 @@ private extension TappableTextView {
 
       UIView.animate(withDuration: Double(slideFactor * 2), delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
         wordView.center = finalPoint
-      }, completion: nil)
+      })
     default: break
     }
   }

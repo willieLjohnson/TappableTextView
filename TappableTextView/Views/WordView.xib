@@ -38,29 +38,31 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="These-Funny-Dog-Videos-Are-the-Break-You-Need-Right-Now_493370860-Jenn_C-760x506" translatesAutoresizingMaskIntoConstraints="NO" id="Tes-eQ-ZPh">
                     <rect key="frame" x="16" y="72" width="343" height="253"/>
                 </imageView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="viP-Q7-bwU">
-                    <rect key="frame" x="16" y="322" width="343" height="345"/>
-                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                    <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6H-fu-4cQ" customClass="TappableTextView" customModule="TappableTextView" customModuleProvider="target">
+                    <rect key="frame" x="16" y="333" width="343" height="314"/>
+                    <color key="backgroundColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="color">
+                            <color key="value" red="0.99999600649999998" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="UCb-7H-nW3" firstAttribute="trailing" secondItem="Tes-eQ-ZPh" secondAttribute="trailing" constant="16" id="0uJ-z8-SFB"/>
+                <constraint firstItem="Q6H-fu-4cQ" firstAttribute="leading" secondItem="UCb-7H-nW3" secondAttribute="leading" constant="16" id="1vF-8k-RqB"/>
+                <constraint firstItem="UCb-7H-nW3" firstAttribute="bottom" secondItem="Q6H-fu-4cQ" secondAttribute="bottom" constant="20" id="4hW-wg-9e8"/>
                 <constraint firstItem="UCb-7H-nW3" firstAttribute="trailing" secondItem="vuU-QS-cfV" secondAttribute="trailing" constant="16" id="60C-TZ-YYh"/>
-                <constraint firstItem="viP-Q7-bwU" firstAttribute="top" secondItem="Tes-eQ-ZPh" secondAttribute="bottom" constant="-3" id="GNe-QI-HIq"/>
                 <constraint firstItem="Tes-eQ-ZPh" firstAttribute="top" secondItem="oH7-u2-ns8" secondAttribute="bottom" constant="14" id="H7n-ha-ZvF"/>
+                <constraint firstItem="Q6H-fu-4cQ" firstAttribute="top" secondItem="Tes-eQ-ZPh" secondAttribute="bottom" constant="8" id="Ibb-ny-QU1"/>
                 <constraint firstItem="UCb-7H-nW3" firstAttribute="trailing" secondItem="Tes-eQ-ZPh" secondAttribute="trailing" constant="16" id="LSW-mQ-ACb"/>
                 <constraint firstItem="oH7-u2-ns8" firstAttribute="top" secondItem="UCb-7H-nW3" secondAttribute="top" constant="14" id="LYr-hT-gBm"/>
                 <constraint firstItem="oH7-u2-ns8" firstAttribute="centerX" secondItem="UCb-7H-nW3" secondAttribute="centerX" id="OZo-yk-AkC"/>
-                <constraint firstItem="viP-Q7-bwU" firstAttribute="leading" secondItem="UCb-7H-nW3" secondAttribute="leading" constant="16" id="cEe-zy-3GE"/>
+                <constraint firstItem="UCb-7H-nW3" firstAttribute="trailing" secondItem="Q6H-fu-4cQ" secondAttribute="trailing" constant="16" id="Q9C-Gy-1sg"/>
                 <constraint firstItem="vuU-QS-cfV" firstAttribute="top" secondItem="UCb-7H-nW3" secondAttribute="top" constant="14" id="d7j-Fn-3a5"/>
                 <constraint firstItem="Tes-eQ-ZPh" firstAttribute="leading" secondItem="UCb-7H-nW3" secondAttribute="leading" constant="16" id="hpT-jZ-tHP"/>
                 <constraint firstItem="Tes-eQ-ZPh" firstAttribute="top" secondItem="oH7-u2-ns8" secondAttribute="bottom" constant="14" id="nj8-yi-0u0"/>
-                <constraint firstItem="viP-Q7-bwU" firstAttribute="bottom" secondItem="UCb-7H-nW3" secondAttribute="bottom" id="xrg-i4-NLS"/>
-                <constraint firstItem="UCb-7H-nW3" firstAttribute="trailing" secondItem="viP-Q7-bwU" secondAttribute="trailing" constant="16" id="yRA-7C-kvO"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="UCb-7H-nW3"/>
             <point key="canvasLocation" x="21.5" y="-139.5"/>
