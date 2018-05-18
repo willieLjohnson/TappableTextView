@@ -134,15 +134,16 @@ private extension TappableTextView {
 
   @objc func handleSwipeOnWordView(recognizer: UIPanGestureRecognizer) {
     guard let wordView = recognizer.view as? WordView else { return }
+    guard let wordViewTextView = wordView.superview as? UITextView else { return }
     contentView.bringSubview(toFront: wordView)
-    let translation = recognizer.translation(in: contentView)
+    let translation = recognizer.translation(in: wordViewTextView)
     wordView.center = CGPoint(x: wordView.center.x + translation.x, y: wordView.center.y + translation.y)
-    recognizer.setTranslation(CGPoint.zero, in: contentView)
+    recognizer.setTranslation(CGPoint.zero, in: wordViewTextView)
     switch recognizer.state {
     case .began:
       wordView.layer.removeAllAnimations()
     case .ended:
-      let velocity = recognizer.velocity(in: self)
+      let velocity = recognizer.velocity(in: wordViewTextView)
       let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
       guard magnitude < 700 else {
         wordView.closeButtonPressed(self)
@@ -154,9 +155,9 @@ private extension TappableTextView {
 
       var finalPoint = CGPoint(x: wordView.center.x + (velocity.x * slideFactor),
                                y: wordView.center.y + (velocity.y * slideFactor))
-
-      finalPoint.x = min(max(finalPoint.x, 0), contentView.bounds.size.width)
-      finalPoint.y = min(max(finalPoint.y, 0), contentView.bounds.size.height)
+//
+//      finalPoint.x = min(max(finalPoint.x, 0), wordViewTextView.bounds.size.width)
+//      finalPoint.y = min(max(finalPoint.y, 0), wordViewTextView.bounds.size.height)
 
       UIView.animate(withDuration: Double(slideFactor * 2), delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
         wordView.center = finalPoint
