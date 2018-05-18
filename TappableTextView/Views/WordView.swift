@@ -55,7 +55,7 @@ class WordView: UIView {
 extension WordView {
   func expandTo(_ view: UIView) {
     guard let superview = superview else { return }
-    frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height).insetBy(dx: 10, dy: 10)
+    frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height).insetBy(dx: 10, dy: 25)
     center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
     transform = .init(scaleX: self.word.rect.width / self.frame.width, y: self.word.rect.height / self.frame.height)
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
