@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TappableTextView_Example' do
+  pod 'TappableTextView', :path => '../'
+
+  target 'TappableTextView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
