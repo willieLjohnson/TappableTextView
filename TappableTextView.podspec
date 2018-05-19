@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TappableTextView'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of TappableTextView.'
+  s.version          = '1.0.0'
+  s.summary          = 'A UITextView that handles taps on text with the view.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+TappableTextView makes it laughably easy to turn any word into a button. With beautiful animations and easy to understand code, you can turn any simple body of text into a world of possibilites.
                        DESC
 
   s.homepage         = 'https://github.com/SlickJohnson/TappableTextView'
