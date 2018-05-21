@@ -5,25 +5,46 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HighlightView" customModule="TappableTextView" customModuleProvider="target">
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="text" value="Hi"/>
+                <userDefinedRuntimeAttribute type="color" keyPath="color">
+                    <color key="value" red="1" green="0.63042342574089605" blue="0.30341319558458191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="contentView" destination="3ds-E4-Hyw" id="52H-jK-JDO"/>
+                <outlet property="textLabel" destination="3ds-E4-Hyw" id="1gC-fI-elM"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3ds-E4-Hyw">
-            <rect key="frame" x="0.0" y="0.0" width="88" height="21"/>
+        <view contentMode="scaleToFill" id="h2O-OQ-qEz">
+            <rect key="frame" x="0.0" y="0.0" width="131" height="38"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <accessibility key="accessibilityConfiguration">
-                <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-            </accessibility>
-            <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="16"/>
-            <nil key="textColor"/>
-            <nil key="highlightedColor"/>
-            <point key="canvasLocation" x="53" y="-30.5"/>
-        </label>
+            <subviews>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adsf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ds-E4-Hyw">
+                    <rect key="frame" x="0.0" y="0.0" width="131" height="38"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="3ds-E4-Hyw" firstAttribute="trailing" secondItem="WzV-ms-D1J" secondAttribute="trailing" id="4pa-2A-s4z"/>
+                <constraint firstItem="3ds-E4-Hyw" firstAttribute="bottom" secondItem="WzV-ms-D1J" secondAttribute="bottom" id="69l-aU-TC7"/>
+                <constraint firstItem="3ds-E4-Hyw" firstAttribute="leading" secondItem="WzV-ms-D1J" secondAttribute="leading" id="C5s-jH-11E"/>
+                <constraint firstItem="3ds-E4-Hyw" firstAttribute="top" secondItem="WzV-ms-D1J" secondAttribute="top" id="SV4-NN-NXW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="WzV-ms-D1J"/>
+            <point key="canvasLocation" x="-3.5" y="-118"/>
+        </view>
     </objects>
 </document>

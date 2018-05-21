@@ -13,13 +13,11 @@ protocol WordViewDelegate: class {
 }
 
 @available(iOS 10.0, *)
-@IBDesignable
-public class WordView: UIView {
-  @IBOutlet var contentView: UIView!
+public class WordView: NibDesignable {
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var wordLabel: UILabel!
   @IBOutlet weak var wordImage: UIImageView!
-  @IBOutlet weak var wordText: TappableTextView!
+  @IBOutlet weak var wordText: UITextView!
   
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
   public var color: UIColor = .white {
@@ -39,9 +37,9 @@ public class WordView: UIView {
   convenience init(highlightView: HighlightView) {
     self.init(frame: highlightView.frame)
     self.highlightView = highlightView
-    highlightView.tapped = true
     self.word = highlightView.word
     wordLabel.text = word.text
+    highlightView.tapped = true
     color = highlightView.color
     updateColors()
   }
@@ -116,9 +114,6 @@ extension WordView {
 @available(iOS 10.0, *)
 private extension WordView {
   func setupView() {
-    contentView = loadNib(viewType: UIView.self)
-    addSubview(contentView)
-    contentView.constrain(to: self)
     updateColors()
     clipsToBounds = true
     layer.masksToBounds = false
@@ -130,8 +125,8 @@ private extension WordView {
 
   func updateColors() {
     backgroundColor = color
-    wordText.color = color
     wordText.backgroundColor = .clear
+    wordText.textColor = color.contrastColor()
     wordLabel.textColor = color.contrastColor()
     closeButton.tintColor = color.contrastColor()
   }

@@ -9,9 +9,10 @@
 import UIKit
 
 @available(iOS 10.0, *)
-public class HighlightView: UIView {
-  @IBOutlet var contentView: UILabel!
-  public var color: UIColor = .white
+public class HighlightView: NibDesignable {
+  @IBOutlet weak var textLabel: UILabel!
+  @IBInspectable public var color: UIColor = .black
+  @IBInspectable public var text: String?
   var word: Word!
   var tapped: Bool = false
 
@@ -24,10 +25,10 @@ public class HighlightView: UIView {
     self.init(frame: word.rect)
     self.word = word
     self.color = color
-    contentView.text = word.text
+    self.text = word.text
+    textLabel.text = word.text
     backgroundColor = color
-    contentView.textColor = color.contrastColor()
-    contentView.tintColor = color.contrastColor()
+    textLabel.textColor = color.contrastColor()
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -88,11 +89,10 @@ private extension HighlightView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
     layer.cornerRadius = frame.height / 4
-    contentView = loadNib(viewType: UILabel.self)
-    addSubview(contentView)
-    contentView.constrain(to: self)
     backgroundColor = color
-    contentView.textColor = color.contrastColor()
-    contentView.tintColor = color.contrastColor()
+    textLabel.textColor = color.contrastColor()
+    if let text = text {
+      textLabel.text = text
+    }
   }
 }
