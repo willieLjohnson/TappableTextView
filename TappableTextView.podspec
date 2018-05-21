@@ -33,7 +33,7 @@ TappableTextView makes it laughably easy to turn any word into a button. With be
   s.source_files = 'TappableTextView/Classes/**/*'
   
   s.resource_bundles = {
-    'TappableTextView' => ['TappableTextView/**/*.xib']
+    'TappableTextView' => ['TappableTextView/Assets/**/*']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

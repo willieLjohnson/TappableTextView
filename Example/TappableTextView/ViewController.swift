@@ -15,11 +15,10 @@ class ViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .black
-
-    tappableTextView = TappableTextView(frame: view.bounds)
+    view.backgroundColor = .white
+    tappableTextView = TappableTextView(frame: view.bounds, color: .white)
     view.addSubview(tappableTextView)
-    tappableTextView.constrain(to: view)
+    tappableTextView.constrainToSafeArea(of: view)
   }
 
   override func didReceiveMemoryWarning() {

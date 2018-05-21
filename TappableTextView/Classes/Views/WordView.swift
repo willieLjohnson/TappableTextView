@@ -18,14 +18,15 @@ public class WordView: UIView {
   @IBOutlet var contentView: UIView!
   @IBOutlet weak var closeButton: UIButton!
   @IBOutlet weak var wordLabel: UILabel!
-  let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .heavy)
-
-  @IBInspectable var color: UIColor? {
+  @IBOutlet weak var wordImage: UIImageView!
+  @IBOutlet weak var wordText: TappableTextView!
+  
+  let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+  public var color: UIColor = .white {
     didSet {
-      contentView.backgroundColor = color
+      updateColors()
     }
   }
-
   weak var delegate: WordViewDelegate?
   weak var highlightView: HighlightView?
   var word: Word!
@@ -41,6 +42,8 @@ public class WordView: UIView {
     highlightView.tapped = true
     self.word = highlightView.word
     wordLabel.text = word.text
+    color = highlightView.color
+    updateColors()
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -58,34 +61,45 @@ public class WordView: UIView {
 // MARK: Animations
 @available(iOS 10.0, *)
 extension WordView {
-  func expandTo(_ view: UIView) {
+  func expandToSuperview() {
     guard let superview = superview else { return }
-    frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height).insetBy(dx: 10, dy: 25)
+    // Prepare view
+    frame = CGRect(x: 0, y: 0, width: superview.frame.width, height: superview.frame.height).insetBy(dx: 10, dy: 25)
     center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
     transform = .init(scaleX: self.word.rect.width / self.frame.width, y: self.word.rect.height / self.frame.height)
+    CATransaction.begin()
+    CATransaction.setAnimationDuration(0.25)
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+    // Corner animation
+    let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
+    cornerAnimation.fromValue = superview.frame.height / 4
+    cornerAnimation.toValue = 8
+    layer.cornerRadius = 8
+    wordImage.layer.cornerRadius = 8
+    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    wordImage.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    // Expand animation
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
       self.impactFeedbackGenerator.impactOccurred()
       self.transform = .identity
-      self.center = superview.convert(view.center, from: view)
+      self.center = CGPoint(x: superview.bounds.midX, y: superview.bounds.midY)
     })
+    CATransaction.commit()
   }
 
   func dismissAnimation() {
     guard let superview = superview else { return }
     superview.sendSubview(toBack: self)
-    /* Do Animations */
     CATransaction.begin()
     CATransaction.setAnimationDuration(0.2)
     CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
 
     // Layer animations
     let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
-    cornerAnimation.fromValue = 0
-    cornerAnimation.toValue = frame.height / 4
-
-    contentView.layer.cornerRadius = frame.height / 2
-    contentView.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
-
+    cornerAnimation.fromValue = layer.cornerRadius
+    cornerAnimation.toValue = frame.height / 2
+    layer.cornerRadius = frame.height / 2
+    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
       self.transform = .init(scaleX: self.word.rect.width / self.frame.width, y: self.word.rect.height / self.frame.height)
       self.center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
@@ -102,15 +116,23 @@ extension WordView {
 @available(iOS 10.0, *)
 private extension WordView {
   func setupView() {
-    backgroundColor = .clear
     contentView = loadNib(viewType: UIView.self)
     addSubview(contentView)
     contentView.constrain(to: self)
-//    clipsToBounds = false
-    contentView.layer.cornerRadius = 5
-    contentView.layer.shadowOpacity = 0.5
-    contentView.layer.shadowColor = UIColor(hue: 0, saturation: 0, brightness: 0.6, alpha: 1).cgColor
-    contentView.layer.shadowRadius = 4
-    contentView.layer.shadowOffset = CGSize(width: 2, height: 2)
+    updateColors()
+    clipsToBounds = true
+    layer.masksToBounds = false
+    layer.shadowOpacity = 0.5
+    layer.shadowColor = color.contrastColor().cgColor
+    layer.shadowRadius = 4
+    layer.shadowOffset = CGSize(width: 2, height: 2)
+  }
+
+  func updateColors() {
+    backgroundColor = color
+    wordText.color = color
+    wordText.backgroundColor = .clear
+    wordLabel.textColor = color.contrastColor()
+    closeButton.tintColor = color.contrastColor()
   }
 }

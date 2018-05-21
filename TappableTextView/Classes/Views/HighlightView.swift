@@ -11,24 +11,23 @@ import UIKit
 @available(iOS 10.0, *)
 public class HighlightView: UIView {
   @IBOutlet var contentView: UILabel!
+  public var color: UIColor = .white
   var word: Word!
   var tapped: Bool = false
-  
-  @IBInspectable var color: UIColor? {
-    didSet {
-      contentView.backgroundColor = color
-    }
-  }
 
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupView()
   }
 
-  convenience init(word: Word) {
+  convenience init(word: Word, color: UIColor) {
     self.init(frame: word.rect)
     self.word = word
+    self.color = color
     contentView.text = word.text
+    backgroundColor = color
+    contentView.textColor = color.contrastColor()
+    contentView.tintColor = color.contrastColor()
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -47,10 +46,11 @@ extension HighlightView {
     CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
 
     // View animations
-    contentView.backgroundColor = .black
+    frame = CGRect(x: 0, y: 0, width: frame.width * 1.1, height: frame.height)
+    center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
+    transform = .init(scaleX: 0.01, y: 1)
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
       self.transform = .identity
-      self.contentView.backgroundColor = self.color
     }, completion: { _ in
       let queue = OperationQueue()
       let autoDismiss = BlockOperation {
@@ -67,9 +67,8 @@ extension HighlightView {
     let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
     cornerAnimation.fromValue = 0
     cornerAnimation.toValue = frame.height / 4
-
-    contentView.layer.cornerRadius = frame.height / 4
-    contentView.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    layer.cornerRadius = frame.height / 4
+    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
 
     CATransaction.commit()
   }
@@ -88,18 +87,12 @@ extension HighlightView {
 private extension HighlightView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
-    backgroundColor = .clear
-    //    layer.cornerRadius = frame.height / 4
-    //    layer.shadowOpacity = 0.5
-    let randomHue = CGFloat(Float(arc4random()) / Float(UINT32_MAX))
-    //    layer.shadowColor = UIColor(hue: randomHue, saturation: 0.6, brightness: 0.6, alpha: 1).cgColor
-    //    layer.shadowRadius = 2
-    //    layer.shadowOffset = CGSize(width: 0, height: 2)
+    layer.cornerRadius = frame.height / 4
     contentView = loadNib(viewType: UILabel.self)
     addSubview(contentView)
     contentView.constrain(to: self)
-    contentView.clipsToBounds = true
-    contentView.textColor = UIColor(hue: randomHue, saturation: 0.9, brightness: 0.3, alpha: 1)
-    color = UIColor(hue: randomHue, saturation: 0.6, brightness: 0.9, alpha: 1)
+    backgroundColor = color
+    contentView.textColor = color.contrastColor()
+    contentView.tintColor = color.contrastColor()
   }
 }
