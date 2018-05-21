@@ -9,11 +9,24 @@
 import UIKit
 
 @available(iOS 10.0, *)
+@IBDesignable
 public class HighlightView: NibDesignable {
   @IBOutlet weak var textLabel: UILabel!
-  @IBInspectable public var color: UIColor = .black
-  @IBInspectable public var text: String?
-  var word: Word!
+  @IBInspectable public var color: UIColor = .black {
+    willSet(color) {
+      updateViews()
+    }
+  }
+  @IBInspectable public var text: String? {
+    willSet(text) {
+      self.textLabel?.text = text
+    }
+  }
+  var word: Word? {
+    willSet(word) {
+      self.text = word?.text
+    }
+  }
   var tapped: Bool = false
 
   override init(frame: CGRect) {
@@ -25,13 +38,10 @@ public class HighlightView: NibDesignable {
     self.init(frame: word.rect)
     self.word = word
     self.color = color
-    self.text = word.text
-    textLabel.text = word.text
-    backgroundColor = color
-    textLabel.textColor = color.contrastColor()
+    updateViews()
   }
 
-  required public init?(coder aDecoder: NSCoder) {
+  public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupView()
   }
@@ -41,6 +51,7 @@ public class HighlightView: NibDesignable {
 @available(iOS 10.0, *)
 extension HighlightView {
   func expandAnimation() {
+    guard let word = word else { return }
     /* Do Animations */
     CATransaction.begin()
     CATransaction.setAnimationDuration(0.2)
@@ -48,7 +59,7 @@ extension HighlightView {
 
     // View animations
     frame = CGRect(x: 0, y: 0, width: frame.width * 1.1, height: frame.height)
-    center = CGPoint(x: self.word.rect.midX, y: self.word.rect.midY)
+    center = CGPoint(x: word.rect.midX, y: word.rect.midY)
     transform = .init(scaleX: 0.01, y: 1)
     UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
       self.transform = .identity
@@ -89,10 +100,14 @@ private extension HighlightView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
     layer.cornerRadius = frame.height / 4
+    updateViews()
+  }
+
+  func updateViews() {
+    guard let textLabel = textLabel else { return }
     backgroundColor = color
     textLabel.textColor = color.contrastColor()
-    if let text = text {
-      textLabel.text = text
-    }
+    textLabel.tintColor = color.contrastColor()
+    text = word?.text
   }
 }

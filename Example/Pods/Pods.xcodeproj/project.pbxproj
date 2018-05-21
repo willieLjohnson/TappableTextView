@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		033763B5A5316B257DD7C1EC61E542C5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9567C5F2625C9C808C57A4AC104489C5 /* Word.swift */; };
 		0AA6D712F582A1C3B14E11A2C9FEDFB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		0CF3E01CC14F4192D4A6206CDBB142A8 /* TappableTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9418C5BE1176FB8B09EFA47AEF430B33 /* TappableTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CF3E01CC14F4192D4A6206CDBB142A8 /* TappableTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEC17AFDA4784CABA751AC0661DFE17F /* TappableTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1D5D32766E71D5E8DD6FCF53EDAFF3AB /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36424873C9FB192577EB713BA5BA71 /* WordView.swift */; };
 		229487F28FE773FC9E4473D7410CDB8C /* Pods-TappableTextView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CBD00E3D831211D58FEEC5B1C622D /* Pods-TappableTextView_Tests-dummy.m */; };
-		3D9A575A20B284AE00D7DFD4 /* TappableTextView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C780BB4B321B6A559ED1395A4BA268 /* TappableTextView.xib */; };
-		3D9A575C20B284BA00D7DFD4 /* HighlightView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37445056950B538B65E66F52E5B063AA /* HighlightView.xib */; };
-		3D9A575D20B284BA00D7DFD4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A9485753C1267272A4C943D7F467A764 /* Images.xcassets */; };
-		3D9A575E20B284BA00D7DFD4 /* WordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36DC191C600CAD480DFB7CB3BFFBF038 /* WordView.xib */; };
-		3D9A576220B29FD000D7DFD4 /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9A576120B29FD000D7DFD4 /* NibDesignable.swift */; };
-		41C15FE1DC16CF85C989D5092895DFDB /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACAD3DA92E2101BEF165857FFBA37E6 /* HighlightView.swift */; };
-		4299357267D54223EDB7076BBD31A073 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9326C1D7E5BF2E713CB843C81FAC46A4 /* WordView.swift */; };
-		4C024B04E347BE387F39E3EB48FA67AB /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F37D5452B521C3DF7A045025AE1DB2 /* Word.swift */; };
+		30A36F2D9E72DBC934191B3B57F29748 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1EFC979D1771ABCD07D7C1B9A74A /* Images.xcassets */; };
+		37A33D65BE4332FE8497A34087D22EBB /* HighlightView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6BB519E3D66DD777CE157E28C644AB94 /* HighlightView.xib */; };
+		38C95047B409130817B56B0B73A71A00 /* TappableTextView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 952E98ABEC76678D2C38C202B0BAA843 /* TappableTextView.xib */; };
 		67B60D22AD3EFF49FC22EE034C7EE87E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		67FFADF98E75BE42E772D800ACE59518 /* Pods-TappableTextView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DEC8F29855B65859B018AD7AC6BB5 /* Pods-TappableTextView_Example-dummy.m */; };
-		6F34F7CC012B5289564B8A4BD7740F0E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 859D9E2B9F972F57CCA3D2D04A80C8C3 /* UIColor+Extensions.swift */; };
+		6AF0E40BADF621B49AE5231BACA0C490 /* TappableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8931754DFDBD4799754DED6377409BB4 /* TappableTextView.swift */; };
 		76AB696420DC09A96651711CC2C34E8F /* TappableTextView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2522C0A2FDFACDE2E79E04DA3FB31A9E /* TappableTextView.bundle */; };
+		7CE3D5D1EDF6A1E78E550464E7A9F555 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E519ACED9BF7FF6E2F5A6857E4161 /* UIColor+Extensions.swift */; };
 		8BB949A24FF2225041F617ADB0A9E41E /* Pods-TappableTextView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0967B69438A432B45ED50092FD972E /* Pods-TappableTextView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		97428DB0939221FD9E0111C67D7C730B /* TappableTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BECDABA3561521FF76EB2CE0997FDE8C /* TappableTextView-dummy.m */; };
+		8C1C9FE58738BCCA603918F308B24B36 /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F57A6815FC6D84AAB892E9537B4E29 /* NibDesignable.swift */; };
 		99307E58415A61B544FB332C17D4648C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		BF13DF2F09776A07590C472BAF452AD4 /* TappableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0EA978C401960D247DE43B11E936D4 /* TappableTextView.swift */; };
+		A97445843D3A9CA9DC1120A784E9E9CF /* WordView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7A4C0F3F7E75DFEF3CBF3A5149611 /* WordView.xib */; };
+		D488BB58C4DEFCBD1A6D2CFCDB1B1E53 /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173688E78AE00AAC6EA520D8C28B7F45 /* HighlightView.swift */; };
 		D86A6600820AEACF6DB2357305A7C31D /* Pods-TappableTextView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F952EC248AEF2EB0492CFD8EDEF7C0CE /* Pods-TappableTextView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F70689A36DA981A21801B16CCADCA28F /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C2EEECDA5E994F58C7829640022E873 /* UIView+Extensions.swift */; };
+		E332D53987C3205604255F95C986E17C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22E5C6F82747F3CED5DD84892922187 /* UIView+Extensions.swift */; };
+		EAEDE30AA70CD2A01A3A861BE0394904 /* TappableTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F1BA91924D6897EF51182C49BE160C /* TappableTextView-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,53 +55,53 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2522C0A2FDFACDE2E79E04DA3FB31A9E /* TappableTextView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappableTextView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		05F1BA91924D6897EF51182C49BE160C /* TappableTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TappableTextView-dummy.m"; sourceTree = "<group>"; };
+		08FF8C12A5CDFF94279D5D77583F30CF /* TappableTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TappableTextView.modulemap; sourceTree = "<group>"; };
+		0C36424873C9FB192577EB713BA5BA71 /* WordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		173688E78AE00AAC6EA520D8C28B7F45 /* HighlightView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
+		2522C0A2FDFACDE2E79E04DA3FB31A9E /* TappableTextView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TappableTextView.bundle; path = "TappableTextView-TappableTextView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		256CBD00E3D831211D58FEEC5B1C622D /* Pods-TappableTextView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TappableTextView_Tests-dummy.m"; sourceTree = "<group>"; };
-		2A42C32367C2C850444591B441A2A7DA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2E061C4A37286CCAFCC3DEC87A9C28B2 /* ResourceBundle-TappableTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TappableTextView-Info.plist"; sourceTree = "<group>"; };
 		2EDC43B7A8086820AB9F08208F9ECEFC /* Pods-TappableTextView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Example-resources.sh"; sourceTree = "<group>"; };
-		36DC191C600CAD480DFB7CB3BFFBF038 /* WordView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = WordView.xib; path = TappableTextView/Assets/WordView.xib; sourceTree = "<group>"; };
-		37445056950B538B65E66F52E5B063AA /* HighlightView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = HighlightView.xib; path = TappableTextView/Assets/HighlightView.xib; sourceTree = "<group>"; };
 		3C13BE050034858DE9B03B52AE98F735 /* Pods-TappableTextView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3C2EEECDA5E994F58C7829640022E873 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		3D9A576120B29FD000D7DFD4 /* NibDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibDesignable.swift; path = TappableTextView/Classes/NibDesignable.swift; sourceTree = "<group>"; };
+		3F72BAA6ABD164D1009B7DBDE24F14FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		410CBC09B7291129A94ABBE06E28072E /* Pods-TappableTextView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		432E142A68486EE9658F0A87F8205D6F /* TappableTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TappableTextView.modulemap; sourceTree = "<group>"; };
-		4787613349C607C94DD836AA8773EAE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4972F58661A98A1261423C5CBFA94E7C /* Pods-TappableTextView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4C70CEDD1F458CDA111F8915BF799002 /* Pods_TappableTextView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TappableTextView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E0EA978C401960D247DE43B11E936D4 /* TappableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TappableTextView.swift; sourceTree = "<group>"; };
+		4C70CEDD1F458CDA111F8915BF799002 /* Pods_TappableTextView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TappableTextView_Example.framework; path = "Pods-TappableTextView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A463F752F5F336747D1738AC039C4E /* Pods-TappableTextView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		52BA1EFC979D1771ABCD07D7C1B9A74A /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TappableTextView/Assets/Images.xcassets; sourceTree = "<group>"; };
+		56C2DADC52D8998D6B0BAB7225C917AA /* TappableTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-prefix.pch"; sourceTree = "<group>"; };
 		58958C193E0F91B601CDFF87991E9506 /* Pods-TappableTextView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6073AC2E61C689FEDC5D59AB1A390E1C /* Pods-TappableTextView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BB519E3D66DD777CE157E28C644AB94 /* HighlightView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = HighlightView.xib; sourceTree = "<group>"; };
 		6D214207E6D73B4AE2BDE21F99A2D496 /* Pods-TappableTextView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		6DC7A4C0F3F7E75DFEF3CBF3A5149611 /* WordView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = WordView.xib; sourceTree = "<group>"; };
+		71C492B5465BF6F23B206DD4719DA072 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7547BC76C88E82CA73BBA5107039F85A /* Pods-TappableTextView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TappableTextView_Example.modulemap"; sourceTree = "<group>"; };
 		755F7AF5CB65933F8C55FAD62DA9BBB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		84C780BB4B321B6A559ED1395A4BA268 /* TappableTextView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = TappableTextView.xib; sourceTree = "<group>"; };
-		859D9E2B9F972F57CCA3D2D04A80C8C3 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		8724C151B520BD755FABAD429EC6A778 /* ResourceBundle-TappableTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TappableTextView-Info.plist"; sourceTree = "<group>"; };
+		8931754DFDBD4799754DED6377409BB4 /* TappableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TappableTextView.swift; sourceTree = "<group>"; };
 		8C8DEC8F29855B65859B018AD7AC6BB5 /* Pods-TappableTextView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TappableTextView_Example-dummy.m"; sourceTree = "<group>"; };
 		90470375AD1852336E4AAF05D63FEB28 /* Pods-TappableTextView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9326C1D7E5BF2E713CB843C81FAC46A4 /* WordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9418C5BE1176FB8B09EFA47AEF430B33 /* TappableTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-umbrella.h"; sourceTree = "<group>"; };
-		9ACAD3DA92E2101BEF165857FFBA37E6 /* HighlightView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
-		A48F65CD335D17D7198F2BB06B343FEE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A9485753C1267272A4C943D7F467A764 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TappableTextView/Assets/Images.xcassets; sourceTree = "<group>"; };
-		AFD7F2D53690F2558E37C7D6C54613A2 /* Pods_TappableTextView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TappableTextView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9F37D5452B521C3DF7A045025AE1DB2 /* Word.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Word.swift; path = TappableTextView/Classes/Word.swift; sourceTree = "<group>"; };
-		BECDABA3561521FF76EB2CE0997FDE8C /* TappableTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TappableTextView-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		952E98ABEC76678D2C38C202B0BAA843 /* TappableTextView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = TappableTextView.xib; sourceTree = "<group>"; };
+		9567C5F2625C9C808C57A4AC104489C5 /* Word.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Word.swift; path = TappableTextView/Classes/Word.swift; sourceTree = "<group>"; };
+		9F271C223746CA55A9701AADA745EBB6 /* TappableTextView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = TappableTextView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AFD7F2D53690F2558E37C7D6C54613A2 /* Pods_TappableTextView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TappableTextView_Tests.framework; path = "Pods-TappableTextView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B07E519ACED9BF7FF6E2F5A6857E4161 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		BF0967B69438A432B45ED50092FD972E /* Pods-TappableTextView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TappableTextView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		C22E5C6F82747F3CED5DD84892922187 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		C332323CCE6F11BD45EBB523CDA37881 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6F57A6815FC6D84AAB892E9537B4E29 /* NibDesignable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibDesignable.swift; path = TappableTextView/Classes/NibDesignable.swift; sourceTree = "<group>"; };
 		C86DF84FDDC3521A61272297F4510AB9 /* Pods-TappableTextView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Tests-resources.sh"; sourceTree = "<group>"; };
-		CC883F1FDB1B85C1E1FCA7BC3756FB51 /* TappableTextView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TappableTextView.podspec; sourceTree = "<group>"; };
-		D5D5DFB546FFD643B3F1214F1ED3209A /* TappableTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TappableTextView.xcconfig; sourceTree = "<group>"; };
 		E22B84413A153F8ADDFF5A86DE6855C0 /* Pods-TappableTextView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		EAF19CA29E5E6A4C2B16D0E58925FAC3 /* Pods-TappableTextView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		F042CE427C8871B23F316ACC70A15DF8 /* TappableTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-prefix.pch"; sourceTree = "<group>"; };
-		F0BD8F9F59EC8608965618C2B397CBC2 /* TappableTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TappableTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TappableTextView.xcconfig; sourceTree = "<group>"; };
+		F0BD8F9F59EC8608965618C2B397CBC2 /* TappableTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TappableTextView.framework; path = TappableTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7E9B4576BE607FEDF11ED5358B6F350 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		F952EC248AEF2EB0492CFD8EDEF7C0CE /* Pods-TappableTextView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TappableTextView_Example-umbrella.h"; sourceTree = "<group>"; };
 		FA6EDEADAD0FDF97E5E084423E8F7351 /* Pods-TappableTextView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TappableTextView_Tests.modulemap"; sourceTree = "<group>"; };
+		FEC17AFDA4784CABA751AC0661DFE17F /* TappableTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,48 +139,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		19E83570B6A3970E21C8FD6C651EB968 /* Views */ = {
+		3643D005508D588FA0F4D5D05324CD72 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9ACAD3DA92E2101BEF165857FFBA37E6 /* HighlightView.swift */,
-				4E0EA978C401960D247DE43B11E936D4 /* TappableTextView.swift */,
-				9326C1D7E5BF2E713CB843C81FAC46A4 /* WordView.swift */,
+				52BA1EFC979D1771ABCD07D7C1B9A74A /* Images.xcassets */,
 			);
-			name = Views;
-			path = TappableTextView/Classes/Views;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		255E57ABE5B1B8D3262EDDE26917C831 /* Pod */ = {
+		4A4D3ED6C6B98AE5B839D3BBD0D8E566 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				2A42C32367C2C850444591B441A2A7DA /* LICENSE */,
-				A48F65CD335D17D7198F2BB06B343FEE /* README.md */,
-				CC883F1FDB1B85C1E1FCA7BC3756FB51 /* TappableTextView.podspec */,
+				B07E519ACED9BF7FF6E2F5A6857E4161 /* UIColor+Extensions.swift */,
+				C22E5C6F82747F3CED5DD84892922187 /* UIView+Extensions.swift */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		3F669B5CB1823B089976506E54F2AD8C /* TappableTextView */ = {
-			isa = PBXGroup;
-			children = (
-				3D9A576120B29FD000D7DFD4 /* NibDesignable.swift */,
-				865BFF46C7E56F5A6C111EFED0B05EA0 /* Extensions */,
-				B9F37D5452B521C3DF7A045025AE1DB2 /* Word.swift */,
-				255E57ABE5B1B8D3262EDDE26917C831 /* Pod */,
-				9EDF8FBED78F5C3823C820EC1B9E9F6E /* Resources */,
-				758BCC852E133947C63E3B7D6774C214 /* Support Files */,
-				19E83570B6A3970E21C8FD6C651EB968 /* Views */,
-			);
-			name = TappableTextView;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		577614AFAF6079F727F88C6500E8D8E6 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				3F669B5CB1823B089976506E54F2AD8C /* TappableTextView */,
-			);
-			name = "Development Pods";
+			name = Extensions;
+			path = TappableTextView/Classes/Extensions;
 			sourceTree = "<group>";
 		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
@@ -209,40 +183,33 @@
 			path = "Target Support Files/Pods-TappableTextView_Tests";
 			sourceTree = "<group>";
 		};
-		758BCC852E133947C63E3B7D6774C214 /* Support Files */ = {
+		77DAE03E9E68327CFFCE9A513B86A2F1 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4787613349C607C94DD836AA8773EAE9 /* Info.plist */,
-				8724C151B520BD755FABAD429EC6A778 /* ResourceBundle-TappableTextView-Info.plist */,
-				432E142A68486EE9658F0A87F8205D6F /* TappableTextView.modulemap */,
-				D5D5DFB546FFD643B3F1214F1ED3209A /* TappableTextView.xcconfig */,
-				BECDABA3561521FF76EB2CE0997FDE8C /* TappableTextView-dummy.m */,
-				F042CE427C8871B23F316ACC70A15DF8 /* TappableTextView-prefix.pch */,
-				9418C5BE1176FB8B09EFA47AEF430B33 /* TappableTextView-umbrella.h */,
+				A929236809212748B2EFAD24D30B705C /* TappableTextView */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TappableTextView";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				577614AFAF6079F727F88C6500E8D8E6 /* Development Pods */,
+				77DAE03E9E68327CFFCE9A513B86A2F1 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				89EBE410A32D70A7302E04384FEF280B /* Products */,
 				DDE5F890D47B9310489F9824AC75B5B2 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		865BFF46C7E56F5A6C111EFED0B05EA0 /* Extensions */ = {
+		82B6044E9826B73247406139B6DB19E2 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				859D9E2B9F972F57CCA3D2D04A80C8C3 /* UIColor+Extensions.swift */,
-				3C2EEECDA5E994F58C7829640022E873 /* UIView+Extensions.swift */,
+				3F72BAA6ABD164D1009B7DBDE24F14FE /* LICENSE */,
+				F7E9B4576BE607FEDF11ED5358B6F350 /* README.md */,
+				9F271C223746CA55A9701AADA745EBB6 /* TappableTextView.podspec */,
 			);
-			name = Extensions;
-			path = TappableTextView/Classes/Extensions;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		89EBE410A32D70A7302E04384FEF280B /* Products */ = {
@@ -256,15 +223,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9EDF8FBED78F5C3823C820EC1B9E9F6E /* Resources */ = {
+		A929236809212748B2EFAD24D30B705C /* TappableTextView */ = {
 			isa = PBXGroup;
 			children = (
-				37445056950B538B65E66F52E5B063AA /* HighlightView.xib */,
-				84C780BB4B321B6A559ED1395A4BA268 /* TappableTextView.xib */,
-				A9485753C1267272A4C943D7F467A764 /* Images.xcassets */,
-				36DC191C600CAD480DFB7CB3BFFBF038 /* WordView.xib */,
+				C6F57A6815FC6D84AAB892E9537B4E29 /* NibDesignable.swift */,
+				9567C5F2625C9C808C57A4AC104489C5 /* Word.swift */,
+				4A4D3ED6C6B98AE5B839D3BBD0D8E566 /* Extensions */,
+				82B6044E9826B73247406139B6DB19E2 /* Pod */,
+				3643D005508D588FA0F4D5D05324CD72 /* Resources */,
+				C99F65F4DECC9ED9411DBADB5D884AC9 /* Support Files */,
+				C8D19E876113B65E023B2A2D9E2CF834 /* Views */,
 			);
-			name = Resources;
+			name = TappableTextView;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -273,6 +244,35 @@
 				5E0D919E635D23B70123790B8308F8EF /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C8D19E876113B65E023B2A2D9E2CF834 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				173688E78AE00AAC6EA520D8C28B7F45 /* HighlightView.swift */,
+				6BB519E3D66DD777CE157E28C644AB94 /* HighlightView.xib */,
+				8931754DFDBD4799754DED6377409BB4 /* TappableTextView.swift */,
+				952E98ABEC76678D2C38C202B0BAA843 /* TappableTextView.xib */,
+				0C36424873C9FB192577EB713BA5BA71 /* WordView.swift */,
+				6DC7A4C0F3F7E75DFEF3CBF3A5149611 /* WordView.xib */,
+			);
+			name = Views;
+			path = TappableTextView/Classes/Views;
+			sourceTree = "<group>";
+		};
+		C99F65F4DECC9ED9411DBADB5D884AC9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				71C492B5465BF6F23B206DD4719DA072 /* Info.plist */,
+				2E061C4A37286CCAFCC3DEC87A9C28B2 /* ResourceBundle-TappableTextView-Info.plist */,
+				08FF8C12A5CDFF94279D5D77583F30CF /* TappableTextView.modulemap */,
+				EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */,
+				05F1BA91924D6897EF51182C49BE160C /* TappableTextView-dummy.m */,
+				56C2DADC52D8998D6B0BAB7225C917AA /* TappableTextView-prefix.pch */,
+				FEC17AFDA4784CABA751AC0661DFE17F /* TappableTextView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TappableTextView";
 			sourceTree = "<group>";
 		};
 		DDE5F890D47B9310489F9824AC75B5B2 /* Targets Support Files */ = {
@@ -338,7 +338,7 @@
 			buildPhases = (
 				61C48402602DD1021C8BFF158F35A5CC /* Sources */,
 				97985254CEE699358D4957FEA700853E /* Frameworks */,
-				1053F8C624AEB94844DBE906EF7207B3 /* Resources */,
+				357421D539E80C485994F90CACEBA053 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -389,7 +389,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E9CFCD594DDF1885A9A8E4C15D1AFAB /* Build configuration list for PBXNativeTarget "TappableTextView" */;
 			buildPhases = (
-				319D10F8796C2AFFB34FC32E2B2B3CC5 /* Sources */,
+				201F288BD2FF2D07BC3E31E90DA018DD /* Sources */,
 				BC8A5043EA249E0E5F7216850C3A32B1 /* Frameworks */,
 				53B125564237E8CB8D7D5A6632107F3A /* Resources */,
 				DF7DA96324F5E0AA5462069BF961FECB /* Headers */,
@@ -434,10 +434,11 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1053F8C624AEB94844DBE906EF7207B3 /* Resources */ = {
+		357421D539E80C485994F90CACEBA053 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A36F2D9E72DBC934191B3B57F29748 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,29 +446,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D9A575C20B284BA00D7DFD4 /* HighlightView.xib in Resources */,
-				3D9A575D20B284BA00D7DFD4 /* Images.xcassets in Resources */,
-				3D9A575A20B284AE00D7DFD4 /* TappableTextView.xib in Resources */,
 				76AB696420DC09A96651711CC2C34E8F /* TappableTextView.bundle in Resources */,
-				3D9A575E20B284BA00D7DFD4 /* WordView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		319D10F8796C2AFFB34FC32E2B2B3CC5 /* Sources */ = {
+		201F288BD2FF2D07BC3E31E90DA018DD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41C15FE1DC16CF85C989D5092895DFDB /* HighlightView.swift in Sources */,
-				97428DB0939221FD9E0111C67D7C730B /* TappableTextView-dummy.m in Sources */,
-				BF13DF2F09776A07590C472BAF452AD4 /* TappableTextView.swift in Sources */,
-				6F34F7CC012B5289564B8A4BD7740F0E /* UIColor+Extensions.swift in Sources */,
-				F70689A36DA981A21801B16CCADCA28F /* UIView+Extensions.swift in Sources */,
-				3D9A576220B29FD000D7DFD4 /* NibDesignable.swift in Sources */,
-				4C024B04E347BE387F39E3EB48FA67AB /* Word.swift in Sources */,
-				4299357267D54223EDB7076BBD31A073 /* WordView.swift in Sources */,
+				D488BB58C4DEFCBD1A6D2CFCDB1B1E53 /* HighlightView.swift in Sources */,
+				37A33D65BE4332FE8497A34087D22EBB /* HighlightView.xib in Sources */,
+				8C1C9FE58738BCCA603918F308B24B36 /* NibDesignable.swift in Sources */,
+				EAEDE30AA70CD2A01A3A861BE0394904 /* TappableTextView-dummy.m in Sources */,
+				6AF0E40BADF621B49AE5231BACA0C490 /* TappableTextView.swift in Sources */,
+				38C95047B409130817B56B0B73A71A00 /* TappableTextView.xib in Sources */,
+				7CE3D5D1EDF6A1E78E550464E7A9F555 /* UIColor+Extensions.swift in Sources */,
+				E332D53987C3205604255F95C986E17C /* UIView+Extensions.swift in Sources */,
+				033763B5A5316B257DD7C1EC61E542C5 /* Word.swift in Sources */,
+				1D5D32766E71D5E8DD6FCF53EDAFF3AB /* WordView.swift in Sources */,
+				A97445843D3A9CA9DC1120A784E9E9CF /* WordView.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -649,7 +649,7 @@
 		};
 		3CE772FF0874A3B0978EBB96300A4511 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D5DFB546FFD643B3F1214F1ED3209A /* TappableTextView.xcconfig */;
+			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
@@ -701,7 +701,7 @@
 		};
 		80A68438940BBF3F4942237C782AF88F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D5DFB546FFD643B3F1214F1ED3209A /* TappableTextView.xcconfig */;
+			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
@@ -780,7 +780,7 @@
 		};
 		A3908B0BDC63BF902F10FCC535762A1B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D5DFB546FFD643B3F1214F1ED3209A /* TappableTextView.xcconfig */;
+			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -814,7 +814,7 @@
 		};
 		D8169CCA1D36341EA18655CC417904D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5D5DFB546FFD643B3F1214F1ED3209A /* TappableTextView.xcconfig */;
+			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";

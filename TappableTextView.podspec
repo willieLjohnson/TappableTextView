@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'TappableTextView'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'A UITextView that handles taps on text with the view.'
 
 # This description is used to generate tags and improve search results.
@@ -30,10 +30,10 @@ TappableTextView makes it laughably easy to turn any word into a button. With be
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'TappableTextView/Classes/**/*'
+  s.source_files = ['TappableTextView/Classes/**/*']
   
   s.resource_bundles = {
-    'TappableTextView' => ['TappableTextView/Assets/**/*']
+    'TappableTextView' => ['TappableTextView/Assets/**/*'],
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'

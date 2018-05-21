@@ -1,5 +1,5 @@
 PODS:
-  - TappableTextView (1.0.0)
+  - TappableTextView (1.1.0)
 
 DEPENDENCIES:
   - TappableTextView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TappableTextView: 0539208aba027cb59518f150da17af2cae6da19b
+  TappableTextView: 5838d05d8565e9be4a217def98f76c80cf9b43f0
 
 PODFILE CHECKSUM: bd6d8b1b27fef2a9331c94dec68c8652e86b8538
 
