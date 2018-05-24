@@ -166,6 +166,7 @@ private extension TappableTextView {
 @available(iOS 10.0, *)
 extension TappableTextView: WordViewDelegate {
   func closeButtonPressed() {
+    self.animator.removeAllBehaviors()
     wordView = nil
   }
 }
