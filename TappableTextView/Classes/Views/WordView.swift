@@ -89,7 +89,7 @@ extension WordView {
     layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
     wordImageView.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
     // Expand animation
-    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut], animations: {
       self.impactFeedbackGenerator.impactOccurred()
       self.transform = .identity
       self.center = CGPoint(x: superview.bounds.midX, y: superview.bounds.midY)

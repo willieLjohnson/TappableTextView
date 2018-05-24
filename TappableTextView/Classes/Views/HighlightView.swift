@@ -86,7 +86,7 @@ extension HighlightView {
   }
 
   func dismissAnimation() {
-    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
       self.transform = .init(scaleX: 1.1, y: 0.01)
     }, completion: ({ _ in
       self.removeFromSuperview()
