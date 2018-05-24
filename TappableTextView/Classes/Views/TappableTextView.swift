@@ -12,6 +12,10 @@ import UIKit
 @IBDesignable
 open class TappableTextView: NibDesignable {
   @IBOutlet private weak var contentView: UITextView!
+  var animator: UIDynamicAnimator!
+  var snap: UISnapBehavior!
+  var snapViewBehavior: UIDynamicItemBehavior!
+
   @IBInspectable public var color: UIColor = .white {
     willSet(color) {
       updateViews()
@@ -60,9 +64,12 @@ private extension TappableTextView {
     guard let contentView = contentView else { return }
     contentView.delegate = self
     contentView.contentInset = UIEdgeInsetsMake(0, 16, 0, 16)
+
     let textTapGesture = UITapGestureRecognizer(target: self, action: #selector(textTapped(recognizer:)))
     textTapGesture.numberOfTapsRequired = 1
     contentView.addGestureRecognizer(textTapGesture)
+
+    animator = UIDynamicAnimator(referenceView: contentView)
   }
 
   func updateViews() {
@@ -127,6 +134,9 @@ private extension TappableTextView {
     wordView.delegate = self
     contentView.addSubview(wordView)
     wordView.expandToSuperview()
+    snap = UISnapBehavior(item: wordView, snapTo: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
+    snap.damping = 0.9
+    animator.addBehavior(snap)
   }
 
   @objc func handleSwipeOnWordView(recognizer: UIPanGestureRecognizer) {
@@ -139,24 +149,15 @@ private extension TappableTextView {
     recognizer.setTranslation(CGPoint.zero, in: wordViewTextView)
     switch recognizer.state {
     case .began:
-      wordView.layer.removeAllAnimations()
-    case .ended:
+      animator.removeBehavior(snap)
+    case .ended, .cancelled, .failed:
       let velocity = recognizer.velocity(in: wordViewTextView)
       let magnitude = sqrt((velocity.x * velocity.x) + (velocity.y * velocity.y))
       guard magnitude < 700 else {
         wordView.closeButtonPressed(self)
         return
       }
-      let slideMultiplier = magnitude / 400
-      
-      let slideFactor = 0.1 * slideMultiplier
-
-      let finalPoint = CGPoint(x: wordView.center.x + (velocity.x * slideFactor),
-                               y: wordView.center.y + (velocity.y * slideFactor))
-
-      UIView.animate(withDuration: Double(slideFactor * 2), delay: 0, options: [.curveEaseOut, .allowUserInteraction], animations: {
-        wordView.center = finalPoint
-      })
+      self.animator.addBehavior(self.snap)
     default: break
     }
   }
