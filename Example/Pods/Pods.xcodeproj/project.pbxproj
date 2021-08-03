@@ -7,338 +7,367 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		033763B5A5316B257DD7C1EC61E542C5 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9567C5F2625C9C808C57A4AC104489C5 /* Word.swift */; };
-		0AA6D712F582A1C3B14E11A2C9FEDFB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		0CF3E01CC14F4192D4A6206CDBB142A8 /* TappableTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEC17AFDA4784CABA751AC0661DFE17F /* TappableTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D5D32766E71D5E8DD6FCF53EDAFF3AB /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36424873C9FB192577EB713BA5BA71 /* WordView.swift */; };
-		229487F28FE773FC9E4473D7410CDB8C /* Pods-TappableTextView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 256CBD00E3D831211D58FEEC5B1C622D /* Pods-TappableTextView_Tests-dummy.m */; };
-		30A36F2D9E72DBC934191B3B57F29748 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52BA1EFC979D1771ABCD07D7C1B9A74A /* Images.xcassets */; };
-		37A33D65BE4332FE8497A34087D22EBB /* HighlightView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6BB519E3D66DD777CE157E28C644AB94 /* HighlightView.xib */; };
-		38C95047B409130817B56B0B73A71A00 /* TappableTextView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 952E98ABEC76678D2C38C202B0BAA843 /* TappableTextView.xib */; };
-		67B60D22AD3EFF49FC22EE034C7EE87E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		67FFADF98E75BE42E772D800ACE59518 /* Pods-TappableTextView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C8DEC8F29855B65859B018AD7AC6BB5 /* Pods-TappableTextView_Example-dummy.m */; };
-		6AF0E40BADF621B49AE5231BACA0C490 /* TappableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8931754DFDBD4799754DED6377409BB4 /* TappableTextView.swift */; };
-		76AB696420DC09A96651711CC2C34E8F /* TappableTextView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2522C0A2FDFACDE2E79E04DA3FB31A9E /* TappableTextView.bundle */; };
-		7CE3D5D1EDF6A1E78E550464E7A9F555 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07E519ACED9BF7FF6E2F5A6857E4161 /* UIColor+Extensions.swift */; };
-		8BB949A24FF2225041F617ADB0A9E41E /* Pods-TappableTextView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF0967B69438A432B45ED50092FD972E /* Pods-TappableTextView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8C1C9FE58738BCCA603918F308B24B36 /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F57A6815FC6D84AAB892E9537B4E29 /* NibDesignable.swift */; };
-		99307E58415A61B544FB332C17D4648C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		A97445843D3A9CA9DC1120A784E9E9CF /* WordView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 6DC7A4C0F3F7E75DFEF3CBF3A5149611 /* WordView.xib */; };
-		D488BB58C4DEFCBD1A6D2CFCDB1B1E53 /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173688E78AE00AAC6EA520D8C28B7F45 /* HighlightView.swift */; };
-		D86A6600820AEACF6DB2357305A7C31D /* Pods-TappableTextView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F952EC248AEF2EB0492CFD8EDEF7C0CE /* Pods-TappableTextView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E332D53987C3205604255F95C986E17C /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22E5C6F82747F3CED5DD84892922187 /* UIView+Extensions.swift */; };
-		EAEDE30AA70CD2A01A3A861BE0394904 /* TappableTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05F1BA91924D6897EF51182C49BE160C /* TappableTextView-dummy.m */; };
+		00B73A2A41D067DD7DB64A1599C9EB91 /* Pods-TappableTextView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21E71D864646BFC19FE4FD050E058A7C /* Pods-TappableTextView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F190938FF08D16CD5BA8592005CD86 /* WordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8962BBF48EEE13E75E33107846F46151 /* WordView.swift */; };
+		0CC8B00E59FF42FCD3C986499441CF4C /* TappableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC863DD6BDEEB3C39D4A59239A98137D /* TappableTextView.swift */; };
+		101C2137293DA3264978A6AD6C544140 /* TappableTextView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A480196DFC102DAACC5215D50EB4FD7 /* TappableTextView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1A43C7F54218DD50C87E0F42CFB7A874 /* HighlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54411507019918FA65C2E03E387DD03 /* HighlightView.swift */; };
+		2369D9FC0F78AE27DD16BBD338080AD8 /* WordView.xib in Sources */ = {isa = PBXBuildFile; fileRef = DABEF41B9462A205CCE9AD007FB76E68 /* WordView.xib */; };
+		3632BB203772C8B85AC5AB1A4CBC580B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3D2F3D2126B8D9C900452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
+		3D2F3D2226B8D9CA00452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
+		3D2F3D2326B8D9CB00452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
+		52E5836B788C29E6236998BCEF887234 /* Pods-TappableTextView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BD73E211C3368E234265A3AEB7793C /* Pods-TappableTextView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5AAC02E949322B9C3F9EF9A414155450 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6AD31ADFB8A32491724AC890534A2 /* UIView+Extensions.swift */; };
+		60D85ABE7A2C0C8CF6368C1A4144EA86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
+		6239EBB2D77FAF94E48F5E7A76E44BD5 /* Pods-TappableTextView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1663C8088CB2F32F884937652C151307 /* Pods-TappableTextView_Tests-dummy.m */; };
+		7DCF359CDA24B45A50034D6583255CBA /* HighlightView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 8C50C4415A0AB1AEEA5194602933C877 /* HighlightView.xib */; };
+		7FB67BA9E45598BAA62591D40D3C9221 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8343FC7B60323F8B5FF9B61CA715129C /* TappableTextView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 75898CF8E75C0C12EFE57B061ADFA030 /* TappableTextView.bundle */; };
+		A21ADEF83744316634CC5E35D5F9F832 /* Pods-TappableTextView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF8CEB3B9E6EF4BA3898DB34BD9EE9F /* Pods-TappableTextView_Example-dummy.m */; };
+		A92139C2340A70CE39DE3299A05FFBE6 /* TappableTextView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 92F03A16C20C4F46849D9EEFF5183C06 /* TappableTextView.xib */; };
+		AA1D5E5A3826B14F24A018DAA597C5F6 /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017A047B6589BAF2A83E8ADFE59E4B7A /* NibDesignable.swift */; };
+		B19E3DAAEDB8210C60B42385C601EBF5 /* TappableTextView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ED91159939139BF4191EDDFF85520654 /* TappableTextView-dummy.m */; };
+		B23B25F2B6D77F52DF2CFCEEF6D3FB22 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E53714AB2DA39956D49D0EA51CD9B8 /* UIColor+Extensions.swift */; };
+		B4204A9EC36968BF78EC9D6D418DC265 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CFA9235B97A7D0D84613763FA669C11 /* Word.swift */; };
+		BDAE847188EC2736F1E5DB69C18FB9ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2A98AAC4605AD9B8DF2EB096FDC4BB59 /* PBXContainerItemProxy */ = {
+		4883644805738729313B44584BBDE4FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 9C829B293F341C1E84EA707EFDEEC848;
-			remoteInfo = TappableTextView;
+			remoteGlobalIDString = 922B361DDE1C59CE072E0AB6FE891555;
+			remoteInfo = "TappableTextView-TappableTextView";
 		};
-		5D8184A9DC2AE79B0A34FAD0A30C4F5A /* PBXContainerItemProxy */ = {
+		98BBF162435CDA8C1C08092ED58E2BC3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 598131A6D20781978059853AC6B54AEB;
+			remoteGlobalIDString = B9E735B46BFF5ABE97A586787C5D2A1E;
 			remoteInfo = "Pods-TappableTextView_Example";
 		};
-		B189651E99E3C10617D62CFA306D46EF /* PBXContainerItemProxy */ = {
+		A7D0C389C279EB664820EF8F2D41BE1F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 12AA09E60520746C4CC67DE16D96137A;
-			remoteInfo = "TappableTextView-TappableTextView";
+			remoteGlobalIDString = 3059105ABB8D9DB19C996786CBBE4528;
+			remoteInfo = TappableTextView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		05F1BA91924D6897EF51182C49BE160C /* TappableTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TappableTextView-dummy.m"; sourceTree = "<group>"; };
-		08FF8C12A5CDFF94279D5D77583F30CF /* TappableTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TappableTextView.modulemap; sourceTree = "<group>"; };
-		0C36424873C9FB192577EB713BA5BA71 /* WordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
-		173688E78AE00AAC6EA520D8C28B7F45 /* HighlightView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
-		2522C0A2FDFACDE2E79E04DA3FB31A9E /* TappableTextView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappableTextView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		256CBD00E3D831211D58FEEC5B1C622D /* Pods-TappableTextView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TappableTextView_Tests-dummy.m"; sourceTree = "<group>"; };
-		2E061C4A37286CCAFCC3DEC87A9C28B2 /* ResourceBundle-TappableTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TappableTextView-Info.plist"; sourceTree = "<group>"; };
-		2EDC43B7A8086820AB9F08208F9ECEFC /* Pods-TappableTextView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Example-resources.sh"; sourceTree = "<group>"; };
-		3C13BE050034858DE9B03B52AE98F735 /* Pods-TappableTextView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3F72BAA6ABD164D1009B7DBDE24F14FE /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		410CBC09B7291129A94ABBE06E28072E /* Pods-TappableTextView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4972F58661A98A1261423C5CBFA94E7C /* Pods-TappableTextView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4C70CEDD1F458CDA111F8915BF799002 /* Pods_TappableTextView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TappableTextView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		51A463F752F5F336747D1738AC039C4E /* Pods-TappableTextView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		52BA1EFC979D1771ABCD07D7C1B9A74A /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TappableTextView/Assets/Images.xcassets; sourceTree = "<group>"; };
-		56C2DADC52D8998D6B0BAB7225C917AA /* TappableTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-prefix.pch"; sourceTree = "<group>"; };
-		58958C193E0F91B601CDFF87991E9506 /* Pods-TappableTextView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6073AC2E61C689FEDC5D59AB1A390E1C /* Pods-TappableTextView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6BB519E3D66DD777CE157E28C644AB94 /* HighlightView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = HighlightView.xib; sourceTree = "<group>"; };
-		6D214207E6D73B4AE2BDE21F99A2D496 /* Pods-TappableTextView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Example-frameworks.sh"; sourceTree = "<group>"; };
-		6DC7A4C0F3F7E75DFEF3CBF3A5149611 /* WordView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = WordView.xib; sourceTree = "<group>"; };
-		71C492B5465BF6F23B206DD4719DA072 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7547BC76C88E82CA73BBA5107039F85A /* Pods-TappableTextView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TappableTextView_Example.modulemap"; sourceTree = "<group>"; };
-		755F7AF5CB65933F8C55FAD62DA9BBB4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8931754DFDBD4799754DED6377409BB4 /* TappableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TappableTextView.swift; sourceTree = "<group>"; };
-		8C8DEC8F29855B65859B018AD7AC6BB5 /* Pods-TappableTextView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TappableTextView_Example-dummy.m"; sourceTree = "<group>"; };
-		90470375AD1852336E4AAF05D63FEB28 /* Pods-TappableTextView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		952E98ABEC76678D2C38C202B0BAA843 /* TappableTextView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = TappableTextView.xib; sourceTree = "<group>"; };
-		9567C5F2625C9C808C57A4AC104489C5 /* Word.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Word.swift; path = TappableTextView/Classes/Word.swift; sourceTree = "<group>"; };
-		9F271C223746CA55A9701AADA745EBB6 /* TappableTextView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TappableTextView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		AFD7F2D53690F2558E37C7D6C54613A2 /* Pods_TappableTextView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TappableTextView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B07E519ACED9BF7FF6E2F5A6857E4161 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		BF0967B69438A432B45ED50092FD972E /* Pods-TappableTextView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TappableTextView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		C22E5C6F82747F3CED5DD84892922187 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		C332323CCE6F11BD45EBB523CDA37881 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C6F57A6815FC6D84AAB892E9537B4E29 /* NibDesignable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibDesignable.swift; path = TappableTextView/Classes/NibDesignable.swift; sourceTree = "<group>"; };
-		C86DF84FDDC3521A61272297F4510AB9 /* Pods-TappableTextView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Tests-resources.sh"; sourceTree = "<group>"; };
-		E22B84413A153F8ADDFF5A86DE6855C0 /* Pods-TappableTextView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EAF19CA29E5E6A4C2B16D0E58925FAC3 /* Pods-TappableTextView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TappableTextView.xcconfig; sourceTree = "<group>"; };
-		F0BD8F9F59EC8608965618C2B397CBC2 /* TappableTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TappableTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7E9B4576BE607FEDF11ED5358B6F350 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		F952EC248AEF2EB0492CFD8EDEF7C0CE /* Pods-TappableTextView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TappableTextView_Example-umbrella.h"; sourceTree = "<group>"; };
-		FA6EDEADAD0FDF97E5E084423E8F7351 /* Pods-TappableTextView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TappableTextView_Tests.modulemap"; sourceTree = "<group>"; };
-		FEC17AFDA4784CABA751AC0661DFE17F /* TappableTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-umbrella.h"; sourceTree = "<group>"; };
+		017A047B6589BAF2A83E8ADFE59E4B7A /* NibDesignable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NibDesignable.swift; path = TappableTextView/Classes/NibDesignable.swift; sourceTree = "<group>"; };
+		05E53714AB2DA39956D49D0EA51CD9B8 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		093AE7DE23900A46A4201FA4B2F855F0 /* TappableTextView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-prefix.pch"; sourceTree = "<group>"; };
+		0C283C151D07B0447438D91E3BF78029 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1663C8088CB2F32F884937652C151307 /* Pods-TappableTextView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TappableTextView_Tests-dummy.m"; sourceTree = "<group>"; };
+		196CE0A0E440E7F5B6175578A26FBE0C /* TappableTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TappableTextView-Info.plist"; sourceTree = "<group>"; };
+		1E00DF01432DCCC92B6190DEAD6931E0 /* Pods-TappableTextView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		21E71D864646BFC19FE4FD050E058A7C /* Pods-TappableTextView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TappableTextView_Tests-umbrella.h"; sourceTree = "<group>"; };
+		3113313BE18B0A80758D33EAC8393E8B /* TappableTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TappableTextView.debug.xcconfig; sourceTree = "<group>"; };
+		3A64B28277EBC3183B2000C67ACCA864 /* Pods-TappableTextView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3E6E16493C3E8E43FBAF14A9F21BEAA3 /* TappableTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TappableTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		591A73A07112E5EF8D12DD37B76AF197 /* Pods-TappableTextView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Example-Info.plist"; sourceTree = "<group>"; };
+		5AF8CEB3B9E6EF4BA3898DB34BD9EE9F /* Pods-TappableTextView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TappableTextView_Example-dummy.m"; sourceTree = "<group>"; };
+		6CFA9235B97A7D0D84613763FA669C11 /* Word.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Word.swift; path = TappableTextView/Classes/Word.swift; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		75898CF8E75C0C12EFE57B061ADFA030 /* TappableTextView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TappableTextView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		80BD73E211C3368E234265A3AEB7793C /* Pods-TappableTextView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TappableTextView_Example-umbrella.h"; sourceTree = "<group>"; };
+		8962BBF48EEE13E75E33107846F46151 /* WordView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = WordView.swift; sourceTree = "<group>"; };
+		8AD5456D2739D4AD4807FC13E0C639ED /* Pods-TappableTextView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TappableTextView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		8C50C4415A0AB1AEEA5194602933C877 /* HighlightView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = HighlightView.xib; sourceTree = "<group>"; };
+		8CFEE47928EFD91583DE5985603E62FE /* Pods_TappableTextView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TappableTextView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92F03A16C20C4F46849D9EEFF5183C06 /* TappableTextView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = TappableTextView.xib; sourceTree = "<group>"; };
+		97D2F7494A4B5E091E159849801F5867 /* Pods-TappableTextView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		9A480196DFC102DAACC5215D50EB4FD7 /* TappableTextView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TappableTextView-umbrella.h"; sourceTree = "<group>"; };
+		9A529EDE8FE9F0C157E374C791CB0CF9 /* TappableTextView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TappableTextView.modulemap; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A348E3AB73EACE0A07FC2CF52A567CA0 /* ResourceBundle-TappableTextView-TappableTextView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TappableTextView-TappableTextView-Info.plist"; sourceTree = "<group>"; };
+		AA673721356A2A9BAD475B9CBB2D4763 /* TappableTextView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TappableTextView.release.xcconfig; sourceTree = "<group>"; };
+		AD74190B00F9D84E19BA2F2371A2EAD7 /* Pods-TappableTextView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		B2C4B1C87B41F487B0B5470C956CF72E /* Pods-TappableTextView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BB90264A3A6977216DC58E062F752309 /* Pods_TappableTextView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TappableTextView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = TappableTextView/Assets/Images.xcassets; sourceTree = "<group>"; };
+		BF2D68674B15A233B92579844F6490EF /* Pods-TappableTextView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		C7D6AD31ADFB8A32491724AC890534A2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		D3EB0B179DB6CF4B9F209A49F8F1E1A4 /* Pods-TappableTextView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D54F132B0CAFC645E0B1C9C320FF2312 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		DABEF41B9462A205CCE9AD007FB76E68 /* WordView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = WordView.xib; sourceTree = "<group>"; };
+		E1222E8B7AD1770ED113283FB462F6FC /* Pods-TappableTextView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Tests-Info.plist"; sourceTree = "<group>"; };
+		E35C5E6E401BA82D6FF8EFA22DF95B45 /* Pods-TappableTextView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TappableTextView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E4368F32204A2E340678130085AD960B /* Pods-TappableTextView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TappableTextView_Example.modulemap"; sourceTree = "<group>"; };
+		E97BE5F28DDD243487E4C81A7A80E410 /* Pods-TappableTextView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TappableTextView_Tests.modulemap"; sourceTree = "<group>"; };
+		EC863DD6BDEEB3C39D4A59239A98137D /* TappableTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TappableTextView.swift; sourceTree = "<group>"; };
+		ED91159939139BF4191EDDFF85520654 /* TappableTextView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TappableTextView-dummy.m"; sourceTree = "<group>"; };
+		EDE60111714645B605B11323A64CDF93 /* TappableTextView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = TappableTextView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F54411507019918FA65C2E03E387DD03 /* HighlightView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HighlightView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		12049BFC608A46A7FE78FDFB40169EAC /* Frameworks */ = {
+		2DA9CBBC60786DE831DB580A434FAE42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AA6D712F582A1C3B14E11A2C9FEDFB7 /* Foundation.framework in Frameworks */,
+				7FB67BA9E45598BAA62591D40D3C9221 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		97985254CEE699358D4957FEA700853E /* Frameworks */ = {
+		69F25018B8931D31762FCED9B297CA8E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3632BB203772C8B85AC5AB1A4CBC580B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC8A5043EA249E0E5F7216850C3A32B1 /* Frameworks */ = {
+		6B54F32720CDD91E3CE1E50E2E83D197 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99307E58415A61B544FB332C17D4648C /* Foundation.framework in Frameworks */,
+				BDAE847188EC2736F1E5DB69C18FB9ED /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F35627DC72A111FE1663883B08C40AD1 /* Frameworks */ = {
+		EF405DAB5872D0B582891F3700C3653D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67B60D22AD3EFF49FC22EE034C7EE87E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3643D005508D588FA0F4D5D05324CD72 /* Resources */ = {
+		2598B3DAD90104B699D25271D446CC58 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				52BA1EFC979D1771ABCD07D7C1B9A74A /* Images.xcassets */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		4A4D3ED6C6B98AE5B839D3BBD0D8E566 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				B07E519ACED9BF7FF6E2F5A6857E4161 /* UIColor+Extensions.swift */,
-				C22E5C6F82747F3CED5DD84892922187 /* UIView+Extensions.swift */,
-			);
-			name = Extensions;
-			path = TappableTextView/Classes/Extensions;
-			sourceTree = "<group>";
-		};
-		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		7043FE8F7D79996BC70A511A60075571 /* Pods-TappableTextView_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				C332323CCE6F11BD45EBB523CDA37881 /* Info.plist */,
-				FA6EDEADAD0FDF97E5E084423E8F7351 /* Pods-TappableTextView_Tests.modulemap */,
-				E22B84413A153F8ADDFF5A86DE6855C0 /* Pods-TappableTextView_Tests-acknowledgements.markdown */,
-				90470375AD1852336E4AAF05D63FEB28 /* Pods-TappableTextView_Tests-acknowledgements.plist */,
-				256CBD00E3D831211D58FEEC5B1C622D /* Pods-TappableTextView_Tests-dummy.m */,
-				EAF19CA29E5E6A4C2B16D0E58925FAC3 /* Pods-TappableTextView_Tests-frameworks.sh */,
-				C86DF84FDDC3521A61272297F4510AB9 /* Pods-TappableTextView_Tests-resources.sh */,
-				BF0967B69438A432B45ED50092FD972E /* Pods-TappableTextView_Tests-umbrella.h */,
-				6073AC2E61C689FEDC5D59AB1A390E1C /* Pods-TappableTextView_Tests.debug.xcconfig */,
-				58958C193E0F91B601CDFF87991E9506 /* Pods-TappableTextView_Tests.release.xcconfig */,
-			);
-			name = "Pods-TappableTextView_Tests";
-			path = "Target Support Files/Pods-TappableTextView_Tests";
-			sourceTree = "<group>";
-		};
-		77DAE03E9E68327CFFCE9A513B86A2F1 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				A929236809212748B2EFAD24D30B705C /* TappableTextView */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				77DAE03E9E68327CFFCE9A513B86A2F1 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				89EBE410A32D70A7302E04384FEF280B /* Products */,
-				DDE5F890D47B9310489F9824AC75B5B2 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		82B6044E9826B73247406139B6DB19E2 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				3F72BAA6ABD164D1009B7DBDE24F14FE /* LICENSE */,
-				F7E9B4576BE607FEDF11ED5358B6F350 /* README.md */,
-				9F271C223746CA55A9701AADA745EBB6 /* TappableTextView.podspec */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		89EBE410A32D70A7302E04384FEF280B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4C70CEDD1F458CDA111F8915BF799002 /* Pods_TappableTextView_Example.framework */,
-				AFD7F2D53690F2558E37C7D6C54613A2 /* Pods_TappableTextView_Tests.framework */,
-				2522C0A2FDFACDE2E79E04DA3FB31A9E /* TappableTextView.bundle */,
-				F0BD8F9F59EC8608965618C2B397CBC2 /* TappableTextView.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A929236809212748B2EFAD24D30B705C /* TappableTextView */ = {
-			isa = PBXGroup;
-			children = (
-				C6F57A6815FC6D84AAB892E9537B4E29 /* NibDesignable.swift */,
-				9567C5F2625C9C808C57A4AC104489C5 /* Word.swift */,
-				4A4D3ED6C6B98AE5B839D3BBD0D8E566 /* Extensions */,
-				82B6044E9826B73247406139B6DB19E2 /* Pod */,
-				3643D005508D588FA0F4D5D05324CD72 /* Resources */,
-				C99F65F4DECC9ED9411DBADB5D884AC9 /* Support Files */,
-				C8D19E876113B65E023B2A2D9E2CF834 /* Views */,
-			);
-			name = TappableTextView;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5E0D919E635D23B70123790B8308F8EF /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C8D19E876113B65E023B2A2D9E2CF834 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				173688E78AE00AAC6EA520D8C28B7F45 /* HighlightView.swift */,
-				6BB519E3D66DD777CE157E28C644AB94 /* HighlightView.xib */,
-				8931754DFDBD4799754DED6377409BB4 /* TappableTextView.swift */,
-				952E98ABEC76678D2C38C202B0BAA843 /* TappableTextView.xib */,
-				0C36424873C9FB192577EB713BA5BA71 /* WordView.swift */,
-				6DC7A4C0F3F7E75DFEF3CBF3A5149611 /* WordView.xib */,
+				F54411507019918FA65C2E03E387DD03 /* HighlightView.swift */,
+				8C50C4415A0AB1AEEA5194602933C877 /* HighlightView.xib */,
+				EC863DD6BDEEB3C39D4A59239A98137D /* TappableTextView.swift */,
+				92F03A16C20C4F46849D9EEFF5183C06 /* TappableTextView.xib */,
+				8962BBF48EEE13E75E33107846F46151 /* WordView.swift */,
+				DABEF41B9462A205CCE9AD007FB76E68 /* WordView.xib */,
 			);
 			name = Views;
 			path = TappableTextView/Classes/Views;
 			sourceTree = "<group>";
 		};
-		C99F65F4DECC9ED9411DBADB5D884AC9 /* Support Files */ = {
+		2E4DAAAE4923B1E2E43DFDB7917F5FA1 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				71C492B5465BF6F23B206DD4719DA072 /* Info.plist */,
-				2E061C4A37286CCAFCC3DEC87A9C28B2 /* ResourceBundle-TappableTextView-Info.plist */,
-				08FF8C12A5CDFF94279D5D77583F30CF /* TappableTextView.modulemap */,
-				EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */,
-				05F1BA91924D6897EF51182C49BE160C /* TappableTextView-dummy.m */,
-				56C2DADC52D8998D6B0BAB7225C917AA /* TappableTextView-prefix.pch */,
-				FEC17AFDA4784CABA751AC0661DFE17F /* TappableTextView-umbrella.h */,
+				D54F132B0CAFC645E0B1C9C320FF2312 /* LICENSE */,
+				0C283C151D07B0447438D91E3BF78029 /* README.md */,
+				EDE60111714645B605B11323A64CDF93 /* TappableTextView.podspec */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TappableTextView";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		DDE5F890D47B9310489F9824AC75B5B2 /* Targets Support Files */ = {
+		30423E8EE4BF0DC1A3529F06BE9DF716 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E71E28B6CA9B8E1EEFB2B4EA7FBB5D01 /* Pods-TappableTextView_Example */,
-				7043FE8F7D79996BC70A511A60075571 /* Pods-TappableTextView_Tests */,
+				D5793657EEF35FE67E5D6AC0DD3DF020 /* TappableTextView */,
 			);
-			name = "Targets Support Files";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		E71E28B6CA9B8E1EEFB2B4EA7FBB5D01 /* Pods-TappableTextView_Example */ = {
+		3DD4BF9E3DD10E01EC63D2D0659CAB69 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				755F7AF5CB65933F8C55FAD62DA9BBB4 /* Info.plist */,
-				7547BC76C88E82CA73BBA5107039F85A /* Pods-TappableTextView_Example.modulemap */,
-				3C13BE050034858DE9B03B52AE98F735 /* Pods-TappableTextView_Example-acknowledgements.markdown */,
-				51A463F752F5F336747D1738AC039C4E /* Pods-TappableTextView_Example-acknowledgements.plist */,
-				8C8DEC8F29855B65859B018AD7AC6BB5 /* Pods-TappableTextView_Example-dummy.m */,
-				6D214207E6D73B4AE2BDE21F99A2D496 /* Pods-TappableTextView_Example-frameworks.sh */,
-				2EDC43B7A8086820AB9F08208F9ECEFC /* Pods-TappableTextView_Example-resources.sh */,
-				F952EC248AEF2EB0492CFD8EDEF7C0CE /* Pods-TappableTextView_Example-umbrella.h */,
-				410CBC09B7291129A94ABBE06E28072E /* Pods-TappableTextView_Example.debug.xcconfig */,
-				4972F58661A98A1261423C5CBFA94E7C /* Pods-TappableTextView_Example.release.xcconfig */,
+				BB90264A3A6977216DC58E062F752309 /* Pods_TappableTextView_Example.framework */,
+				8CFEE47928EFD91583DE5985603E62FE /* Pods_TappableTextView_Tests.framework */,
+				75898CF8E75C0C12EFE57B061ADFA030 /* TappableTextView.bundle */,
+				3E6E16493C3E8E43FBAF14A9F21BEAA3 /* TappableTextView.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		493E934670387DBAF0CB6B027D56C5E4 /* Pods-TappableTextView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				E4368F32204A2E340678130085AD960B /* Pods-TappableTextView_Example.modulemap */,
+				3A64B28277EBC3183B2000C67ACCA864 /* Pods-TappableTextView_Example-acknowledgements.markdown */,
+				1E00DF01432DCCC92B6190DEAD6931E0 /* Pods-TappableTextView_Example-acknowledgements.plist */,
+				5AF8CEB3B9E6EF4BA3898DB34BD9EE9F /* Pods-TappableTextView_Example-dummy.m */,
+				8AD5456D2739D4AD4807FC13E0C639ED /* Pods-TappableTextView_Example-frameworks.sh */,
+				591A73A07112E5EF8D12DD37B76AF197 /* Pods-TappableTextView_Example-Info.plist */,
+				80BD73E211C3368E234265A3AEB7793C /* Pods-TappableTextView_Example-umbrella.h */,
+				E35C5E6E401BA82D6FF8EFA22DF95B45 /* Pods-TappableTextView_Example.debug.xcconfig */,
+				97D2F7494A4B5E091E159849801F5867 /* Pods-TappableTextView_Example.release.xcconfig */,
 			);
 			name = "Pods-TappableTextView_Example";
 			path = "Target Support Files/Pods-TappableTextView_Example";
 			sourceTree = "<group>";
 		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		72740F153E169DE689B8569216CBEFD7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				05E53714AB2DA39956D49D0EA51CD9B8 /* UIColor+Extensions.swift */,
+				C7D6AD31ADFB8A32491724AC890534A2 /* UIView+Extensions.swift */,
+			);
+			name = Extensions;
+			path = TappableTextView/Classes/Extensions;
+			sourceTree = "<group>";
+		};
+		88E9EE27809DF93B3CFA9F29CF80B629 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A348E3AB73EACE0A07FC2CF52A567CA0 /* ResourceBundle-TappableTextView-TappableTextView-Info.plist */,
+				9A529EDE8FE9F0C157E374C791CB0CF9 /* TappableTextView.modulemap */,
+				ED91159939139BF4191EDDFF85520654 /* TappableTextView-dummy.m */,
+				196CE0A0E440E7F5B6175578A26FBE0C /* TappableTextView-Info.plist */,
+				093AE7DE23900A46A4201FA4B2F855F0 /* TappableTextView-prefix.pch */,
+				9A480196DFC102DAACC5215D50EB4FD7 /* TappableTextView-umbrella.h */,
+				3113313BE18B0A80758D33EAC8393E8B /* TappableTextView.debug.xcconfig */,
+				AA673721356A2A9BAD475B9CBB2D4763 /* TappableTextView.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TappableTextView";
+			sourceTree = "<group>";
+		};
+		95B760236E3E4DFFEA42A1055923F5FE /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				493E934670387DBAF0CB6B027D56C5E4 /* Pods-TappableTextView_Example */,
+				E60529EB9464A2E3D2FB0F8CFEA162E7 /* Pods-TappableTextView_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				30423E8EE4BF0DC1A3529F06BE9DF716 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				3DD4BF9E3DD10E01EC63D2D0659CAB69 /* Products */,
+				95B760236E3E4DFFEA42A1055923F5FE /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5793657EEF35FE67E5D6AC0DD3DF020 /* TappableTextView */ = {
+			isa = PBXGroup;
+			children = (
+				BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */,
+				017A047B6589BAF2A83E8ADFE59E4B7A /* NibDesignable.swift */,
+				6CFA9235B97A7D0D84613763FA669C11 /* Word.swift */,
+				72740F153E169DE689B8569216CBEFD7 /* Extensions */,
+				2E4DAAAE4923B1E2E43DFDB7917F5FA1 /* Pod */,
+				88E9EE27809DF93B3CFA9F29CF80B629 /* Support Files */,
+				2598B3DAD90104B699D25271D446CC58 /* Views */,
+			);
+			name = TappableTextView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		E60529EB9464A2E3D2FB0F8CFEA162E7 /* Pods-TappableTextView_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E97BE5F28DDD243487E4C81A7A80E410 /* Pods-TappableTextView_Tests.modulemap */,
+				B2C4B1C87B41F487B0B5470C956CF72E /* Pods-TappableTextView_Tests-acknowledgements.markdown */,
+				BF2D68674B15A233B92579844F6490EF /* Pods-TappableTextView_Tests-acknowledgements.plist */,
+				1663C8088CB2F32F884937652C151307 /* Pods-TappableTextView_Tests-dummy.m */,
+				E1222E8B7AD1770ED113283FB462F6FC /* Pods-TappableTextView_Tests-Info.plist */,
+				21E71D864646BFC19FE4FD050E058A7C /* Pods-TappableTextView_Tests-umbrella.h */,
+				D3EB0B179DB6CF4B9F209A49F8F1E1A4 /* Pods-TappableTextView_Tests.debug.xcconfig */,
+				AD74190B00F9D84E19BA2F2371A2EAD7 /* Pods-TappableTextView_Tests.release.xcconfig */,
+			);
+			name = "Pods-TappableTextView_Tests";
+			path = "Target Support Files/Pods-TappableTextView_Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3054737446027D017C08B126AB5B89E5 /* Headers */ = {
+		324445E85B9B15D2567DC6451153DD0A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D86A6600820AEACF6DB2357305A7C31D /* Pods-TappableTextView_Example-umbrella.h in Headers */,
+				52E5836B788C29E6236998BCEF887234 /* Pods-TappableTextView_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF7DA96324F5E0AA5462069BF961FECB /* Headers */ = {
+		94AF160595BB7FCF2B34111276C6B9C2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CF3E01CC14F4192D4A6206CDBB142A8 /* TappableTextView-umbrella.h in Headers */,
+				101C2137293DA3264978A6AD6C544140 /* TappableTextView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DFAE54443B9113F39BC3FD9BAD7A5119 /* Headers */ = {
+		F695494605A2D0C75FFAD4B9FEC772D9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BB949A24FF2225041F617ADB0A9E41E /* Pods-TappableTextView_Tests-umbrella.h in Headers */,
+				00B73A2A41D067DD7DB64A1599C9EB91 /* Pods-TappableTextView_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		12AA09E60520746C4CC67DE16D96137A /* TappableTextView-TappableTextView */ = {
+		3059105ABB8D9DB19C996786CBBE4528 /* TappableTextView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A66C09DBF4DEFD88C987556845CA9F41 /* Build configuration list for PBXNativeTarget "TappableTextView-TappableTextView" */;
+			buildConfigurationList = 4277275CC1AE22650A1B109928CD53A7 /* Build configuration list for PBXNativeTarget "TappableTextView" */;
 			buildPhases = (
-				61C48402602DD1021C8BFF158F35A5CC /* Sources */,
-				97985254CEE699358D4957FEA700853E /* Frameworks */,
-				357421D539E80C485994F90CACEBA053 /* Resources */,
+				94AF160595BB7FCF2B34111276C6B9C2 /* Headers */,
+				758ACC87A75F0F828A7C4428E609EF81 /* Sources */,
+				2DA9CBBC60786DE831DB580A434FAE42 /* Frameworks */,
+				CC6ABB92CA4CB4B053B3B7F2D9BAE268 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1B3735A54705D96929365D9B3A22B40 /* PBXTargetDependency */,
+			);
+			name = TappableTextView;
+			productName = TappableTextView;
+			productReference = 3E6E16493C3E8E43FBAF14A9F21BEAA3 /* TappableTextView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		31B6002CACA58F56794915727FACF8FB /* Pods-TappableTextView_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 824B3E6A6E17F6A30166642E59860D69 /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Tests" */;
+			buildPhases = (
+				F695494605A2D0C75FFAD4B9FEC772D9 /* Headers */,
+				7757E400719AC2FF73B4F4F7875486F3 /* Sources */,
+				69F25018B8931D31762FCED9B297CA8E /* Frameworks */,
+				295837FA3FD1B9233BA3A3264463EE0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8D1242A4A73657E1C3B26530F53F9C7D /* PBXTargetDependency */,
+			);
+			name = "Pods-TappableTextView_Tests";
+			productName = "Pods-TappableTextView_Tests";
+			productReference = 8CFEE47928EFD91583DE5985603E62FE /* Pods_TappableTextView_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		922B361DDE1C59CE072E0AB6FE891555 /* TappableTextView-TappableTextView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ADBBF3D8730E20F4BB0CBED072EEFC5 /* Build configuration list for PBXNativeTarget "TappableTextView-TappableTextView" */;
+			buildPhases = (
+				A5BC99486182C82C52A5CFA73ABCB674 /* Sources */,
+				EF405DAB5872D0B582891F3700C3653D /* Frameworks */,
+				E56F4A9BC4BB137BC8313F638333D459 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -346,79 +375,38 @@
 			);
 			name = "TappableTextView-TappableTextView";
 			productName = "TappableTextView-TappableTextView";
-			productReference = 2522C0A2FDFACDE2E79E04DA3FB31A9E /* TappableTextView.bundle */;
+			productReference = 75898CF8E75C0C12EFE57B061ADFA030 /* TappableTextView.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		598131A6D20781978059853AC6B54AEB /* Pods-TappableTextView_Example */ = {
+		B9E735B46BFF5ABE97A586787C5D2A1E /* Pods-TappableTextView_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3544D56D1566844F9F182227932C992D /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Example" */;
+			buildConfigurationList = F83330DE5D40BC4DBF3B7E0F79608AB2 /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Example" */;
 			buildPhases = (
-				A1F52D53535BD2F074A264D3D48FAE7C /* Sources */,
-				F35627DC72A111FE1663883B08C40AD1 /* Frameworks */,
-				3054737446027D017C08B126AB5B89E5 /* Headers */,
+				324445E85B9B15D2567DC6451153DD0A /* Headers */,
+				7C28D513C2B690359F7541AA12C7E006 /* Sources */,
+				6B54F32720CDD91E3CE1E50E2E83D197 /* Frameworks */,
+				4932D1FD0EE6F1698A08D0EDEBB5D6E5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A8DAAE03B9F733808D3CD915B5642892 /* PBXTargetDependency */,
+				ADF1D681009F3884A7AD49F965070364 /* PBXTargetDependency */,
 			);
 			name = "Pods-TappableTextView_Example";
 			productName = "Pods-TappableTextView_Example";
-			productReference = 4C70CEDD1F458CDA111F8915BF799002 /* Pods_TappableTextView_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		97E26D94AD3170AD27797F440D10F4B9 /* Pods-TappableTextView_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F3C27571419615236AD26358DD0E9795 /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Tests" */;
-			buildPhases = (
-				37E5F5A9503DDD0208285AF38B10B294 /* Sources */,
-				12049BFC608A46A7FE78FDFB40169EAC /* Frameworks */,
-				DFAE54443B9113F39BC3FD9BAD7A5119 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E0D1B56F40AA021CA93B1EF750940B9B /* PBXTargetDependency */,
-			);
-			name = "Pods-TappableTextView_Tests";
-			productName = "Pods-TappableTextView_Tests";
-			productReference = AFD7F2D53690F2558E37C7D6C54613A2 /* Pods_TappableTextView_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		9C829B293F341C1E84EA707EFDEEC848 /* TappableTextView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9E9CFCD594DDF1885A9A8E4C15D1AFAB /* Build configuration list for PBXNativeTarget "TappableTextView" */;
-			buildPhases = (
-				201F288BD2FF2D07BC3E31E90DA018DD /* Sources */,
-				BC8A5043EA249E0E5F7216850C3A32B1 /* Frameworks */,
-				53B125564237E8CB8D7D5A6632107F3A /* Resources */,
-				DF7DA96324F5E0AA5462069BF961FECB /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				03B56DB909E59B110A2F34E783772E6F /* PBXTargetDependency */,
-			);
-			name = TappableTextView;
-			productName = TappableTextView;
-			productReference = F0BD8F9F59EC8608965618C2B397CBC2 /* TappableTextView.framework */;
+			productReference = BB90264A3A6977216DC58E062F752309 /* Pods_TappableTextView_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1250;
-				TargetAttributes = {
-					9C829B293F341C1E84EA707EFDEEC848 = {
-						LastSwiftMigration = 1250;
-					};
-				};
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -426,141 +414,122 @@
 				en,
 				Base,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 89EBE410A32D70A7302E04384FEF280B /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 3DD4BF9E3DD10E01EC63D2D0659CAB69 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				598131A6D20781978059853AC6B54AEB /* Pods-TappableTextView_Example */,
-				97E26D94AD3170AD27797F440D10F4B9 /* Pods-TappableTextView_Tests */,
-				9C829B293F341C1E84EA707EFDEEC848 /* TappableTextView */,
-				12AA09E60520746C4CC67DE16D96137A /* TappableTextView-TappableTextView */,
+				B9E735B46BFF5ABE97A586787C5D2A1E /* Pods-TappableTextView_Example */,
+				31B6002CACA58F56794915727FACF8FB /* Pods-TappableTextView_Tests */,
+				3059105ABB8D9DB19C996786CBBE4528 /* TappableTextView */,
+				922B361DDE1C59CE072E0AB6FE891555 /* TappableTextView-TappableTextView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		357421D539E80C485994F90CACEBA053 /* Resources */ = {
+		295837FA3FD1B9233BA3A3264463EE0B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30A36F2D9E72DBC934191B3B57F29748 /* Images.xcassets in Resources */,
+				3D2F3D2226B8D9CA00452452 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		53B125564237E8CB8D7D5A6632107F3A /* Resources */ = {
+		4932D1FD0EE6F1698A08D0EDEBB5D6E5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76AB696420DC09A96651711CC2C34E8F /* TappableTextView.bundle in Resources */,
+				3D2F3D2326B8D9CB00452452 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CC6ABB92CA4CB4B053B3B7F2D9BAE268 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8343FC7B60323F8B5FF9B61CA715129C /* TappableTextView.bundle in Resources */,
+				3D2F3D2126B8D9C900452452 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E56F4A9BC4BB137BC8313F638333D459 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60D85ABE7A2C0C8CF6368C1A4144EA86 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		201F288BD2FF2D07BC3E31E90DA018DD /* Sources */ = {
+		758ACC87A75F0F828A7C4428E609EF81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D488BB58C4DEFCBD1A6D2CFCDB1B1E53 /* HighlightView.swift in Sources */,
-				37A33D65BE4332FE8497A34087D22EBB /* HighlightView.xib in Sources */,
-				8C1C9FE58738BCCA603918F308B24B36 /* NibDesignable.swift in Sources */,
-				EAEDE30AA70CD2A01A3A861BE0394904 /* TappableTextView-dummy.m in Sources */,
-				6AF0E40BADF621B49AE5231BACA0C490 /* TappableTextView.swift in Sources */,
-				38C95047B409130817B56B0B73A71A00 /* TappableTextView.xib in Sources */,
-				7CE3D5D1EDF6A1E78E550464E7A9F555 /* UIColor+Extensions.swift in Sources */,
-				E332D53987C3205604255F95C986E17C /* UIView+Extensions.swift in Sources */,
-				033763B5A5316B257DD7C1EC61E542C5 /* Word.swift in Sources */,
-				1D5D32766E71D5E8DD6FCF53EDAFF3AB /* WordView.swift in Sources */,
-				A97445843D3A9CA9DC1120A784E9E9CF /* WordView.xib in Sources */,
+				1A43C7F54218DD50C87E0F42CFB7A874 /* HighlightView.swift in Sources */,
+				7DCF359CDA24B45A50034D6583255CBA /* HighlightView.xib in Sources */,
+				AA1D5E5A3826B14F24A018DAA597C5F6 /* NibDesignable.swift in Sources */,
+				B19E3DAAEDB8210C60B42385C601EBF5 /* TappableTextView-dummy.m in Sources */,
+				0CC8B00E59FF42FCD3C986499441CF4C /* TappableTextView.swift in Sources */,
+				A92139C2340A70CE39DE3299A05FFBE6 /* TappableTextView.xib in Sources */,
+				B23B25F2B6D77F52DF2CFCEEF6D3FB22 /* UIColor+Extensions.swift in Sources */,
+				5AAC02E949322B9C3F9EF9A414155450 /* UIView+Extensions.swift in Sources */,
+				B4204A9EC36968BF78EC9D6D418DC265 /* Word.swift in Sources */,
+				09F190938FF08D16CD5BA8592005CD86 /* WordView.swift in Sources */,
+				2369D9FC0F78AE27DD16BBD338080AD8 /* WordView.xib in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		37E5F5A9503DDD0208285AF38B10B294 /* Sources */ = {
+		7757E400719AC2FF73B4F4F7875486F3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				229487F28FE773FC9E4473D7410CDB8C /* Pods-TappableTextView_Tests-dummy.m in Sources */,
+				6239EBB2D77FAF94E48F5E7A76E44BD5 /* Pods-TappableTextView_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61C48402602DD1021C8BFF158F35A5CC /* Sources */ = {
+		7C28D513C2B690359F7541AA12C7E006 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21ADEF83744316634CC5E35D5F9F832 /* Pods-TappableTextView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A1F52D53535BD2F074A264D3D48FAE7C /* Sources */ = {
+		A5BC99486182C82C52A5CFA73ABCB674 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				67FFADF98E75BE42E772D800ACE59518 /* Pods-TappableTextView_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03B56DB909E59B110A2F34E783772E6F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "TappableTextView-TappableTextView";
-			target = 12AA09E60520746C4CC67DE16D96137A /* TappableTextView-TappableTextView */;
-			targetProxy = B189651E99E3C10617D62CFA306D46EF /* PBXContainerItemProxy */;
-		};
-		A8DAAE03B9F733808D3CD915B5642892 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = TappableTextView;
-			target = 9C829B293F341C1E84EA707EFDEEC848 /* TappableTextView */;
-			targetProxy = 2A98AAC4605AD9B8DF2EB096FDC4BB59 /* PBXContainerItemProxy */;
-		};
-		E0D1B56F40AA021CA93B1EF750940B9B /* PBXTargetDependency */ = {
+		8D1242A4A73657E1C3B26530F53F9C7D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-TappableTextView_Example";
-			target = 598131A6D20781978059853AC6B54AEB /* Pods-TappableTextView_Example */;
-			targetProxy = 5D8184A9DC2AE79B0A34FAD0A30C4F5A /* PBXContainerItemProxy */;
+			target = B9E735B46BFF5ABE97A586787C5D2A1E /* Pods-TappableTextView_Example */;
+			targetProxy = 98BBF162435CDA8C1C08092ED58E2BC3 /* PBXContainerItemProxy */;
+		};
+		A1B3735A54705D96929365D9B3A22B40 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "TappableTextView-TappableTextView";
+			target = 922B361DDE1C59CE072E0AB6FE891555 /* TappableTextView-TappableTextView */;
+			targetProxy = 4883644805738729313B44584BBDE4FC /* PBXContainerItemProxy */;
+		};
+		ADF1D681009F3884A7AD49F965070364 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TappableTextView;
+			target = 3059105ABB8D9DB19C996786CBBE4528 /* TappableTextView */;
+			targetProxy = A7D0C389C279EB664820EF8F2D41BE1F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		05DDDF23FFC629FC5734875479642CD0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4972F58661A98A1261423C5CBFA94E7C /* Pods-TappableTextView_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		08638A96A528B1EC32DE62F8A728389D /* Release */ = {
+		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -594,172 +563,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		340D737B2CF4EC998BE4154EAA52A261 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 58958C193E0F91B601CDFF87991E9506 /* Pods-TappableTextView_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3CE772FF0874A3B0978EBB96300A4511 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
-				INFOPLIST_FILE = "Target Support Files/TappableTextView/ResourceBundle-TappableTextView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = TappableTextView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		78313C249696BC8C8EEB5C84F8715270 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 410CBC09B7291129A94ABBE06E28072E /* Pods-TappableTextView_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		80A68438940BBF3F4942237C782AF88F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
-				INFOPLIST_FILE = "Target Support Files/TappableTextView/ResourceBundle-TappableTextView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_NAME = TappableTextView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_ALLOWED = NO;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -780,21 +583,23 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		A3908B0BDC63BF902F10FCC535762A1B /* Release */ = {
+		4F0D0A9E7BE10E06D391F17614249AB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
+			baseConfigurationReference = 3113313BE18B0A80758D33EAC8393E8B /* TappableTextView.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -804,7 +609,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_PREFIX_HEADER = "Target Support Files/TappableTextView/TappableTextView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TappableTextView/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/TappableTextView/TappableTextView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -814,41 +619,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D8169CCA1D36341EA18655CC417904D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB0A819664665E8E5A2C80FD94D0523E /* TappableTextView.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TappableTextView/TappableTextView-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TappableTextView/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TappableTextView/TappableTextView.modulemap";
-				PRODUCT_MODULE_NAME = TappableTextView;
-				PRODUCT_NAME = TappableTextView;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -856,13 +626,73 @@
 			};
 			name = Debug;
 		};
-		F90B4F9BEAEBD8A5D66B945D99B065A5 /* Debug */ = {
+		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6073AC2E61C689FEDC5D59AB1A390E1C /* Pods-TappableTextView_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		789475C96150C1244C6317FF3CF1925A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3EB0B179DB6CF4B9F209A49F8F1E1A4 /* Pods-TappableTextView_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -871,7 +701,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -890,55 +720,220 @@
 			};
 			name = Debug;
 		};
+		7B0773CA8EEB287E57472C931B81D88B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E35C5E6E401BA82D6FF8EFA22DF95B45 /* Pods-TappableTextView_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A1FF2ED4C55C32F0681BD79A9A8098A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 97D2F7494A4B5E091E159849801F5867 /* Pods-TappableTextView_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B709DEA1801C95E8669D718ACDD95E7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3113313BE18B0A80758D33EAC8393E8B /* TappableTextView.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
+				IBSC_MODULE = TappableTextView;
+				INFOPLIST_FILE = "Target Support Files/TappableTextView/ResourceBundle-TappableTextView-TappableTextView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = TappableTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		C0B35B65E2D71A31223F130D3E623862 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA673721356A2A9BAD475B9CBB2D4763 /* TappableTextView.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TappableTextView/TappableTextView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TappableTextView/TappableTextView-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TappableTextView/TappableTextView.modulemap";
+				PRODUCT_MODULE_NAME = TappableTextView;
+				PRODUCT_NAME = TappableTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E0D6DD512F3507259F882A4F7FD07CD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AD74190B00F9D84E19BA2F2371A2EAD7 /* Pods-TappableTextView_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F993AAD9F3C9053951B1139D7C1BE947 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA673721356A2A9BAD475B9CBB2D4763 /* TappableTextView.release.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
+				IBSC_MODULE = TappableTextView;
+				INFOPLIST_FILE = "Target Support Files/TappableTextView/ResourceBundle-TappableTextView-TappableTextView-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				PRODUCT_NAME = TappableTextView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4277275CC1AE22650A1B109928CD53A7 /* Build configuration list for PBXNativeTarget "TappableTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9DAE5233986C01ADB6E67169C53A3FD2 /* Debug */,
-				08638A96A528B1EC32DE62F8A728389D /* Release */,
+				4F0D0A9E7BE10E06D391F17614249AB0 /* Debug */,
+				C0B35B65E2D71A31223F130D3E623862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3544D56D1566844F9F182227932C992D /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Example" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				78313C249696BC8C8EEB5C84F8715270 /* Debug */,
-				05DDDF23FFC629FC5734875479642CD0 /* Release */,
+				2B9E26EAE2CD392AD762421F663075A1 /* Debug */,
+				63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9E9CFCD594DDF1885A9A8E4C15D1AFAB /* Build configuration list for PBXNativeTarget "TappableTextView" */ = {
+		824B3E6A6E17F6A30166642E59860D69 /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D8169CCA1D36341EA18655CC417904D4 /* Debug */,
-				A3908B0BDC63BF902F10FCC535762A1B /* Release */,
+				789475C96150C1244C6317FF3CF1925A /* Debug */,
+				E0D6DD512F3507259F882A4F7FD07CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A66C09DBF4DEFD88C987556845CA9F41 /* Build configuration list for PBXNativeTarget "TappableTextView-TappableTextView" */ = {
+		9ADBBF3D8730E20F4BB0CBED072EEFC5 /* Build configuration list for PBXNativeTarget "TappableTextView-TappableTextView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3CE772FF0874A3B0978EBB96300A4511 /* Debug */,
-				80A68438940BBF3F4942237C782AF88F /* Release */,
+				B709DEA1801C95E8669D718ACDD95E7F /* Debug */,
+				F993AAD9F3C9053951B1139D7C1BE947 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3C27571419615236AD26358DD0E9795 /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Tests" */ = {
+		F83330DE5D40BC4DBF3B7E0F79608AB2 /* Build configuration list for PBXNativeTarget "Pods-TappableTextView_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F90B4F9BEAEBD8A5D66B945D99B065A5 /* Debug */,
-				340D737B2CF4EC998BE4154EAA52A261 /* Release */,
+				7B0773CA8EEB287E57472C931B81D88B /* Debug */,
+				A1FF2ED4C55C32F0681BD79A9A8098A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

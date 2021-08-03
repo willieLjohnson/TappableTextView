@@ -17,7 +17,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tappableTextView = TappableTextView(frame: view.frame, color: .black)
-    tappableTextView.delegate = self;
+    tappableTextView.setDelegate(self);
 
     tappableTextView.text = ""
     for _ in 0..<10 {
@@ -35,7 +35,19 @@ class ViewController: UIViewController {
 
 @available(iOS 10.0, *)
 extension ViewController: TappableTextViewDelegate {
-  func wordViewOpened()
-  func wordViewClosed()
+  func wordViewUpdated(_ wordView: WordView) {
+    guard let word = wordView.word else { return }
+    print(word.getText())
+    wordView.wordTextViewText = "OHM NOM NOMMIE"
+  }
+
+  func wordViewOpened(_ wordView: WordView) {
+    guard let wordView = tappableTextView.wordView else { return }
+    print(wordView)
+  }
+
+  func wordViewClosed(_ wordView: WordView) {
+    return
+  }
 }
 
