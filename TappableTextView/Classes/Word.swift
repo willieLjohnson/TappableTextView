@@ -13,5 +13,9 @@ public struct Word {
   var text: String
   var range: NSRange
   var rect: CGRect
+
+  public func getText() -> String {
+    return text;
+  }
 }
 

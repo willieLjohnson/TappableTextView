@@ -10,6 +10,7 @@ import UIKit
 
 protocol WordViewDelegate: AnyObject {
   func closeButtonPressed()
+  func wordViewUpdated(_ wordView: WordView)
 }
 
 @available(iOS 10.0, *)
@@ -35,9 +36,20 @@ public class WordView: NibDesignable {
     }
   }
 
+  public var wordTextViewText: String? {
+    didSet {
+      wordTextView.text = wordTextViewText
+    }
+  }
+
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
 
-  weak var delegate: WordViewDelegate?
+  weak var delegate: WordViewDelegate? {
+    didSet {
+      guard let delegate = delegate else { return }
+      delegate.wordViewUpdated(self)
+    }
+  }
   weak var highlightView: HighlightView?
   
   override init(frame: CGRect) {
@@ -65,6 +77,10 @@ public class WordView: NibDesignable {
     guard let delegate = delegate else { return }
     delegate.closeButtonPressed()
     dismissAnimation()
+  }
+
+  public func getWordText() -> String? {
+    return wordText
   }
 }
 

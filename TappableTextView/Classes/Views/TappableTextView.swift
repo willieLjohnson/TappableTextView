@@ -8,9 +8,10 @@
 
 import UIKit
 
-protocol TappableTextViewDelegate: AnyObject {
-  func wordViewOpened()
-  func wordViewClosed()
+public protocol TappableTextViewDelegate: AnyObject {
+  func wordViewUpdated(_ wordView: WordView)
+  func wordViewOpened(_ wordView: WordView)
+  func wordViewClosed(_ wordView: WordView)
 }
 
 @available(iOS 10.0, *)
@@ -40,7 +41,7 @@ open class TappableTextView: NibDesignable {
   /// The subview that appears when a highlighted word (HighlightView) is pressed.
   public var wordView: WordView?
 
-  public weak var delegate: TappableTextViewDelegate?
+  weak var delegate: TappableTextViewDelegate?
 
   public override init(frame: CGRect) {
     super.init(frame: frame)
@@ -55,6 +56,10 @@ open class TappableTextView: NibDesignable {
   public required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupView()
+  }
+
+  public func setDelegate(_ delegate: TappableTextViewDelegate) {
+    self.delegate = delegate
   }
 }
 
@@ -150,7 +155,7 @@ private extension TappableTextView {
     snap.damping = 0.9
     animator.addBehavior(snap)
     guard let delegate = delegate else { return }
-    delegate.wordViewOpened()
+    delegate.wordViewOpened(wordView)
   }
 
   @objc func handleSwipeOnWordView(recognizer: UIPanGestureRecognizer) {
@@ -179,11 +184,19 @@ private extension TappableTextView {
 
 @available(iOS 10.0, *)
 extension TappableTextView: WordViewDelegate {
+  func wordViewUpdated(_ wordView: WordView) {
+    guard let delegate = delegate else { return }
+    delegate.wordViewUpdated(wordView)
+
+  }
+
   func closeButtonPressed() {
     self.animator.removeAllBehaviors()
-    wordView = nil
+
     guard let delegate = delegate else { return }
-    delegate.wordViewClosed()
+    guard let wordView = wordView else { return }
+    delegate.wordViewClosed(wordView)
+    self.wordView = nil
   }
 }
 
