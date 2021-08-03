@@ -11,14 +11,31 @@ import UIKit
 
 @available(iOS 10.0, *)
 extension UIView {
+  /// Constrains the current UIView to the given view with provided padding.
+  ///
+  /// Parameters:
+  ///   - baseView: The view that acts as the container.
+  ///   - padding: The amount of padding to surround the view with.
   public func constrain<U: UIView>(to baseView: U, padding: UIEdgeInsets = .zero) {
     anchor(top: baseView.topAnchor, leading: baseView.leadingAnchor, bottom: baseView.bottomAnchor, trailing: baseView.trailingAnchor, padding: padding)
   }
 
-  public func constrainToSafeArea<U: UIView>(of baseView: U) {
-    anchor(top: baseView.safeAreaLayoutGuide.topAnchor, leading: baseView.safeAreaLayoutGuide.leadingAnchor, bottom: baseView.safeAreaLayoutGuide.bottomAnchor, trailing: baseView.safeAreaLayoutGuide.trailingAnchor)
+  /// Constrains the current UIView to the given view's safe area with the given padding.
+  ///
+  /// Parameters:
+  ///   - baseView: The view that acts as the container.
+  ///   - padding: The amount of padding to surround the view with.
+  public func constrainToSafeArea<U: UIView>(of baseView: U, padding: UIEdgeInsets = .zero) {
+    anchor(top: baseView.safeAreaLayoutGuide.topAnchor, leading: baseView.safeAreaLayoutGuide.leadingAnchor, bottom: baseView.safeAreaLayoutGuide.bottomAnchor, trailing: baseView.safeAreaLayoutGuide.trailingAnchor, padding: padding)
   }
 
+  /// Constrains the current UIView to the provided layout anchors.
+  ///
+  /// Parameters:
+  ///   - top: The Y axis anchor that this view's top anchor will be constrained to.
+  ///   - leading: The X axis anchor that this view's leading anchor will be constrained to.
+  ///   - bottom: The Y axis anchor that this view's bottom anchor will be constrained to.
+  ///   - trailing: The X axis anchor that this view's trailing anchor will be constrained to.
   public func anchor(top: NSLayoutYAxisAnchor, leading: NSLayoutXAxisAnchor, bottom: NSLayoutYAxisAnchor, trailing: NSLayoutXAxisAnchor, padding: UIEdgeInsets = .zero) {
     translatesAutoresizingMaskIntoConstraints = false
 

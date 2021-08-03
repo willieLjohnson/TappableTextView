@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol WordViewDelegate: class {
+protocol WordViewDelegate: AnyObject {
   func closeButtonPressed()
 }
 
@@ -29,7 +29,7 @@ public class WordView: NibDesignable {
     }
   }
 
-  var word: Word? {
+  public var word: Word? {
     willSet(word) {
       wordText = word?.text
     }
@@ -39,6 +39,7 @@ public class WordView: NibDesignable {
 
   weak var delegate: WordViewDelegate?
   weak var highlightView: HighlightView?
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     setupView()
@@ -79,7 +80,7 @@ extension WordView {
     transform = .init(scaleX: word.rect.width / frame.width, y: word.rect.height / frame.height)
     CATransaction.begin()
     CATransaction.setAnimationDuration(0.25)
-    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
     // Corner animation
     let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
     cornerAnimation.fromValue = superview.frame.height / 4
@@ -100,10 +101,10 @@ extension WordView {
   func dismissAnimation() {
     guard let superview = superview else { return }
     guard let word = word else { return }
-    superview.sendSubview(toBack: self)
+    superview.sendSubviewToBack(self)
     CATransaction.begin()
     CATransaction.setAnimationDuration(0.2)
-    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
 
     // Layer animations
     let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))

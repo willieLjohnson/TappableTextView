@@ -55,7 +55,7 @@ extension HighlightView {
     /* Do Animations */
     CATransaction.begin()
     CATransaction.setAnimationDuration(0.2)
-    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
 
     // View animations
     frame = CGRect(x: 0, y: 0, width: frame.width * 1.1, height: frame.height)

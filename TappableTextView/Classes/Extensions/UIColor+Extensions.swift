@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
+  /// Returns this UIColor's constrast color.
   public func contrastColor() -> UIColor {
     var hue: CGFloat = 0
     var saturation: CGFloat = 0

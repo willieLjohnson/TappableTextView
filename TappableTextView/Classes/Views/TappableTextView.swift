@@ -8,15 +8,17 @@
 
 import UIKit
 
+protocol TappableTextViewDelegate: AnyObject {
+  func wordViewOpened()
+  func wordViewClosed()
+}
+
 @available(iOS 10.0, *)
 @IBDesignable
 open class TappableTextView: NibDesignable {
   @IBOutlet private weak var contentView: UITextView!
-  var animator: UIDynamicAnimator!
-  var snap: UISnapBehavior!
-  var snapViewBehavior: UIDynamicItemBehavior!
 
-  @IBInspectable public var color: UIColor = .white {
+  @IBInspectable public var color: UIColor = .black {
     willSet(color) {
       updateViews()
     }
@@ -26,9 +28,19 @@ open class TappableTextView: NibDesignable {
       self.contentView?.text = text
     }
   }
-  
-  let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-  var wordView: WordView?
+
+  /// Handles behaviors for the **contentView**.
+  private var animator: UIDynamicAnimator!
+  /// The behavior that forces the **wordView** to remain in the center of the **contentView**.
+  private var snap: UISnapBehavior!
+  /// The impactFeeddbackGenerator that's tied to the **contentView's** tap gesture.
+  private let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+
+
+  /// The subview that appears when a highlighted word (HighlightView) is pressed.
+  public var wordView: WordView?
+
+  public weak var delegate: TappableTextViewDelegate?
 
   public override init(frame: CGRect) {
     super.init(frame: frame)
@@ -63,7 +75,7 @@ private extension TappableTextView {
   func setupView() {
     guard let contentView = contentView else { return }
     contentView.delegate = self
-    contentView.contentInset = UIEdgeInsetsMake(0, 16, 0, 16)
+    contentView.contentInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
 
     let textTapGesture = UITapGestureRecognizer(target: self, action: #selector(textTapped(recognizer:)))
     textTapGesture.numberOfTapsRequired = 1
@@ -111,7 +123,7 @@ private extension TappableTextView {
   ///   - textView: The textView that was tappped.
   func getWordAt(point: CGPoint, textView: UITextView) -> Word? {
     guard let textPosition = textView.closestPosition(to: point) else { return nil }
-    guard let textRange = textView.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: 1) else { return nil }
+    guard let textRange = textView.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: convertToUITextDirection(1)) else { return nil }
     let location = textView.offset(from: textView.beginningOfDocument, to: textRange.start)
     let length = textView.offset(from: textRange.start, to: textRange.end)
     guard let wordText = textView.text(in: textRange) else { return nil }
@@ -137,13 +149,15 @@ private extension TappableTextView {
     snap = UISnapBehavior(item: wordView, snapTo: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
     snap.damping = 0.9
     animator.addBehavior(snap)
+    guard let delegate = delegate else { return }
+    delegate.wordViewOpened()
   }
 
   @objc func handleSwipeOnWordView(recognizer: UIPanGestureRecognizer) {
     guard let contentView = contentView else { return }
     guard let wordView = recognizer.view as? WordView else { return }
     guard let wordViewTextView = wordView.superview as? UITextView else { return }
-    contentView.bringSubview(toFront: wordView)
+    contentView.bringSubviewToFront(wordView)
     let translation = recognizer.translation(in: wordViewTextView)
     wordView.center = CGPoint(x: wordView.center.x + translation.x, y: wordView.center.y + translation.y)
     recognizer.setTranslation(CGPoint.zero, in: wordViewTextView)
@@ -168,9 +182,16 @@ extension TappableTextView: WordViewDelegate {
   func closeButtonPressed() {
     self.animator.removeAllBehaviors()
     wordView = nil
+    guard let delegate = delegate else { return }
+    delegate.wordViewClosed()
   }
 }
 
 @available(iOS 10.0, *)
 extension TappableTextView: UIGestureRecognizerDelegate {
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUITextDirection(_ input: Int) -> UITextDirection {
+	return UITextDirection(rawValue: input)
 }

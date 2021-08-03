@@ -23,7 +23,7 @@
 
 import UIKit
 
-public protocol NibDesignableProtocol: class {
+public protocol NibDesignableProtocol: AnyObject {
   /**
    Identifies the view that will be the superview of the contents loaded from
    the Nib. Referenced in setupNib().
@@ -113,7 +113,7 @@ open class NibDesignableTableViewCell: UITableViewCell, NibDesignableProtocol {
   }
 
   // MARK: - Initializer
-  override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+  override public init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     self.setupNib()
   }
