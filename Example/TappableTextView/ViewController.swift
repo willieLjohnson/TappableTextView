@@ -39,7 +39,7 @@ The field of articulatory phonetics is a subfield of phonetics that studies arti
 extension ViewController: TappableTextViewDelegate {
   func wordViewUpdated(_ wordView: WordView) {
     guard let word = wordView.word else { return }
-    print(word.getText())
+
     word.getWordMeaning(word: word) { meanings in
       var newText = ""
       for meaning in meanings {
@@ -47,7 +47,9 @@ extension ViewController: TappableTextViewDelegate {
         newText += "\(meaning.getPartOfSpeech())\n"
         for definition in meaning.getDefinitions() {
           newText += "\n\(numberOfDefintions). \(definition.getDefinition())\n"
-          newText += "\nExample:\n\"\(definition.getExample())\"\n"
+          if let example = definition.getExample() {
+            newText += "\nExample: \"\(example)\"\n"
+          }
           newText += "\n"
           numberOfDefintions += 1;
         }

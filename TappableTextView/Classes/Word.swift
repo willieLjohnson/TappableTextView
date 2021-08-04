@@ -44,7 +44,7 @@ public struct Meaning: Decodable {
 public struct Definition: Decodable {
   let definition: String
   let synonyms: [String]?
-  let example: String
+  let example: String?
 
   public func getDefinition() -> String {
     return definition
@@ -52,7 +52,7 @@ public struct Definition: Decodable {
   public func getSynonyms() -> [String]? {
     return synonyms
   }
-  public func getExample() -> String {
+  public func getExample() -> String? {
     return example
   }
 }
@@ -60,6 +60,7 @@ public struct Definition: Decodable {
 extension Word {
   public func getWordMeaning(word: Word, completion: @escaping ([Meaning]) -> Void) {
     guard let url = URL(string: DictionaryAPI.baseURL.rawValue + word.getText()) else { return }
+    print(url)
     var request = URLRequest(url: url)
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -69,7 +70,7 @@ extension Word {
           guard let resultWord = result.first else { return }
           completion(resultWord.meanings)
         } else {
-          print("Invalid Response")
+          print("Invalid Response \(String(data: data, encoding: String.Encoding.utf8) as String?)")
         }
       } else if let error = error {
         print("HTTP Request Failed \(error)")
