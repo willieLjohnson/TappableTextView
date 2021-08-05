@@ -51,6 +51,7 @@ open class TappableTextView: NibDesignable {
   public convenience init(frame: CGRect, color: UIColor) {
     self.init(frame: frame)
     self.color = color
+    updateViews()
   }
   
   public required init?(coder aDecoder: NSCoder) {

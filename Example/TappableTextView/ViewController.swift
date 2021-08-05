@@ -18,7 +18,7 @@ The field of articulatory phonetics is a subfield of phonetics that studies arti
 """
   override func viewDidLoad() {
     super.viewDidLoad()
-    tappableTextView = TappableTextView(frame: view.frame, color: .black)
+    tappableTextView = TappableTextView(frame: view.frame, color: .white)
     tappableTextView.setDelegate(self);
 
     tappableTextView.text = ""
