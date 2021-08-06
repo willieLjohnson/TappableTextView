@@ -18,10 +18,11 @@ public class WordView: NibDesignable {
   @IBOutlet private weak var closeButton: UIButton!
   @IBOutlet private weak var wordLabel: UILabel!
   @IBOutlet private weak var wordImageView: UIImageView!
-  @IBOutlet private weak var wordTextView: UITextView!
+  @IBOutlet weak var addButton: UIButton!
+  @IBOutlet private weak var wordDetailsTableView: UITableView!
   @IBInspectable public var color: UIColor = .white {
     willSet {
-      updateColors()
+      updateViews()
     }
   }
   @IBInspectable public var wordText: String? {
@@ -36,9 +37,11 @@ public class WordView: NibDesignable {
     }
   }
 
-  public var wordTextViewText: String? {
+  public var wordMeaningsList = [WordMeaning]() {
     didSet {
-      wordTextView.text = wordTextViewText
+      DispatchQueue.main.async {
+        self.wordDetailsTableView.reloadData()
+      }
     }
   }
 
@@ -64,14 +67,13 @@ public class WordView: NibDesignable {
     wordLabel.text = word!.text
     highlightView.tapped = true
     color = highlightView.color
-    updateColors()
+    updateViews()
   }
 
   required public init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
     setupView()
   }
-
 
   @IBAction func closeButtonPressed(_ sender: Any) {
     guard let delegate = delegate else { return }
@@ -149,16 +151,85 @@ private extension WordView {
     layer.shadowOpacity = 0.5
     layer.shadowRadius = 4
     layer.shadowOffset = CGSize(width: 2, height: 2)
-    updateColors()
+
+    wordDetailsTableView.dataSource = self
+    wordDetailsTableView.delegate = self
+    wordDetailsTableView.estimatedRowHeight = WordDetailsTableViewCell.HEIGHT
+    wordDetailsTableView.rowHeight = UITableView.automaticDimension
+
+    wordDetailsTableView.register(WordDetailsTableViewCell.self, forCellReuseIdentifier: "wordCell")
+
+    updateViews()
   }
 
-  func updateColors() {
+  func updateViews() {
+    wordDetailsTableView.layer.cornerRadius = 10;
     backgroundColor = color
-    wordTextView.backgroundColor = color
-    wordTextView.textColor = color.contrastColor()
-    wordTextView.tintColor = color.contrastColor()
+    wordDetailsTableView.backgroundColor = color.darken(0.95)
+    wordDetailsTableView.tintColor = color.contrastColor()
     wordLabel.textColor = color.contrastColor()
-    closeButton.tintColor = color.contrastColor()
-    layer.shadowColor = color.contrastColor().cgColor
+    closeButton.backgroundColor = color
+    closeButton.setTitleColor(color.opposite(), for: .normal)
+    closeButton.layer.cornerRadius = addButton.frame.height / 6
+    addButton.backgroundColor = color.opposite()
+    addButton.setTitleColor(color, for: .normal)
+    addButton.layer.cornerRadius = addButton.frame.height / 6
   }
+}
+
+// MARK: UITableViewDataSource
+extension WordView: UITableViewDataSource {
+  public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return wordMeaningsList.count
+  }
+
+  public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    print("WE HERE")
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "wordCell") as? WordDetailsTableViewCell else {
+      return UITableViewCell()
+    }
+    let wordMeaning = wordMeaningsList[indexPath.row]
+    cell.wordMeaning = wordMeaning
+    cell.color =  color
+    for wordMeaning in wordMeaning.getDefintions() {
+      cell.wordDetailsTextView.text += wordMeaning.getDefinition()
+      cell.wordDetailsTextView.text += wordMeaning.getExample() ?? ""
+    }
+
+
+    print("WE FINALLY HERE", cell)
+    return cell
+  }
+}
+
+
+// MARK: TableViewDelegate
+extension WordView: UITableViewDelegate {
+  public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return WordDetailsTableViewCell.HEIGHT
+    }
+
+  public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      guard let cell = tableView.cellForRow(at: indexPath) as? WordDetailsTableViewCell else { return }
+      cell.innerView.animateTap()
+    }
+
+  public func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+      return true
+    }
+
+  public func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+      UIView.animate(withDuration: 0.2) {
+        if let cell = tableView.cellForRow(at: indexPath) as? WordDetailsTableViewCell {
+          cell.innerView.animateHighlight(transform: .init(scaleX: 0.95, y: 0.95), offset: 3.5)
+        }
+      }
+    }
+
+  public func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+      if let cell = tableView.cellForRow(at: indexPath) as? WordDetailsTableViewCell {
+        cell.innerView.animateHighlight(transform: .identity, offset: 4, duration: 0.15)
+      }
+  }
+
 }

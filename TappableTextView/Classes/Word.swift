@@ -23,28 +23,37 @@ public struct Word {
   }
 }
 
-struct WordDecodable: Decodable {
-  let word: String
-  let meanings: [Meaning]
-}
-
-public struct Meaning: Decodable {
+public struct WordMeaning {
   let partOfSpeech: String
-  let definitions: [Definition]
+  var definitions: [WordDefinition]
 
+  public init() {
+    self.partOfSpeech = ""
+    self.definitions = [WordDefinition]()
+  }
+
+  public init(decodable: MeaningDecodable) {
+    self.partOfSpeech = decodable.partOfSpeech
+    self.definitions = [WordDefinition]()
+
+    for decodedDefinition in decodable.definitions {
+      self.definitions.append(WordDefinition(definition: decodedDefinition.definition, synonyms: decodedDefinition.synonyms ?? [String](), example: decodedDefinition.example ?? ""))
+    }
+  }
+  
   public func getPartOfSpeech() -> String {
     return partOfSpeech
   }
-
-  public func getDefinitions() -> [Definition] {
+  public func getDefintions() -> [WordDefinition] {
     return definitions
   }
 }
 
-public struct Definition: Decodable {
+public struct WordDefinition {
   let definition: String
-  let synonyms: [String]?
-  let example: String?
+  let synonyms: [String]
+  let example: String
+
 
   public func getDefinition() -> String {
     return definition
@@ -57,8 +66,25 @@ public struct Definition: Decodable {
   }
 }
 
+
+struct WordDecodable: Decodable {
+  let word: String
+  let meanings: [MeaningDecodable]
+}
+
+public struct MeaningDecodable: Decodable {
+  let partOfSpeech: String
+  let definitions: [DefinitionDecodable]
+}
+
+public struct DefinitionDecodable: Decodable {
+  let definition: String
+  let synonyms: [String]?
+  let example: String?
+}
+
 extension Word {
-  public func getWordMeaning(word: Word, completion: @escaping ([Meaning]) -> Void) {
+  public func getWordMeaning(word: Word, completion: @escaping ([MeaningDecodable]) -> Void) {
     guard let url = URL(string: DictionaryAPI.baseURL.rawValue + word.getText()) else { return }
     print(url)
     var request = URLRequest(url: url)

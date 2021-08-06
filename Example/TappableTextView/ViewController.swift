@@ -41,23 +41,11 @@ extension ViewController: TappableTextViewDelegate {
     guard let word = wordView.word else { return }
 
     word.getWordMeaning(word: word) { meanings in
-      var newText = ""
-      for meaning in meanings {
-        var numberOfDefintions = 1
-        newText += "\(meaning.getPartOfSpeech())\n"
-        for definition in meaning.getDefinitions() {
-          newText += "\n\(numberOfDefintions). \(definition.getDefinition())\n"
-          if let example = definition.getExample() {
-            newText += "\nExample: \"\(example)\"\n"
-          }
-          newText += "\n"
-          numberOfDefintions += 1;
-        }
-        newText += "\n"
-      }
 
-      DispatchQueue.main.async {
-        wordView.wordTextViewText = newText
+      for meaning in meanings {
+        DispatchQueue.main.async {
+          wordView.wordMeaningsList.append(WordMeaning(decodable: meaning))
+        }
       }
     };
   }

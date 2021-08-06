@@ -17,6 +17,9 @@
 		3D2F3D2126B8D9C900452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
 		3D2F3D2226B8D9CA00452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
 		3D2F3D2326B8D9CB00452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
+		3DB0970126BC8A23001CB3B2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970026BC8A23001CB3B2 /* Style.swift */; };
+		3DB0970C26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */; };
+		3DB0970D26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */; };
 		52E5836B788C29E6236998BCEF887234 /* Pods-TappableTextView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BD73E211C3368E234265A3AEB7793C /* Pods-TappableTextView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5AAC02E949322B9C3F9EF9A414155450 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D6AD31ADFB8A32491724AC890534A2 /* UIView+Extensions.swift */; };
 		60D85ABE7A2C0C8CF6368C1A4144EA86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
@@ -68,6 +71,9 @@
 		21E71D864646BFC19FE4FD050E058A7C /* Pods-TappableTextView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TappableTextView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		3113313BE18B0A80758D33EAC8393E8B /* TappableTextView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TappableTextView.debug.xcconfig; sourceTree = "<group>"; };
 		3A64B28277EBC3183B2000C67ACCA864 /* Pods-TappableTextView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		3DB0970026BC8A23001CB3B2 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		3E6E16493C3E8E43FBAF14A9F21BEAA3 /* TappableTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TappableTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		591A73A07112E5EF8D12DD37B76AF197 /* Pods-TappableTextView_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TappableTextView_Example-Info.plist"; sourceTree = "<group>"; };
 		5AF8CEB3B9E6EF4BA3898DB34BD9EE9F /* Pods-TappableTextView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TappableTextView_Example-dummy.m"; sourceTree = "<group>"; };
@@ -149,6 +155,8 @@
 				92F03A16C20C4F46849D9EEFF5183C06 /* TappableTextView.xib */,
 				8962BBF48EEE13E75E33107846F46151 /* WordView.swift */,
 				DABEF41B9462A205CCE9AD007FB76E68 /* WordView.xib */,
+				3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */,
+				3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */,
 			);
 			name = Views;
 			path = TappableTextView/Classes/Views;
@@ -170,6 +178,14 @@
 				D5793657EEF35FE67E5D6AC0DD3DF020 /* TappableTextView */,
 			);
 			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3DB096FF26BC8A23001CB3B2 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				3DB0970026BC8A23001CB3B2 /* Style.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		3DD4BF9E3DD10E01EC63D2D0659CAB69 /* Products */ = {
@@ -265,6 +281,7 @@
 		D5793657EEF35FE67E5D6AC0DD3DF020 /* TappableTextView */ = {
 			isa = PBXGroup;
 			children = (
+				3DB096FF26BC8A23001CB3B2 /* Helper */,
 				BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */,
 				017A047B6589BAF2A83E8ADFE59E4B7A /* NibDesignable.swift */,
 				6CFA9235B97A7D0D84613763FA669C11 /* Word.swift */,
@@ -450,6 +467,7 @@
 			files = (
 				8343FC7B60323F8B5FF9B61CA715129C /* TappableTextView.bundle in Resources */,
 				3D2F3D2126B8D9C900452452 /* Images.xcassets in Resources */,
+				3DB0970D26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,10 +487,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A43C7F54218DD50C87E0F42CFB7A874 /* HighlightView.swift in Sources */,
+				3DB0970C26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift in Sources */,
 				7DCF359CDA24B45A50034D6583255CBA /* HighlightView.xib in Sources */,
 				AA1D5E5A3826B14F24A018DAA597C5F6 /* NibDesignable.swift in Sources */,
 				B19E3DAAEDB8210C60B42385C601EBF5 /* TappableTextView-dummy.m in Sources */,
 				0CC8B00E59FF42FCD3C986499441CF4C /* TappableTextView.swift in Sources */,
+				3DB0970126BC8A23001CB3B2 /* Style.swift in Sources */,
 				A92139C2340A70CE39DE3299A05FFBE6 /* TappableTextView.xib in Sources */,
 				B23B25F2B6D77F52DF2CFCEEF6D3FB22 /* UIColor+Extensions.swift in Sources */,
 				5AAC02E949322B9C3F9EF9A414155450 /* UIView+Extensions.swift in Sources */,
