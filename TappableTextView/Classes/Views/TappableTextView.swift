@@ -95,6 +95,7 @@ private extension TappableTextView {
     backgroundColor = color
     contentView.backgroundColor = color
     contentView.textColor = color.contrastColor()
+    contentView.font = Style.normalFont.withSize(20)
   }
 
   /// Handle taps on the UITextView.

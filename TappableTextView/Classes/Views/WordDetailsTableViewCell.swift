@@ -14,7 +14,6 @@ class WordDetailsTableViewCell: NibDesignableTableViewCell {
   @IBOutlet weak var partOfSpeechLabel: UILabel!
   @IBOutlet weak var wordDetailsTextView: UITextView!
 
-
   public var wordMeaning = WordMeaning() {
     willSet(wordMeaning) {
       updateViews()
@@ -62,9 +61,9 @@ private extension WordDetailsTableViewCell {
   }
 
   func updateViews() {
-    backgroundColor = color.darken(0.95)
-    innerView.backgroundColor = color.darken(0.95)
-    wordDetailsTextView.backgroundColor = color.darken(0.95)
+    backgroundColor = color
+    innerView.backgroundColor = color
+    wordDetailsTextView.backgroundColor = color
     wordDetailsTextView.textColor = color.contrastColor()
     wordDetailsTextView.tintColor = color.contrastColor()
     partOfSpeechLabel.textColor = color.contrastColor()
@@ -72,15 +71,34 @@ private extension WordDetailsTableViewCell {
     layer.shadowColor = color.contrastColor().cgColor
     partOfSpeechLabel.text = wordMeaning.getPartOfSpeech()
     wordDetailsTextView.text = ""
-
+    let textViewAttributedText = NSMutableAttributedString()
+    
     for (count, definition) in wordMeaning.getDefintions().enumerated() {
-      wordDetailsTextView.text += "Definition \(count + 1). \(definition.getDefinition())\n"
-      wordDetailsTextView.text += "\n\"\(definition.getExample() ?? "")\"\n\n"
-      guard let synonyms = definition.getSynonyms() else { continue }
-      for synonym in synonyms {
-        wordDetailsTextView.text += "\(synonym), "
+      textViewAttributedText.append(NSMutableAttributedString()
+                                      .semiBold("Definition \(count + 1): ")
+                                      .normal("\(definition.getDefinition())\n"))
+
+      if definition.getExample() != nil {
+        textViewAttributedText.append(NSMutableAttributedString()
+                                        .semiBold("\nExample: ")
+                                        .normal("\"\(definition.getExample()!)\"\n\n"))
+      }
+
+
+      if definition.getSynonyms() != nil {
+        textViewAttributedText.append(NSMutableAttributedString().semiBold("Synonyms: "))
+        for synonym in definition.getSynonyms()! {
+          textViewAttributedText.append(NSMutableAttributedString().normal("\(synonym), "))
+        }
+
+        textViewAttributedText.append(NSMutableAttributedString().normal("\n\n"))
       }
     }
-    wordDetailsTextView.text += "\n"
+    textViewAttributedText.append(NSMutableAttributedString().normal("\n"))
+    wordDetailsTextView.attributedText = textViewAttributedText.withColor(color.contrastColor())
+
+    let fixedWidth = wordDetailsTextView.frame.size.width
+    let newSize = wordDetailsTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+    wordDetailsTextView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
   }
 }

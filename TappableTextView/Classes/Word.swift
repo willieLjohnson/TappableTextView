@@ -37,7 +37,7 @@ public struct WordMeaning {
     self.definitions = [WordDefinition]()
 
     for decodedDefinition in decodable.definitions {
-      self.definitions.append(WordDefinition(definition: decodedDefinition.definition, synonyms: decodedDefinition.synonyms ?? [String](), example: decodedDefinition.example ?? ""))
+      self.definitions.append(WordDefinition(definition: decodedDefinition.definition, synonyms: decodedDefinition.synonyms, example: decodedDefinition.example))
     }
   }
   
@@ -51,8 +51,8 @@ public struct WordMeaning {
 
 public struct WordDefinition {
   let definition: String
-  let synonyms: [String]
-  let example: String
+  let synonyms: [String]?
+  let example: String?
 
 
   public func getDefinition() -> String {

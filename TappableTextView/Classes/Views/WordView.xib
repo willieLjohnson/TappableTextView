@@ -29,7 +29,7 @@
                         <constraint firstAttribute="height" constant="44" id="KR9-aJ-33U"/>
                         <constraint firstAttribute="width" constant="76" id="iWA-xY-V16"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="25"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
                     <state key="normal" title="X">
                         <color key="titleColor" systemColor="systemBackgroundColor"/>
                     </state>
@@ -49,7 +49,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="gZc-g0-Bfv"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="KohinoorDevanagari-Semibold" family="Kohinoor Devanagari" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -59,6 +59,7 @@
                         <constraint firstAttribute="width" constant="76" id="BmN-bU-JcW"/>
                         <constraint firstAttribute="height" constant="44" id="CZG-z5-dQv"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="15"/>
                     <state key="normal" title="Add">
                         <color key="titleColor" systemColor="systemBackgroundColor"/>
                     </state>
