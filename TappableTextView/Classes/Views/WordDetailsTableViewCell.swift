@@ -57,6 +57,7 @@ class WordDetailsTableViewCell: NibDesignableTableViewCell {
 private extension WordDetailsTableViewCell {
   func setupView() {
     wordDetailsTextView.textContainerInset = UIEdgeInsets(top: partOfSpeechLabel.frame.height + 10, left: 0, bottom: 0, right: 0)
+    partOfSpeechLabel.font = Style.boldFont
     updateViews()
   }
 
@@ -75,18 +76,18 @@ private extension WordDetailsTableViewCell {
     
     for (count, definition) in wordMeaning.getDefintions().enumerated() {
       textViewAttributedText.append(NSMutableAttributedString()
-                                      .bold("Definition \(count + 1): ")
+                                      .bold("Definition \(count + 1): ").withSize(Style.normalFontSize)
                                       .normal("\(definition.getDefinition())\n"))
 
       if definition.getExample() != nil {
         textViewAttributedText.append(NSMutableAttributedString()
-                                        .semiBold("\nExample: ")
+                                        .semiBold("\nExample: ").withSize(Style.normalFontSize)
                                         .normal("\"\(definition.getExample()!)\"\n\n"))
       }
 
 
       if definition.getSynonyms() != nil {
-        textViewAttributedText.append(NSMutableAttributedString().semiBold("Synonyms: "))
+        textViewAttributedText.append(NSMutableAttributedString().semiBold("Synonyms: ").withSize(Style.normalFontSize))
         for synonym in definition.getSynonyms()! {
           textViewAttributedText.append(NSMutableAttributedString().normal("\(synonym), "))
         }

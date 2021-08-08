@@ -8,6 +8,16 @@
 import Foundation
 
 extension NSMutableAttributedString {
+  func withSize(_ size: CGFloat ) -> NSMutableAttributedString {
+    let attributes = self.attributes(at: 0, effectiveRange: nil)
+    let font = (attributes[NSMutableAttributedString.Key.font] as! UIFont).withSize(size)
+
+    self.addAttribute(NSMutableAttributedString.Key.font, value: font, range:
+                        NSRange(location: 0, length: mutableString.length))
+
+    return self
+  }
+
   func bold(_ value: String) -> NSMutableAttributedString {
 
       let attributes:[NSAttributedString.Key : Any] = [
@@ -17,6 +27,7 @@ extension NSMutableAttributedString {
       self.append(NSAttributedString(string: value, attributes:attributes))
       return self
   }
+
 
   func semiBold(_ value: String) -> NSMutableAttributedString {
 

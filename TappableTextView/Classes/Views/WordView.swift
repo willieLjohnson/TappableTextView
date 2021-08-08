@@ -93,7 +93,7 @@ extension WordView {
     guard let superview = superview else { return }
     guard let word = word else { return }
     // Prepare view
-    frame = CGRect(x: 0, y: 0, width: superview.frame.width, height: superview.frame.height).insetBy(dx: 10, dy: 25)
+    frame = CGRect(x: 0, y: 0, width: superview.frame.width, height: superview.frame.height).insetBy(dx: 10, dy: 5)
     center = CGPoint(x: word.rect.midX, y: word.rect.midY)
     transform = .init(scaleX: word.rect.width / frame.width, y: word.rect.height / frame.height)
     CATransaction.begin()
@@ -153,6 +153,7 @@ private extension WordView {
     layer.shadowOffset = CGSize(width: 2, height: 2)
 
     wordLabel.font = Style.boldFont.withSize(20)
+  
 
     wordDetailsTableView.dataSource = self
     wordDetailsTableView.delegate = self
