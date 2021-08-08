@@ -84,16 +84,23 @@ extension UIView {
 
   /// The animation used for all tapable views.
   func animateTap(duration: TimeInterval = 0.1) {
-    UIView.animate(withDuration: duration, animations: {
+    UIView.animate(withDuration: duration * 0.25, animations: {
       self.transform = .init(scaleX: 0.9, y: 0.9)
       self.layer.shadowOffset = CGSize(width: 0, height: 2)
       self.layer.shadowRadius = 2
     }) { _ in
-      UIView.animate(withDuration: duration * 1.75, animations: {
-        self.transform = .identity
-        self.layer.shadowOffset = CGSize(width: 0, height: 4)
-        self.layer.shadowRadius = 4
-      })
+      UIView.animate(withDuration: duration * 0.75, animations: {
+        self.transform = .init(scaleX: 1.1, y: 1.1)
+        self.layer.shadowOffset = CGSize(width: 0, height: 6)
+        self.layer.shadowRadius = 6
+      }) { _ in
+        UIView.animate(withDuration: duration * 0.9, animations: {
+          self.transform = .identity
+          self.layer.shadowOffset = CGSize(width: 0, height: 4)
+          self.layer.shadowRadius = 4
+        })
+      }
+
     }
   }
 

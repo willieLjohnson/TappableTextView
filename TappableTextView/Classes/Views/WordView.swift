@@ -153,7 +153,8 @@ private extension WordView {
     layer.shadowOffset = CGSize(width: 2, height: 2)
 
     wordLabel.font = Style.boldFont.withSize(20)
-  
+    addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+
 
     wordDetailsTableView.dataSource = self
     wordDetailsTableView.delegate = self
@@ -180,6 +181,11 @@ private extension WordView {
     addButton.backgroundColor = color.opposite()
     addButton.setTitleColor(color, for: .normal)
     addButton.layer.cornerRadius = addButton.frame.height / 6
+  }
+
+  @objc private func addButtonPressed() {
+    print("bruh")
+    addButton.animateTap(duration: 0.25)
   }
 }
 
