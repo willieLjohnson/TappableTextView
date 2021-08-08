@@ -68,6 +68,7 @@ public class WordView: NibDesignable {
     highlightView.tapped = true
     color = highlightView.color
     updateViews()
+
   }
 
   required public init?(coder aDecoder: NSCoder) {
@@ -162,8 +163,7 @@ private extension WordView {
     wordDetailsTableView.rowHeight = UITableView.automaticDimension
 
     wordDetailsTableView.register(WordDetailsTableViewCell.self, forCellReuseIdentifier: "wordCell")
-
-    updateViews()
+    self.updateViews()
   }
 
   func updateViews() {
@@ -171,7 +171,7 @@ private extension WordView {
     backgroundColor = color
     wordDetailsTableView.backgroundColor = color.darken(0.95)
     wordDetailsTableView.tintColor = color.contrastColor()
-    wordDetailsTableView.separatorColor = color.contrastColor()
+    wordDetailsTableView.separatorColor = color.darken(0.8)
     wordDetailsTableView.separatorInset = UIEdgeInsets(top: 50, left: 10, bottom: 50, right: 10)
 
     wordLabel.textColor = color.contrastColor()
@@ -181,6 +181,21 @@ private extension WordView {
     addButton.backgroundColor = color.opposite()
     addButton.setTitleColor(color, for: .normal)
     addButton.layer.cornerRadius = addButton.frame.height / 6
+
+    updateImageView()
+  }
+
+  func updateImageView() {
+    wordImageView.clipsToBounds = true
+    self.word?.getWordImageURL(success: { urlString in
+      guard let url = URL(string: urlString) else { return }
+      UIImage().fromURL(url) { image in
+        guard let image = image else { return }
+        DispatchQueue.main.async {
+          self.wordImageView.image = image
+        }
+      }
+    })
   }
 
   @objc private func addButtonPressed() {
@@ -219,12 +234,12 @@ extension WordView: UITableViewDelegate {
   }
 
   public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      guard let cell = tableView.cellForRow(at: indexPath) as? WordDetailsTableViewCell else { return }
-      cell.innerView.animateTap()
+    guard let cell = tableView.cellForRow(at: indexPath) as? WordDetailsTableViewCell else { return }
+    cell.innerView.animateTap()
   }
 
   public func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-      return true
+    return true
   }
 
   public func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
@@ -236,9 +251,9 @@ extension WordView: UITableViewDelegate {
   }
 
   public func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-      if let cell = tableView.cellForRow(at: indexPath) as? WordDetailsTableViewCell {
-        cell.innerView.animateHighlight(transform: .identity, offset: 4, duration: 0.15)
-      }
+    if let cell = tableView.cellForRow(at: indexPath) as? WordDetailsTableViewCell {
+      cell.innerView.animateHighlight(transform: .identity, offset: 4, duration: 0.15)
+    }
   }
 
 }
