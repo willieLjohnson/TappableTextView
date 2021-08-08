@@ -152,6 +152,8 @@ private extension WordView {
     layer.shadowRadius = 4
     layer.shadowOffset = CGSize(width: 2, height: 2)
 
+    wordLabel.font = Style.boldFont.withSize(20)
+
     wordDetailsTableView.dataSource = self
     wordDetailsTableView.delegate = self
     wordDetailsTableView.estimatedRowHeight = WordDetailsTableViewCell.HEIGHT

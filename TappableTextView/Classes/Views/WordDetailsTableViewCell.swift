@@ -75,7 +75,7 @@ private extension WordDetailsTableViewCell {
     
     for (count, definition) in wordMeaning.getDefintions().enumerated() {
       textViewAttributedText.append(NSMutableAttributedString()
-                                      .semiBold("Definition \(count + 1): ")
+                                      .bold("Definition \(count + 1): ")
                                       .normal("\(definition.getDefinition())\n"))
 
       if definition.getExample() != nil {
