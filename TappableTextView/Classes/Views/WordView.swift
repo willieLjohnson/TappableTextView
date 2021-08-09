@@ -46,9 +46,14 @@ public class WordView: NibDesignable {
   }
 
   public var images: Images?
-  public var currentImage = Image(url: "")
+  public var currentImage = Image()
 
-  let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+  @available(iOS 13.0, *)
+  lazy var impactFeedbackGeneratoriOS13 = UIImpactFeedbackGenerator(style: .soft)
+
+  var impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+
+
   var activityView: UIActivityIndicatorView!
   var nextImageIndex = 0
   var currentImageIndex: Int {
@@ -105,7 +110,11 @@ extension WordView {
   func openAnimation() {
     guard let word = word else { return }
     expandToSuperview(from: word.rect) {
-      self.impactFeedbackGenerator.impactOccurred()
+      if #available(iOS 13.0, *) {
+        self.impactFeedbackGenerator.impactOccurred()
+      } else {
+        // Fallback on earlier versions
+      }
     }
   }
 
@@ -174,10 +183,7 @@ private extension WordView {
   }
 
   @objc private func imageTapped() {
-    wordImageView.expandToView(view: self, from: wordImageView.frame) {
-      self.impactFeedbackGenerator.impactOccurred()
-
-    }
+    updateImageView()
   }
 }
 
@@ -195,10 +201,12 @@ private extension WordView {
           self.images = images
           self.loadNextImage(from: images)
           self.cacheImages()
-        case .failure:
-          self.activityView.stopAnimating()
-          self.activityView.removeFromSuperview()
-          print("FAILURE")
+        case let .failure(error):
+          DispatchQueue.main.async {
+            self.activityView.stopAnimating()
+            self.activityView.removeFromSuperview()
+            print(error)
+          }
         }
       })
     }
@@ -219,22 +227,34 @@ private extension WordView {
   }
 
   func loadNextImage(from images: Images) {
-    let nextImage = images.value[nextImageIndex]
+    if images.results.count == 0 {
+      DispatchQueue.main.async {
+        self.activityView.stopAnimating()
+        self.activityView.removeFromSuperview()
+        self.wordImageView.heightAnchor.constraint(equalToConstant: 0).isActive = true
+      }
+      return
+    }
+    let nextImage = images.results[nextImageIndex]
     currentImage = nextImage
-    nextImageIndex = (nextImageIndex + 1) % images.value.count
-    self.wordImageView.loadImage(fromURL: nextImage.url) { _ in
+    nextImageIndex = (nextImageIndex + 1) % images.results.count
+    self.wordImageView.loadImage(fromURL: nextImage.urls.regular) { _ in
       self.activityView.stopAnimating()
       self.activityView.removeFromSuperview()
       self.wordImageView.expandToSuperview(from: self.wordImageView.frame) {
-        self.impactFeedbackGenerator.impactOccurred()
+        if #available(iOS 13.0, *) {
+          self.impactFeedbackGeneratoriOS13.impactOccurred()
+        } else {
+          self.impactFeedbackGenerator.impactOccurred()
+        }
       }
     }
   }
 
   func cacheImages() {
     guard let images = images else { return }
-    for image in images.value {
-      guard let url = URL(string: image.url) else {
+    for image in images.results {
+      guard let url = URL(string: image.urls.regular) else {
         continue
       }
       UIImage().fromURL(url) { _ in }

@@ -22,6 +22,7 @@
 		3D79B21E26C07F0E00ED384E /* WordImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21D26C07F0E00ED384E /* WordImage.swift */; };
 		3D79B22026C093A400ED384E /* UIImageView+Extensiosn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21F26C093A400ED384E /* UIImageView+Extensiosn.swift */; };
 		3D97611526C0CF500027DDD4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611426C0CF500027DDD4 /* Result.swift */; };
+		3D97611926C1AA8A0027DDD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611826C1AA8A0027DDD4 /* Constants.swift */; };
 		3DB0970126BC8A23001CB3B2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970026BC8A23001CB3B2 /* Style.swift */; };
 		3DB0970C26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */; };
 		3DB0970D26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */; };
@@ -81,6 +82,7 @@
 		3D79B21D26C07F0E00ED384E /* WordImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordImage.swift; sourceTree = "<group>"; };
 		3D79B21F26C093A400ED384E /* UIImageView+Extensiosn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensiosn.swift"; sourceTree = "<group>"; };
 		3D97611426C0CF500027DDD4 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		3D97611826C1AA8A0027DDD4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3DB0970026BC8A23001CB3B2 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordDetailsTableViewCell.xib; sourceTree = "<group>"; };
@@ -295,6 +297,7 @@
 		D5793657EEF35FE67E5D6AC0DD3DF020 /* TappableTextView */ = {
 			isa = PBXGroup;
 			children = (
+				3D97611826C1AA8A0027DDD4 /* Constants.swift */,
 				3DB096FF26BC8A23001CB3B2 /* Helper */,
 				BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */,
 				017A047B6589BAF2A83E8ADFE59E4B7A /* NibDesignable.swift */,
@@ -502,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D97611526C0CF500027DDD4 /* Result.swift in Sources */,
+				3D97611926C1AA8A0027DDD4 /* Constants.swift in Sources */,
 				3D79B21C26C07D4200ED384E /* UIImageView+Extensions.swift in Sources */,
 				1A43C7F54218DD50C87E0F42CFB7A874 /* HighlightView.swift in Sources */,
 				3D79B22026C093A400ED384E /* UIImageView+Extensiosn.swift in Sources */,
@@ -622,7 +626,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -716,7 +720,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

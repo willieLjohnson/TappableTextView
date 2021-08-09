@@ -7,19 +7,48 @@
 
 import Foundation
 
+let baseAPIURL = "https://api.unsplash.com/search/photos?query="
 public struct Images: Decodable {
-  let totalCount: Int
-  let value: [Image]
+  let total: Int
+  let total_pages: Int
+  let results: [Image]
 }
 
 public struct Image: Decodable {
-  let url: String
+  let id: String
+  let width: Int
+  let height: Int
+  let urls: ImageURLS
+
+  public init() {
+    self.id = ""
+    self.width = 0
+    self.height = 0
+    self.urls = ImageURLS()
+  }
+}
+
+public struct ImageURLS: Decodable {
+  let raw: String
+  let full: String
+  let regular: String
+  let small: String
+  let thumb: String
+
+  public init() {
+    self.raw = ""
+    self.full = ""
+    self.regular = ""
+    self.small = ""
+    self.thumb = ""
+  }
 }
 
 
+
+
 let headers = [
-  "x-rapidapi-key": "751fb2e1d1msh2b6b56caaaa5e1ep10695fjsn2a76ed4063e0",
-  "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com"
+  "Authorization": "Client-ID \(Constants.unsplashAPIKey)",
 ]
 
 let imagesCache = NSCache<AnyObject, AnyObject>()
@@ -27,7 +56,8 @@ let imagesCache = NSCache<AnyObject, AnyObject>()
 
 extension Word {
   func getWordImages(completion: @escaping ImagesResult) {
-    let urlString = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=\(self.getText())&pageNumber=0&pageSize=20&autoCorrect=true&safeSearch=true"
+
+    let urlString = baseAPIURL + "\(self.getText())"
     if let imagesFromCache = imagesCache.object(forKey: urlString as AnyObject) as? Images {
       completion(.success(imagesFromCache))
       return
@@ -46,7 +76,7 @@ extension Word {
       }
 
       guard (response as? HTTPURLResponse) != nil else {
-        completion(.failure("error"))
+        completion(.failure("response error: \(String(describing: response))"))
         return
 
       }
