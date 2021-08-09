@@ -163,7 +163,7 @@ extension UIView {
   func expandToView(view: UIView, from fromRect: CGRect, completion: @escaping () -> ()) {
     // Prepare view
     view.addSubview(self)
-    frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height).insetBy(dx: 10, dy: 5)
+    frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height).insetBy(dx: 10, dy: 10)
     center = CGPoint(x: fromRect.midX, y: fromRect.midY)
     transform = .init(scaleX: fromRect.width / frame.width, y: fromRect.height / frame.height)
     CATransaction.begin()
@@ -185,9 +185,6 @@ extension UIView {
     })
     CATransaction.commit()
   }
-
-
-
 
   func shrinkFromSuperview(to toRect: CGRect, completion: @escaping () -> ()) {
     guard let superview = superview else { return }
