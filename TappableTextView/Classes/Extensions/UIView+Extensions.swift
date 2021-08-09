@@ -125,7 +125,6 @@ extension UIView {
     }
   }
 
-
   /// The highlight animation used for all highlitable views.
   func animateHighlight(transform: CGAffineTransform, offset: CGFloat, duration: TimeInterval = 0.1) {
     UIView.animate(withDuration: duration) {
@@ -135,4 +134,81 @@ extension UIView {
     }
   }
 
+  func expandToSuperview(from fromRect: CGRect, completion: @escaping () -> ()) {
+    guard let superview = superview else { return }
+    // Prepare view
+    frame = CGRect(x: 0, y: 0, width: superview.frame.width, height: superview.frame.height).insetBy(dx: 10, dy: 5)
+    center = CGPoint(x: fromRect.midX, y: fromRect.midY)
+    transform = .init(scaleX: fromRect.width / frame.width, y: fromRect.height / frame.height)
+    CATransaction.begin()
+    CATransaction.setAnimationDuration(0.25)
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
+    // Corner animation
+    let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
+    cornerAnimation.fromValue = superview.frame.height / 4
+    cornerAnimation.toValue = 8
+    layer.cornerRadius = 8
+    self.layer.cornerRadius = 8
+    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    self.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    // Expand animation
+    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut], animations: {
+      self.transform = .identity
+      self.center = CGPoint(x: superview.bounds.midX, y: superview.bounds.midY)
+      completion()
+    })
+    CATransaction.commit()
+  }
+
+  func expandToView(view: UIView, from fromRect: CGRect, completion: @escaping () -> ()) {
+    // Prepare view
+    view.addSubview(self)
+    frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height).insetBy(dx: 10, dy: 5)
+    center = CGPoint(x: fromRect.midX, y: fromRect.midY)
+    transform = .init(scaleX: fromRect.width / frame.width, y: fromRect.height / frame.height)
+    CATransaction.begin()
+    CATransaction.setAnimationDuration(0.25)
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
+    // Corner animation
+    let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
+    cornerAnimation.fromValue = view.frame.height / 4
+    cornerAnimation.toValue = 8
+    layer.cornerRadius = 8
+    self.layer.cornerRadius = 8
+    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    self.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    // Expand animation
+    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut], animations: {
+      self.transform = .identity
+      self.center = CGPoint(x: view.bounds.midX, y: view.bounds.midY)
+      completion()
+    })
+    CATransaction.commit()
+  }
+
+
+
+
+  func shrinkFromSuperview(to toRect: CGRect, completion: @escaping () -> ()) {
+    guard let superview = superview else { return }
+
+    superview.sendSubviewToBack(self)
+    CATransaction.begin()
+    CATransaction.setAnimationDuration(0.2)
+    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
+
+    // Layer animations
+    let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
+    cornerAnimation.fromValue = layer.cornerRadius
+    cornerAnimation.toValue = frame.height / 2
+    layer.cornerRadius = frame.height / 2
+    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
+    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
+      self.transform = .init(scaleX: toRect.width / self.frame.width, y: toRect.height / self.frame.height)
+      self.center = CGPoint(x: toRect.midX, y: toRect.midY)
+    }, completion: ({ _ in
+      completion()
+    }))
+    CATransaction.commit()
+  }
 }

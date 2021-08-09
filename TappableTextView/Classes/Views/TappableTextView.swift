@@ -152,7 +152,7 @@ private extension TappableTextView {
     wordView.addGestureRecognizer(panGesture)
     wordView.delegate = self
     contentView.addSubview(wordView)
-    wordView.expandToSuperview()
+    wordView.openAnimation()
     snap = UISnapBehavior(item: wordView, snapTo: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
     snap.damping = 0.9
     animator.addBehavior(snap)

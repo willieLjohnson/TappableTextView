@@ -102,60 +102,24 @@ public class WordView: NibDesignable {
 // MARK: Animations
 @available(iOS 10.0, *)
 extension WordView {
-  func expandToSuperview() {
-    guard let superview = superview else { return }
+  func openAnimation() {
     guard let word = word else { return }
-    // Prepare view
-    frame = CGRect(x: 0, y: 0, width: superview.frame.width, height: superview.frame.height).insetBy(dx: 10, dy: 5)
-    center = CGPoint(x: word.rect.midX, y: word.rect.midY)
-    transform = .init(scaleX: word.rect.width / frame.width, y: word.rect.height / frame.height)
-    CATransaction.begin()
-    CATransaction.setAnimationDuration(0.25)
-    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
-    // Corner animation
-    let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
-    cornerAnimation.fromValue = superview.frame.height / 4
-    cornerAnimation.toValue = 8
-    layer.cornerRadius = 8
-    wordImageView.layer.cornerRadius = 8
-    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
-    wordImageView.layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
-    // Expand animation
-    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [.curveEaseInOut], animations: {
+    expandToSuperview(from: word.rect) {
       self.impactFeedbackGenerator.impactOccurred()
-      self.transform = .identity
-      self.center = CGPoint(x: superview.bounds.midX, y: superview.bounds.midY)
-    })
-    CATransaction.commit()
+    }
   }
 
   func dismissAnimation() {
-    guard let superview = superview else { return }
     guard let word = word else { return }
-    superview.sendSubviewToBack(self)
-    CATransaction.begin()
-    CATransaction.setAnimationDuration(0.2)
-    CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut))
-
-    // Layer animations
-    let cornerAnimation = CABasicAnimation(keyPath: #keyPath(CALayer.cornerRadius))
-    cornerAnimation.fromValue = layer.cornerRadius
-    cornerAnimation.toValue = frame.height / 2
-    layer.cornerRadius = frame.height / 2
-    layer.add(cornerAnimation, forKey: #keyPath(CALayer.cornerRadius))
-    UIView.animate(withDuration: 0.4, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveEaseIn], animations: {
-      self.transform = .init(scaleX: word.rect.width / self.frame.width, y: word.rect.height / self.frame.height)
-      self.center = CGPoint(x: word.rect.midX, y: word.rect.midY)
-    }, completion: ({ _ in
+    shrinkFromSuperview(to: word.rect) {
       self.removeFromSuperview()
       guard let highlightView = self.highlightView else { return }
       highlightView.dismissAnimation()
-    }))
-    CATransaction.commit()
+    }
   }
 }
 
-// MARK: Helper methods
+// MARK: Helper methods - Setup
 @available(iOS 10.0, *)
 private extension WordView {
   func setupView() {
@@ -202,21 +166,25 @@ private extension WordView {
     addButton.setTitleColor(color, for: .normal)
     addButton.layer.cornerRadius = addButton.frame.height / 6
 
-
     updateImageView()
   }
 
-  func updateImageView() {
-    wordImageView.addSubview(activityView)
-    activityView.frame = wordImageView.bounds
-    activityView.translatesAutoresizingMaskIntoConstraints = false
-    activityView.centerXAnchor.constraint(equalTo: wordImageView.centerXAnchor).isActive = true
-    activityView.centerYAnchor.constraint(equalTo: wordImageView.centerYAnchor).isActive = true
-    activityView.heightAnchor.constraint(equalTo: wordImageView.heightAnchor).isActive = true
-    activityView.widthAnchor.constraint(equalTo: wordImageView.widthAnchor).isActive = true
-    activityView.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0, alpha: 0.5)
+  @objc private func addButtonPressed() {
+    addButton.animateTap(duration: 0.25)
+  }
 
-    activityView.startAnimating()
+  @objc private func imageTapped() {
+    wordImageView.expandToView(view: self, from: wordImageView.frame) {
+      self.impactFeedbackGenerator.impactOccurred()
+
+    }
+  }
+}
+
+// MARK: Word Image
+private extension WordView {
+  func updateImageView() {
+    startLoadingAnimation()
 
     if images != nil {
       self.loadNextImage(from: images!)
@@ -237,34 +205,40 @@ private extension WordView {
 
   }
 
-  private func loadNextImage(from images: Images) {
+  func startLoadingAnimation() {
+    wordImageView.addSubview(activityView)
+    activityView.frame = wordImageView.bounds
+    activityView.translatesAutoresizingMaskIntoConstraints = false
+    activityView.centerXAnchor.constraint(equalTo: wordImageView.centerXAnchor).isActive = true
+    activityView.centerYAnchor.constraint(equalTo: wordImageView.centerYAnchor).isActive = true
+    activityView.heightAnchor.constraint(equalTo: wordImageView.heightAnchor).isActive = true
+    activityView.widthAnchor.constraint(equalTo: wordImageView.widthAnchor).isActive = true
+    activityView.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0, alpha: 0.5)
+
+    activityView.startAnimating()
+  }
+
+  func loadNextImage(from images: Images) {
     let nextImage = images.value[nextImageIndex]
     currentImage = nextImage
     nextImageIndex = (nextImageIndex + 1) % images.value.count
     self.wordImageView.loadImage(fromURL: nextImage.url) { _ in
       self.activityView.stopAnimating()
       self.activityView.removeFromSuperview()
-      self.wordImageView.animateDoneLoading(duration: 0.25)
+      self.wordImageView.expandToSuperview(from: self.wordImageView.frame) {
+        self.impactFeedbackGenerator.impactOccurred()
+      }
     }
   }
 
-  private func cacheImages() {
+  func cacheImages() {
     guard let images = images else { return }
     for image in images.value {
       guard let url = URL(string: image.url) else {
         continue
       }
-
       UIImage().fromURL(url) { _ in }
     }
-
-  }
-  @objc private func addButtonPressed() {
-    addButton.animateTap(duration: 0.25)
-  }
-
-  @objc private func imageTapped() {
-    updateImageView()
   }
 }
 
