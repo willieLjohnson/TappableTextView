@@ -14,4 +14,17 @@ extension UIImageView {
     self.image = image
     return self
   }
+
+  func loadImage(fromURL urlString: String, completion: @escaping () -> ()) {
+    guard let url = URL(string: urlString) else {
+      return
+    }
+
+    UIImage().fromURL(url) { image in
+      DispatchQueue.main.async {
+        completion()
+        self.image = image
+      }
+    }
+  }
 }

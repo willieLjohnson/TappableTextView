@@ -19,6 +19,7 @@ public extension UIImage {
   private func getImage(from url: URL, _ completion: @escaping (UIImage?) -> ()) {
     if let imageFromCache = imageCache.object(forKey: url as AnyObject) {
       completion(imageFromCache as? UIImage)
+      return
     }
 
     URLSession.shared.dataTask(with: url) { data, response, error in

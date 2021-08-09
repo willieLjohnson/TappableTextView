@@ -46,6 +46,8 @@ public class WordView: NibDesignable {
   }
 
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
+  var activityView: UIActivityIndicatorView!
+
 
   weak var delegate: WordViewDelegate? {
     didSet {
@@ -54,6 +56,7 @@ public class WordView: NibDesignable {
     }
   }
   weak var highlightView: HighlightView?
+  
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -156,6 +159,13 @@ private extension WordView {
     wordLabel.font = Style.boldFont.withSize(20)
     addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
 
+    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+    wordImageView.isUserInteractionEnabled = true
+    wordImageView.addGestureRecognizer(tapGestureRecognizer)
+
+    wordImageView.clipsToBounds = true
+
+    activityView = UIActivityIndicatorView(style: .whiteLarge)
 
     wordDetailsTableView.dataSource = self
     wordDetailsTableView.delegate = self
@@ -163,6 +173,8 @@ private extension WordView {
     wordDetailsTableView.rowHeight = UITableView.automaticDimension
 
     wordDetailsTableView.register(WordDetailsTableViewCell.self, forCellReuseIdentifier: "wordCell")
+
+
     self.updateViews()
   }
 
@@ -182,25 +194,38 @@ private extension WordView {
     addButton.setTitleColor(color, for: .normal)
     addButton.layer.cornerRadius = addButton.frame.height / 6
 
+
     updateImageView()
   }
 
   func updateImageView() {
-    wordImageView.clipsToBounds = true
+    wordImageView.addSubview(activityView)
+    activityView.frame = wordImageView.bounds
+    activityView.translatesAutoresizingMaskIntoConstraints = false
+    activityView.centerXAnchor.constraint(equalTo: wordImageView.centerXAnchor).isActive = true
+    activityView.centerYAnchor.constraint(equalTo: wordImageView.centerYAnchor).isActive = true
+    activityView.heightAnchor.constraint(equalTo: wordImageView.heightAnchor).isActive = true
+    activityView.widthAnchor.constraint(equalTo: wordImageView.widthAnchor).isActive = true
+    activityView.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0, alpha: 0.5)
+
+    activityView.startAnimating()
+
     self.word?.getWordImageURL(success: { urlString in
-      guard let url = URL(string: urlString) else { return }
-      UIImage().fromURL(url) { image in
-        guard let image = image else { return }
-        DispatchQueue.main.async {
-          self.wordImageView.image = image
-        }
+      self.wordImageView.loadImage(fromURL: urlString) { [unowned self] in
+        print("Done Loading")
+        activityView.stopAnimating()
+        activityView.removeFromSuperview()
       }
     })
   }
 
   @objc private func addButtonPressed() {
-    print("bruh")
     addButton.animateTap(duration: 0.25)
+  }
+
+  @objc private func imageTapped() {
+    wordImageView.animateTap(duration: 0.25)
+    updateImageView()
   }
 }
 

@@ -22,13 +22,19 @@ let headers = [
   "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com"
 ]
 
+let imagesCache = NSCache<AnyObject, AnyObject>()
+
 
 extension Word {
   func getWordImageURL(success: @escaping (String) -> ()) {
-    print("getting image")
+    if let imagesFromCache = imagesCache.object(forKey: self.getText() as AnyObject) as? Images {
+      guard let random = imagesFromCache.value.randomElement() else { return }
+      success(random.url)
+      return
+    }
+
     let request = NSMutableURLRequest(url: NSURL(string: "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=\(self.getText())&pageNumber=1&pageSize=10&autoCorrect=true")! as URL,
-                                            cachePolicy: .useProtocolCachePolicy,
-                                        timeoutInterval: 10.0)
+                                      cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
 
@@ -44,8 +50,9 @@ extension Word {
 
       if let data = data {
         if let result = try? JSONDecoder().decode(Images.self, from: data) {
-          guard let first = result.value.first else { return }
-          success(first.url)
+          imagesCache.setObject(result as AnyObject, forKey: self.getText() as AnyObject)
+          guard let random = result.value.randomElement() else { return }
+          success(random.url)
         } else {
           print("Invalid Response \(String(data: data, encoding: String.Encoding.utf8) as String?)")
         }

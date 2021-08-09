@@ -83,8 +83,20 @@ public struct DefinitionDecodable: Decodable {
   let example: String?
 }
 
+
+let wordCache = NSCache<AnyObject, AnyObject>()
+
+
 extension Word {
   public func getWordMeaning(word: Word, completion: @escaping ([MeaningDecodable]) -> Void) {
+    if let wordsFromCache = wordCache.object(forKey: self.getText() as AnyObject) as? [WordDecodable] {
+      guard let word = wordsFromCache.first else { return }
+      DispatchQueue.main.async {
+        completion(word.meanings)
+      }
+      return
+    }
+
     guard let url = URL(string: DictionaryAPI.baseURL.rawValue + word.getText()) else { return }
     print(url)
     var request = URLRequest(url: url)
@@ -93,6 +105,7 @@ extension Word {
     let task = URLSession.shared.dataTask(with: request) {data, response, error in
       if let data = data {
         if let result = try? JSONDecoder().decode([WordDecodable].self, from: data) {
+          wordCache.setObject(result as AnyObject, forKey: self.getText() as AnyObject)
           guard let resultWord = result.first else { return }
           completion(resultWord.meanings)
         } else {
