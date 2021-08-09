@@ -203,8 +203,8 @@ private extension WordView {
           self.cacheImages()
         case let .failure(error):
           DispatchQueue.main.async {
-            self.activityView.stopAnimating()
-            self.activityView.removeFromSuperview()
+            self.stopLoadingAnimation()
+            self.wordImageView.heightAnchor.constraint(equalToConstant: 0).isActive = true
             print(error)
           }
         }
@@ -226,11 +226,15 @@ private extension WordView {
     activityView.startAnimating()
   }
 
+  func stopLoadingAnimation() {
+    self.activityView.stopAnimating()
+    self.activityView.removeFromSuperview()
+  }
+
   func loadNextImage(from images: Images) {
     if images.results.count == 0 {
       DispatchQueue.main.async {
-        self.activityView.stopAnimating()
-        self.activityView.removeFromSuperview()
+        self.stopLoadingAnimation()
         self.wordImageView.heightAnchor.constraint(equalToConstant: 0).isActive = true
       }
       return
@@ -239,8 +243,7 @@ private extension WordView {
     currentImage = nextImage
     nextImageIndex = (nextImageIndex + 1) % images.results.count
     self.wordImageView.loadImage(fromURL: nextImage.urls.regular) { _ in
-      self.activityView.stopAnimating()
-      self.activityView.removeFromSuperview()
+      self.stopLoadingAnimation()
       self.wordImageView.expandToSuperview(from: self.wordImageView.frame) {
         if #available(iOS 13.0, *) {
           self.impactFeedbackGeneratoriOS13.impactOccurred()

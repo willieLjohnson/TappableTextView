@@ -56,14 +56,17 @@ let imagesCache = NSCache<AnyObject, AnyObject>()
 
 extension Word {
   func getWordImages(completion: @escaping ImagesResult) {
-
     let urlString = baseAPIURL + "\(self.getText())"
+    guard let url = NSURL(string: urlString) as URL? else {
+      completion(.failure("Invalid URL"))
+      return
+    }
     if let imagesFromCache = imagesCache.object(forKey: urlString as AnyObject) as? Images {
       completion(.success(imagesFromCache))
       return
     }
 
-    let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL,
+    let request = NSMutableURLRequest(url: url,
                                       cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
