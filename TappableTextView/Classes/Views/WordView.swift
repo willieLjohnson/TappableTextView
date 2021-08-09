@@ -48,12 +48,6 @@ public class WordView: NibDesignable {
   public var images: Images?
   public var currentImage = Image()
 
-  @available(iOS 13.0, *)
-  lazy var impactFeedbackGeneratoriOS13 = UIImpactFeedbackGenerator(style: .soft)
-
-  var impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-
-
   var activityView: UIActivityIndicatorView!
   var nextImageIndex = 0
   var currentImageIndex: Int {
@@ -110,11 +104,7 @@ extension WordView {
   func openAnimation() {
     guard let word = word else { return }
     expandToSuperview(from: word.rect) {
-      if #available(iOS 13.0, *) {
-        self.impactFeedbackGenerator.impactOccurred()
-      } else {
-        // Fallback on earlier versions
-      }
+      Global.softImpactFeedbackGenerator.impactOccurred()
     }
   }
 
@@ -232,6 +222,7 @@ private extension WordView {
   }
 
   func loadNextImage(from images: Images) {
+    Global.softImpactFeedbackGenerator.prepare()
     if images.results.count == 0 {
       DispatchQueue.main.async {
         self.stopLoadingAnimation()
@@ -245,11 +236,7 @@ private extension WordView {
     self.wordImageView.loadImage(fromURL: nextImage.urls.regular) { _ in
       self.stopLoadingAnimation()
       self.wordImageView.expandToSuperview(from: self.wordImageView.frame) {
-        if #available(iOS 13.0, *) {
-          self.impactFeedbackGeneratoriOS13.impactOccurred()
-        } else {
-          self.impactFeedbackGenerator.impactOccurred()
-        }
+        Global.softImpactFeedbackGenerator.impactOccurred()
       }
     }
   }

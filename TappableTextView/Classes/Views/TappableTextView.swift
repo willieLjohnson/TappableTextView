@@ -34,10 +34,6 @@ open class TappableTextView: NibDesignable {
   private var animator: UIDynamicAnimator!
   /// The behavior that forces the **wordView** to remain in the center of the **contentView**.
   private var snap: UISnapBehavior!
-  /// The impactFeeddbackGenerator that's tied to the **contentView's** tap gesture.
-  private let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .light)
-
-
   /// The subview that appears when a highlighted word (HighlightView) is pressed.
   public var wordView: WordView?
 
@@ -103,7 +99,7 @@ private extension TappableTextView {
   /// - Parameter recognizer: The UITapGestureRecognizer that triggered this handler.
   @objc func textTapped(recognizer: UITapGestureRecognizer) {
     guard wordView == nil else { return }
-    impactFeedbackGenerator.prepare()
+    Global.softImpactFeedbackGenerator.prepare()
     // Grab UITextView and its content.
     guard let textView = recognizer.view as? UITextView else {
       return
@@ -119,7 +115,7 @@ private extension TappableTextView {
     // Animate highlight
     highlight.transform = .init(scaleX: 0.01, y: 1)
     highlight.expandAnimation()
-    impactFeedbackGenerator.impactOccurred()
+    Global.softImpactFeedbackGenerator.impactOccurred()
     textView.selectedTextRange = nil
   }
   
