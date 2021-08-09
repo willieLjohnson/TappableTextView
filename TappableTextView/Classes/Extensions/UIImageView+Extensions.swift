@@ -10,15 +10,20 @@ import Foundation
 let imageCache = NSCache<AnyObject, AnyObject>()
 
 public extension UIImage {
-  func fromURL(_ url: URL, completion: @escaping (UIImage?) -> ())  {
-    self.getImage(from: url) { result in
-      completion(result)
+  func fromURL(_ url: URL, completion: @escaping UIImageResult)  {
+    self.getImage(from: url) { imageResult in
+      switch imageResult {
+      case let .success(image):
+        completion(.success(image))
+      case .failure:
+        completion(.failure("Image not found"))
+      }
     }
   }
 
-  private func getImage(from url: URL, _ completion: @escaping (UIImage?) -> ()) {
-    if let imageFromCache = imageCache.object(forKey: url as AnyObject) {
-      completion(imageFromCache as? UIImage)
+  private func getImage(from url: URL, _ completion: @escaping UIImageResult) {
+    if let imageFromCache = imageCache.object(forKey: url as AnyObject) as? UIImage {
+      completion(.success(imageFromCache))
       return
     }
 
@@ -28,10 +33,13 @@ public extension UIImage {
         let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
         let data = data, error == nil,
         let imageToCache = UIImage(data: data)
-      else { return }
+      else {
+        completion(.failure("error"))
+        return
+      }
 
       imageCache.setObject(imageToCache, forKey: url as AnyObject)
-      completion(imageToCache)
+      completion(.success(imageToCache))
     }.resume()
   }
 }

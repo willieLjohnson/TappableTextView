@@ -90,11 +90,11 @@ extension UIView {
       self.layer.shadowRadius = 2
     }) { _ in
       UIView.animate(withDuration: duration * 0.75, animations: {
-        self.transform = .init(scaleX: 1.1, y: 1.1)
+        self.transform = .init(scaleX: 1.05, y: 1.05)
         self.layer.shadowOffset = CGSize(width: 0, height: 6)
         self.layer.shadowRadius = 6
       }) { _ in
-        UIView.animate(withDuration: duration * 0.9, animations: {
+        UIView.animate(withDuration: duration * 0.6, animations: {
           self.transform = .identity
           self.layer.shadowOffset = CGSize(width: 0, height: 4)
           self.layer.shadowRadius = 4
@@ -103,6 +103,28 @@ extension UIView {
 
     }
   }
+
+  func animateDoneLoading(duration: TimeInterval = 0.1) {
+    UIView.animate(withDuration: duration * 0.25, animations: {
+      self.transform = .init(scaleX: 0.95, y: 0.95)
+      self.layer.shadowOffset = CGSize(width: 0, height: 2)
+      self.layer.shadowRadius = 2
+    }) { _ in
+      UIView.animate(withDuration: duration * 0.75, animations: {
+        self.transform = .init(scaleX: 1.02, y: 1.02)
+        self.layer.shadowOffset = CGSize(width: 0, height: 6)
+        self.layer.shadowRadius = 6
+      }) { _ in
+        UIView.animate(withDuration: duration * 0.6, animations: {
+          self.transform = .identity
+          self.layer.shadowOffset = CGSize(width: 0, height: 4)
+          self.layer.shadowRadius = 4
+        })
+      }
+
+    }
+  }
+
 
   /// The highlight animation used for all highlitable views.
   func animateHighlight(transform: CGAffineTransform, offset: CGFloat, duration: TimeInterval = 0.1) {

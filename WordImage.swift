@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Images: Decodable {
+public struct Images: Decodable {
   let totalCount: Int
   let value: [Image]
 }
 
-struct Image: Decodable {
+public struct Image: Decodable {
   let url: String
 }
 
@@ -26,14 +26,14 @@ let imagesCache = NSCache<AnyObject, AnyObject>()
 
 
 extension Word {
-  func getWordImageURL(success: @escaping (String) -> ()) {
-    if let imagesFromCache = imagesCache.object(forKey: self.getText() as AnyObject) as? Images {
-      guard let random = imagesFromCache.value.randomElement() else { return }
-      success(random.url)
+  func getWordImages(completion: @escaping ImagesResult) {
+    let urlString = "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=\(self.getText())&pageNumber=0&pageSize=20&autoCorrect=true&safeSearch=true"
+    if let imagesFromCache = imagesCache.object(forKey: urlString as AnyObject) as? Images {
+      completion(.success(imagesFromCache))
       return
     }
 
-    let request = NSMutableURLRequest(url: NSURL(string: "https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/Search/ImageSearchAPI?q=\(self.getText())&pageNumber=1&pageSize=10&autoCorrect=true")! as URL,
+    let request = NSMutableURLRequest(url: NSURL(string: urlString)! as URL,
                                       cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
     request.httpMethod = "GET"
     request.allHTTPHeaderFields = headers
@@ -41,23 +41,25 @@ extension Word {
     let session = URLSession.shared
     let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
       if let error = error {
-        print(error)
+        completion(.failure(error))
         return
       }
 
-      guard let httpResponse = response as? HTTPURLResponse else { return }
-      print(httpResponse)
+      guard (response as? HTTPURLResponse) != nil else {
+        completion(.failure("error"))
+        return
+
+      }
 
       if let data = data {
         if let result = try? JSONDecoder().decode(Images.self, from: data) {
-          imagesCache.setObject(result as AnyObject, forKey: self.getText() as AnyObject)
-          guard let random = result.value.randomElement() else { return }
-          success(random.url)
+          imagesCache.setObject(result as AnyObject, forKey: urlString as AnyObject)
+          completion(.success(result))
         } else {
-          print("Invalid Response \(String(data: data, encoding: String.Encoding.utf8) as String?)")
+          completion(.failure("Invalid Response \(String(data: data, encoding: String.Encoding.utf8) as String?)"))
         }
       } else if let error = error {
-        print("HTTP Request Failed \(error)")
+        completion(.failure(error))
       }
     })
 

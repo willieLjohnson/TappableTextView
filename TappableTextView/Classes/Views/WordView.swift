@@ -45,9 +45,18 @@ public class WordView: NibDesignable {
     }
   }
 
+  public var images: Images?
+  public var currentImage = Image(url: "")
+
   let impactFeedbackGenerator = UIImpactFeedbackGenerator(style: .medium)
   var activityView: UIActivityIndicatorView!
-
+  var nextImageIndex = 0
+  var currentImageIndex: Int {
+    if self.nextImageIndex == 0 {
+      return 0
+    }
+    return self.nextImageIndex - 1
+  }
 
   weak var delegate: WordViewDelegate? {
     didSet {
@@ -164,7 +173,6 @@ private extension WordView {
     wordImageView.addGestureRecognizer(tapGestureRecognizer)
 
     wordImageView.clipsToBounds = true
-
     activityView = UIActivityIndicatorView(style: .whiteLarge)
 
     wordDetailsTableView.dataSource = self
@@ -210,21 +218,52 @@ private extension WordView {
 
     activityView.startAnimating()
 
-    self.word?.getWordImageURL(success: { urlString in
-      self.wordImageView.loadImage(fromURL: urlString) { [unowned self] in
-        print("Done Loading")
-        activityView.stopAnimating()
-        activityView.removeFromSuperview()
-      }
-    })
+    if images != nil {
+      self.loadNextImage(from: images!)
+    } else {
+      self.word?.getWordImages(completion: { imagesResult in
+        switch imagesResult {
+        case let .success(images):
+          self.images = images
+          self.loadNextImage(from: images)
+          self.cacheImages()
+        case .failure:
+          self.activityView.stopAnimating()
+          self.activityView.removeFromSuperview()
+          print("FAILURE")
+        }
+      })
+    }
+
   }
 
+  private func loadNextImage(from images: Images) {
+    let nextImage = images.value[nextImageIndex]
+    currentImage = nextImage
+    nextImageIndex = (nextImageIndex + 1) % images.value.count
+    self.wordImageView.loadImage(fromURL: nextImage.url) { _ in
+      self.activityView.stopAnimating()
+      self.activityView.removeFromSuperview()
+      self.wordImageView.animateDoneLoading(duration: 0.25)
+    }
+  }
+
+  private func cacheImages() {
+    guard let images = images else { return }
+    for image in images.value {
+      guard let url = URL(string: image.url) else {
+        continue
+      }
+
+      UIImage().fromURL(url) { _ in }
+    }
+
+  }
   @objc private func addButtonPressed() {
     addButton.animateTap(duration: 0.25)
   }
 
   @objc private func imageTapped() {
-    wordImageView.animateTap(duration: 0.25)
     updateImageView()
   }
 }

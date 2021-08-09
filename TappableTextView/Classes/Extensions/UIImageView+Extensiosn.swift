@@ -15,15 +15,21 @@ extension UIImageView {
     return self
   }
 
-  func loadImage(fromURL urlString: String, completion: @escaping () -> ()) {
+  func loadImage(fromURL urlString: String, completion: @escaping VoidResult) {
     guard let url = URL(string: urlString) else {
+      completion(.failure("Not a valid URL"))
       return
     }
 
-    UIImage().fromURL(url) { image in
-      DispatchQueue.main.async {
-        completion()
-        self.image = image
+    UIImage().fromURL(url) { imageResult in
+      DispatchQueue.main.async { [self] in
+        switch imageResult {
+        case let .success(image):
+          self.image = image
+          completion(.success)
+        case .failure:
+          completion(.failure("error"))
+        }
       }
     }
   }

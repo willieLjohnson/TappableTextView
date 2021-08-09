@@ -89,16 +89,18 @@ let wordCache = NSCache<AnyObject, AnyObject>()
 
 extension Word {
   public func getWordMeaning(word: Word, completion: @escaping ([MeaningDecodable]) -> Void) {
-    if let wordsFromCache = wordCache.object(forKey: self.getText() as AnyObject) as? [WordDecodable] {
-      guard let word = wordsFromCache.first else { return }
-      DispatchQueue.main.async {
-        completion(word.meanings)
+    DispatchQueue.global(qos: .background).async {
+      if let wordsFromCache = wordCache.object(forKey: self.getText() as AnyObject) as? [WordDecodable] {
+        guard let word = wordsFromCache.first else { return }
+        DispatchQueue.main.async {
+          completion(word.meanings)
+        }
+        return
       }
-      return
     }
 
     guard let url = URL(string: DictionaryAPI.baseURL.rawValue + word.getText()) else { return }
-    print(url)
+
     var request = URLRequest(url: url)
     request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
