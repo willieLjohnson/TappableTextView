@@ -19,12 +19,12 @@
 		3D2F3D2226B8D9CA00452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
 		3D2F3D2326B8D9CB00452452 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */; };
 		3D79B21C26C07D4200ED384E /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21B26C07D4200ED384E /* UIImageView+Extensions.swift */; };
-		3D79B21E26C07F0E00ED384E /* WordImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21D26C07F0E00ED384E /* WordImage.swift */; };
 		3D79B22026C093A400ED384E /* UIImageView+Extensiosn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21F26C093A400ED384E /* UIImageView+Extensiosn.swift */; };
-		3D97611926C1AA8A0027DDD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611826C1AA8A0027DDD4 /* Constants.swift */; };
-		3D97612B26C1FFA60027DDD4 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970026BC8A23001CB3B2 /* Style.swift */; };
-		3D97612C26C1FFA60027DDD4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611A26C1C9980027DDD4 /* Global.swift */; };
-		3D97612D26C1FFA60027DDD4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611426C0CF500027DDD4 /* Result.swift */; };
+		3D9D99BA26C2075A007E8252 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D99B726C2075A007E8252 /* Result.swift */; };
+		3D9D99BB26C2075A007E8252 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D99B826C2075A007E8252 /* Global.swift */; };
+		3D9D99BC26C2075A007E8252 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D99B926C2075A007E8252 /* Style.swift */; };
+		3D9D99BE26C2079B007E8252 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D99BD26C2079B007E8252 /* Constants.swift */; };
+		3D9D99C026C207AE007E8252 /* WordImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9D99BF26C207AE007E8252 /* WordImage.swift */; };
 		3DB0970C26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */; };
 		3DB0970D26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */; };
 		52E5836B788C29E6236998BCEF887234 /* Pods-TappableTextView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BD73E211C3368E234265A3AEB7793C /* Pods-TappableTextView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,12 +80,12 @@
 		3A64B28277EBC3183B2000C67ACCA864 /* Pods-TappableTextView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TappableTextView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		3D135B3726BEE2CF006A415C /* NSMutableAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extensions.swift"; sourceTree = "<group>"; };
 		3D79B21B26C07D4200ED384E /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
-		3D79B21D26C07F0E00ED384E /* WordImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordImage.swift; sourceTree = "<group>"; };
 		3D79B21F26C093A400ED384E /* UIImageView+Extensiosn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensiosn.swift"; sourceTree = "<group>"; };
-		3D97611426C0CF500027DDD4 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		3D97611826C1AA8A0027DDD4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3D97611A26C1C9980027DDD4 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
-		3DB0970026BC8A23001CB3B2 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		3D9D99B726C2075A007E8252 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = ../TappableTextView/Classes/Helper/Result.swift; sourceTree = "<group>"; };
+		3D9D99B826C2075A007E8252 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Global.swift; path = ../TappableTextView/Classes/Helper/Global.swift; sourceTree = "<group>"; };
+		3D9D99B926C2075A007E8252 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Style.swift; path = ../TappableTextView/Classes/Helper/Style.swift; sourceTree = "<group>"; };
+		3D9D99BD26C2079B007E8252 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = TappableTextView/Classes/Constants.swift; sourceTree = "<group>"; };
+		3D9D99BF26C207AE007E8252 /* WordImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WordImage.swift; path = TappableTextView/Classes/WordImage.swift; sourceTree = "<group>"; };
 		3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WordDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		3E6E16493C3E8E43FBAF14A9F21BEAA3 /* TappableTextView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TappableTextView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,9 +197,9 @@
 		3DB096FF26BC8A23001CB3B2 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				3D97611426C0CF500027DDD4 /* Result.swift */,
-				3DB0970026BC8A23001CB3B2 /* Style.swift */,
-				3D97611A26C1C9980027DDD4 /* Global.swift */,
+				3D9D99B826C2075A007E8252 /* Global.swift */,
+				3D9D99B726C2075A007E8252 /* Result.swift */,
+				3D9D99B926C2075A007E8252 /* Style.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -300,12 +300,12 @@
 		D5793657EEF35FE67E5D6AC0DD3DF020 /* TappableTextView */ = {
 			isa = PBXGroup;
 			children = (
-				3D97611826C1AA8A0027DDD4 /* Constants.swift */,
+				3D9D99BF26C207AE007E8252 /* WordImage.swift */,
+				3D9D99BD26C2079B007E8252 /* Constants.swift */,
 				3DB096FF26BC8A23001CB3B2 /* Helper */,
 				BF2C40240C67C97E172F9A6145226FB1 /* Images.xcassets */,
 				017A047B6589BAF2A83E8ADFE59E4B7A /* NibDesignable.swift */,
 				6CFA9235B97A7D0D84613763FA669C11 /* Word.swift */,
-				3D79B21D26C07F0E00ED384E /* WordImage.swift */,
 				72740F153E169DE689B8569216CBEFD7 /* Extensions */,
 				2E4DAAAE4923B1E2E43DFDB7917F5FA1 /* Pod */,
 				88E9EE27809DF93B3CFA9F29CF80B629 /* Support Files */,
@@ -507,24 +507,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D97611926C1AA8A0027DDD4 /* Constants.swift in Sources */,
 				3D79B21C26C07D4200ED384E /* UIImageView+Extensions.swift in Sources */,
+				3D9D99C026C207AE007E8252 /* WordImage.swift in Sources */,
 				1A43C7F54218DD50C87E0F42CFB7A874 /* HighlightView.swift in Sources */,
 				3D79B22026C093A400ED384E /* UIImageView+Extensiosn.swift in Sources */,
-				3D97612C26C1FFA60027DDD4 /* Global.swift in Sources */,
+				3D9D99BC26C2075A007E8252 /* Style.swift in Sources */,
 				3DB0970C26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift in Sources */,
-				3D97612D26C1FFA60027DDD4 /* Result.swift in Sources */,
+				3D9D99BB26C2075A007E8252 /* Global.swift in Sources */,
 				7DCF359CDA24B45A50034D6583255CBA /* HighlightView.xib in Sources */,
 				AA1D5E5A3826B14F24A018DAA597C5F6 /* NibDesignable.swift in Sources */,
-				3D97612B26C1FFA60027DDD4 /* Style.swift in Sources */,
 				3D135B3826BEE2CF006A415C /* NSMutableAttributedString+Extensions.swift in Sources */,
 				B19E3DAAEDB8210C60B42385C601EBF5 /* TappableTextView-dummy.m in Sources */,
 				0CC8B00E59FF42FCD3C986499441CF4C /* TappableTextView.swift in Sources */,
-				3D79B21E26C07F0E00ED384E /* WordImage.swift in Sources */,
 				A92139C2340A70CE39DE3299A05FFBE6 /* TappableTextView.xib in Sources */,
 				B23B25F2B6D77F52DF2CFCEEF6D3FB22 /* UIColor+Extensions.swift in Sources */,
 				5AAC02E949322B9C3F9EF9A414155450 /* UIView+Extensions.swift in Sources */,
+				3D9D99BE26C2079B007E8252 /* Constants.swift in Sources */,
 				B4204A9EC36968BF78EC9D6D418DC265 /* Word.swift in Sources */,
+				3D9D99BA26C2075A007E8252 /* Result.swift in Sources */,
 				09F190938FF08D16CD5BA8592005CD86 /* WordView.swift in Sources */,
 				2369D9FC0F78AE27DD16BBD338080AD8 /* WordView.xib in Sources */,
 			);

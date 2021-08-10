@@ -33,7 +33,7 @@ TappableTextView makes it laughably easy to turn any word into a button. With be
 
   s.ios.deployment_target = '13.0'
 
-  s.source_files = ['TappableTextView/Classes/**/*']
+  s.source_files = ['TappableTextView/Classes/*']
   
   s.resource_bundles = {
     'TappableTextView' => ['TappableTextView/Assets/**/*'],
