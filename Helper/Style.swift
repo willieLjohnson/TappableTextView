@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// Holds the style guide of the app
-struct Style {
+public struct Style {
   static let accentColor: UIColor = #colorLiteral(red: 0.3450980392, green: 0.337254902, blue: 0.8392156863, alpha: 1)
   static let contentColor: UIColor = #colorLiteral(red: 0.3490196078, green: 0.3450980392, blue: 0.4509803922, alpha: 1)
   static let shadowColor: CGColor = #colorLiteral(red: 0.3490196078, green: 0.3450980392, blue: 0.4509803922, alpha: 0.5)
