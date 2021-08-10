@@ -8,12 +8,13 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 protocol WordViewDelegate: AnyObject {
   func closeButtonPressed()
   func wordViewUpdated(_ wordView: WordView)
 }
 
-@available(iOS 10.0, *)
+@available(iOS 13.0, *)
 public class WordView: NibDesignable {
   @IBOutlet private weak var closeButton: UIButton!
   @IBOutlet private weak var wordLabel: UILabel!
@@ -99,7 +100,7 @@ public class WordView: NibDesignable {
 }
 
 // MARK: Animations
-@available(iOS 10.0, *)
+@available(iOS 13.0, *)
 extension WordView {
   func openAnimation() {
     guard let word = word else { return }
@@ -119,7 +120,7 @@ extension WordView {
 }
 
 // MARK: Helper methods - Setup
-@available(iOS 10.0, *)
+@available(iOS 13.0, *)
 private extension WordView {
   func setupView() {
     clipsToBounds = true
@@ -136,7 +137,9 @@ private extension WordView {
     wordImageView.addGestureRecognizer(tapGestureRecognizer)
 
     wordImageView.clipsToBounds = true
-    activityView = UIActivityIndicatorView(style: .whiteLarge)
+
+    activityView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+
 
     wordDetailsTableView.dataSource = self
     wordDetailsTableView.delegate = self
@@ -178,6 +181,7 @@ private extension WordView {
 }
 
 // MARK: Word Image
+@available(iOS 13.0, *)
 private extension WordView {
   func updateImageView() {
     startLoadingAnimation()
@@ -253,6 +257,7 @@ private extension WordView {
 }
 
 // MARK: UITableViewDataSource
+@available(iOS 13.0, *)
 extension WordView: UITableViewDataSource {
   public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return wordMeaningsList.count
@@ -272,6 +277,7 @@ extension WordView: UITableViewDataSource {
 
 
 // MARK: TableViewDelegate
+@available(iOS 13.0, *)
 extension WordView: UITableViewDelegate {
   public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return UITableView.automaticDimension

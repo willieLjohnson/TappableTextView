@@ -21,10 +21,10 @@
 		3D79B21C26C07D4200ED384E /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21B26C07D4200ED384E /* UIImageView+Extensions.swift */; };
 		3D79B21E26C07F0E00ED384E /* WordImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21D26C07F0E00ED384E /* WordImage.swift */; };
 		3D79B22026C093A400ED384E /* UIImageView+Extensiosn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D79B21F26C093A400ED384E /* UIImageView+Extensiosn.swift */; };
-		3D97611526C0CF500027DDD4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611426C0CF500027DDD4 /* Result.swift */; };
 		3D97611926C1AA8A0027DDD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611826C1AA8A0027DDD4 /* Constants.swift */; };
-		3D97611B26C1C9980027DDD4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611A26C1C9980027DDD4 /* Global.swift */; };
-		3DB0970126BC8A23001CB3B2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970026BC8A23001CB3B2 /* Style.swift */; };
+		3D97612B26C1FFA60027DDD4 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970026BC8A23001CB3B2 /* Style.swift */; };
+		3D97612C26C1FFA60027DDD4 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611A26C1C9980027DDD4 /* Global.swift */; };
+		3D97612D26C1FFA60027DDD4 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D97611426C0CF500027DDD4 /* Result.swift */; };
 		3DB0970C26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB0970A26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift */; };
 		3DB0970D26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3DB0970B26BC99A8001CB3B2 /* WordDetailsTableViewCell.xib */; };
 		52E5836B788C29E6236998BCEF887234 /* Pods-TappableTextView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80BD73E211C3368E234265A3AEB7793C /* Pods-TappableTextView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -507,19 +507,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D97611526C0CF500027DDD4 /* Result.swift in Sources */,
 				3D97611926C1AA8A0027DDD4 /* Constants.swift in Sources */,
 				3D79B21C26C07D4200ED384E /* UIImageView+Extensions.swift in Sources */,
 				1A43C7F54218DD50C87E0F42CFB7A874 /* HighlightView.swift in Sources */,
-				3D97611B26C1C9980027DDD4 /* Global.swift in Sources */,
 				3D79B22026C093A400ED384E /* UIImageView+Extensiosn.swift in Sources */,
+				3D97612C26C1FFA60027DDD4 /* Global.swift in Sources */,
 				3DB0970C26BC99A8001CB3B2 /* WordDetailsTableViewCell.swift in Sources */,
+				3D97612D26C1FFA60027DDD4 /* Result.swift in Sources */,
 				7DCF359CDA24B45A50034D6583255CBA /* HighlightView.xib in Sources */,
 				AA1D5E5A3826B14F24A018DAA597C5F6 /* NibDesignable.swift in Sources */,
+				3D97612B26C1FFA60027DDD4 /* Style.swift in Sources */,
 				3D135B3826BEE2CF006A415C /* NSMutableAttributedString+Extensions.swift in Sources */,
 				B19E3DAAEDB8210C60B42385C601EBF5 /* TappableTextView-dummy.m in Sources */,
 				0CC8B00E59FF42FCD3C986499441CF4C /* TappableTextView.swift in Sources */,
-				3DB0970126BC8A23001CB3B2 /* Style.swift in Sources */,
 				3D79B21E26C07F0E00ED384E /* WordImage.swift in Sources */,
 				A92139C2340A70CE39DE3299A05FFBE6 /* TappableTextView.xib in Sources */,
 				B23B25F2B6D77F52DF2CFCEEF6D3FB22 /* UIColor+Extensions.swift in Sources */,
@@ -659,8 +659,9 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TappableTextView/TappableTextView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TappableTextView/TappableTextView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				MODULEMAP_FILE = "Target Support Files/TappableTextView/TappableTextView.modulemap";
 				PRODUCT_MODULE_NAME = TappableTextView;
 				PRODUCT_NAME = TappableTextView;
@@ -751,9 +752,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 2.0.0;
 				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -784,9 +786,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 2.0.0;
 				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -817,9 +820,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 2.0.0;
 				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Example/Pods-TappableTextView_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -842,7 +846,8 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
 				IBSC_MODULE = TappableTextView;
 				INFOPLIST_FILE = "Target Support Files/TappableTextView/ResourceBundle-TappableTextView-TappableTextView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = TappableTextView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -867,8 +872,9 @@
 				GCC_PREFIX_HEADER = "Target Support Files/TappableTextView/TappableTextView-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/TappableTextView/TappableTextView-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MARKETING_VERSION = 2.0.0;
 				MODULEMAP_FILE = "Target Support Files/TappableTextView/TappableTextView.modulemap";
 				PRODUCT_MODULE_NAME = TappableTextView;
 				PRODUCT_NAME = TappableTextView;
@@ -899,9 +905,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
+				MARKETING_VERSION = 2.0.0;
 				MODULEMAP_FILE = "Target Support Files/Pods-TappableTextView_Tests/Pods-TappableTextView_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
@@ -924,7 +931,8 @@
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TappableTextView";
 				IBSC_MODULE = TappableTextView;
 				INFOPLIST_FILE = "Target Support Files/TappableTextView/ResourceBundle-TappableTextView-TappableTextView-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_NAME = TappableTextView;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
