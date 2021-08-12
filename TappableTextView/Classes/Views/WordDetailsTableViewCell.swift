@@ -12,7 +12,7 @@ class WordDetailsTableViewCell: NibDesignableTableViewCell {
 
   @IBOutlet weak var innerView: UIView!
   @IBOutlet weak var partOfSpeechLabel: UILabel!
-  @IBOutlet weak var wordDetailsTextView: UITextView!
+  @IBOutlet weak var wordDetailsTextView: TappableTextView!
 
   public var wordMeaning = WordMeaning() {
     willSet(wordMeaning) {

@@ -14,19 +14,10 @@ public protocol TappableTextViewDelegate: AnyObject {
   func wordViewClosed(_ wordView: WordView)
 }
 
-@available(iOS 10.0, *)
-@IBDesignable
-open class TappableTextView: NibDesignable {
-  @IBOutlet private weak var contentView: UITextView!
-
-  @IBInspectable public var color: UIColor = .black {
+open class TappableTextView: UITextView {
+  public var color: UIColor = .black {
     willSet(color) {
       updateViews()
-    }
-  }
-  @IBInspectable public var text: String? {
-    willSet {
-      self.contentView?.text = text
     }
   }
 
@@ -37,15 +28,17 @@ open class TappableTextView: NibDesignable {
   /// The subview that appears when a highlighted word (HighlightView) is pressed.
   public var wordView: WordView?
 
-  weak var delegate: TappableTextViewDelegate?
+  weak var tappableTextViewDelegate: TappableTextViewDelegate?
 
-  public override init(frame: CGRect) {
-    super.init(frame: frame)
+  public weak var rootTappableTextView: TappableTextView?
+
+  public override init(frame: CGRect, textContainer: NSTextContainer?) {
+    super.init(frame: frame, textContainer: textContainer)
     setupView()
   }
 
   public convenience init(frame: CGRect, color: UIColor) {
-    self.init(frame: frame)
+    self.init(frame: frame, textContainer: nil)
     self.color = color
     updateViews()
   }
@@ -56,7 +49,7 @@ open class TappableTextView: NibDesignable {
   }
 
   public func setDelegate(_ delegate: TappableTextViewDelegate) {
-    self.delegate = delegate
+    self.tappableTextViewDelegate = delegate
   }
 }
 
@@ -75,25 +68,30 @@ extension TappableTextView: UITextViewDelegate {
 private extension TappableTextView {
   /// Configure the UITextView with the required gestures to make text in the view tappable.
   func setupView() {
-    guard let contentView = contentView else { return }
-    contentView.delegate = self
-    contentView.contentInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
+    contentInset = UIEdgeInsets.init(top: 0, left: 16, bottom: 0, right: 16)
 
     let textTapGesture = UITapGestureRecognizer(target: self, action: #selector(textTapped(recognizer:)))
     textTapGesture.numberOfTapsRequired = 1
-    contentView.addGestureRecognizer(textTapGesture)
+    addGestureRecognizer(textTapGesture)
 
-    animator = UIDynamicAnimator(referenceView: contentView)
+    isSelectable = false
+    isEditable = false
   }
 
   func updateViews() {
-    guard let contentView = contentView else { return }
     backgroundColor = color
-    contentView.backgroundColor = color
-    contentView.textColor = color.contrastColor()
-    contentView.font = Style.normalFont.withSize(20)
+    backgroundColor = color
+    textColor = color.contrastColor()
+    font = Style.normalFont.withSize(20)
   }
 
+  func getRootTappableTextView() -> TappableTextView? {
+    if rootTappableTextView == nil {
+      rootTappableTextView = self
+    }
+
+    return rootTappableTextView
+  }
   /// Handle taps on the UITextView.
   ///
   /// - Parameter recognizer: The UITapGestureRecognizer that triggered this handler.
@@ -106,8 +104,8 @@ private extension TappableTextView {
     }
     // Grab the word.
     let tapLocation = recognizer.location(in: textView)
-    guard let word = self.getWordAt(point: tapLocation, textView: textView) else { return }
-    let highlight = HighlightView(word: word, color:  .randomColor())
+    guard let word = getWordAt(point: tapLocation) else { return }
+    let highlight = HighlightView(word: word, color: .randomColor())
     let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapOnHighlightView(recognizer:)))
     tapGesture.delegate = self
     textView.addSubview(highlight)
@@ -119,27 +117,12 @@ private extension TappableTextView {
     textView.selectedTextRange = nil
   }
   
-  /// Return the word that was tapped within the textview.
-  ///
-  /// - Paremeters:
-  ///   - point: A position within the tapped UITextView.
-  ///   - textView: The textView that was tappped.
-  func getWordAt(point: CGPoint, textView: UITextView) -> Word? {
-    guard let textPosition = textView.closestPosition(to: point) else { return nil }
-    guard let textRange = textView.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: convertToUITextDirection(1)) else { return nil }
-    let location = textView.offset(from: textView.beginningOfDocument, to: textRange.start)
-    let length = textView.offset(from: textRange.start, to: textRange.end)
-    guard let wordText = textView.text(in: textRange) else { return nil }
-    let wordRange = NSRange(location: location, length: length)
-    let wordRect = textView.firstRect(for: textRange)
-    return Word(text: wordText, range: wordRange, rect: wordRect)
-  }
+
   
   @objc func handleTapOnHighlightView(recognizer: UIGestureRecognizer) {
-    guard let contentView = contentView else { return }
     guard let highlightView = recognizer.view as? HighlightView else { return }
     if let wordView = wordView {
-      wordView.closeButtonPressed(self)
+      wordView.closeButtonPressed(getRootTappableTextView()!)
     }
     wordView = WordView(highlightView: highlightView)
     let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handleSwipeOnWordView(recognizer:)))
@@ -147,20 +130,22 @@ private extension TappableTextView {
     guard let wordView = wordView else { return }
     wordView.addGestureRecognizer(panGesture)
     wordView.delegate = self
-    contentView.addSubview(wordView)
+    guard let rootTappableTextView = getRootTappableTextView() else { return }
+    wordView.rootTappableTextView = rootTappableTextView
+    rootTappableTextView.addSubview(wordView)
     wordView.openAnimation()
-    snap = UISnapBehavior(item: wordView, snapTo: CGPoint(x: contentView.bounds.midX, y: contentView.bounds.midY))
+    animator = UIDynamicAnimator(referenceView: rootTappableTextView)
+    snap = UISnapBehavior(item: wordView, snapTo: CGPoint(x: rootTappableTextView.bounds.midX, y: rootTappableTextView.bounds.midY))
     snap.damping = 0.9
     animator.addBehavior(snap)
-    guard let delegate = delegate else { return }
-    delegate.wordViewOpened(wordView)
+    guard let tappableTextViewDelegate = rootTappableTextView.tappableTextViewDelegate else { return }
+    tappableTextViewDelegate.wordViewOpened(wordView)
   }
 
   @objc func handleSwipeOnWordView(recognizer: UIPanGestureRecognizer) {
-    guard let contentView = contentView else { return }
     guard let wordView = recognizer.view as? WordView else { return }
     guard let wordViewTextView = wordView.superview as? UITextView else { return }
-    contentView.bringSubviewToFront(wordView)
+    bringSubviewToFront(wordView)
     let translation = recognizer.translation(in: wordViewTextView)
     wordView.center = CGPoint(x: wordView.center.x + translation.x, y: wordView.center.y + translation.y)
     recognizer.setTranslation(CGPoint.zero, in: wordViewTextView)
@@ -183,26 +168,20 @@ private extension TappableTextView {
 @available(iOS 10.0, *)
 extension TappableTextView: WordViewDelegate {
   func wordViewUpdated(_ wordView: WordView) {
-    guard let delegate = delegate else { return }
-    delegate.wordViewUpdated(wordView)
-
+    guard let tappableTextViewDelegate = tappableTextViewDelegate else { return }
+    tappableTextViewDelegate.wordViewUpdated(wordView)
   }
 
   func closeButtonPressed() {
     self.animator.removeAllBehaviors()
 
-    guard let delegate = delegate else { return }
+    guard let tappableTextViewDelegate = tappableTextViewDelegate else { return }
     guard let wordView = wordView else { return }
-    delegate.wordViewClosed(wordView)
+    tappableTextViewDelegate.wordViewClosed(wordView)
     self.wordView = nil
   }
 }
 
 @available(iOS 10.0, *)
 extension TappableTextView: UIGestureRecognizerDelegate {
-}
-
-// Helper function inserted by Swift 4.2 migrator.
-fileprivate func convertToUITextDirection(_ input: Int) -> UITextDirection {
-	return UITextDirection(rawValue: input)
 }

@@ -49,6 +49,8 @@ public class WordView: NibDesignable {
   public var images: Images?
   public var currentImage = Image()
 
+  public var rootTappableTextView: TappableTextView?
+
   var activityView: UIActivityIndicatorView!
   var nextImageIndex = 0
   var currentImageIndex: Int {
@@ -65,7 +67,6 @@ public class WordView: NibDesignable {
     }
   }
   weak var highlightView: HighlightView?
-  
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -268,6 +269,9 @@ extension WordView: UITableViewDataSource {
       return UITableViewCell()
     }
 
+    if let rootTappableTextView = rootTappableTextView {
+      cell.wordDetailsTextView.rootTappableTextView = rootTappableTextView
+    }
     cell.wordMeaning = wordMeaningsList[indexPath.row]
     cell.color = color
 
