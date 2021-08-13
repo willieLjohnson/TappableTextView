@@ -31,7 +31,16 @@ extension UIColor {
     var brightness: CGFloat = 0
     var alpha: CGFloat = 0
     getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
-    return UIColor(hue: hue, saturation: saturation, brightness: brightness * CGFloat(factor), alpha: alpha)
+    return UIColor(hue: hue, saturation: saturation * (1 - CGFloat(factor)), brightness: brightness * (1 - CGFloat(factor)), alpha: alpha)
+  }
+
+  public func lighten(_ factor: Float = 1) -> UIColor {
+    var hue: CGFloat = 0
+    var saturation: CGFloat = 0
+    var brightness: CGFloat = 0
+    var alpha: CGFloat = 0
+    getHue(&hue, saturation: &saturation, brightness: &brightness, alpha: &alpha)
+    return UIColor(hue: hue, saturation: saturation, brightness: brightness * (1 + CGFloat(factor)), alpha: alpha)
   }
 
   public func opposite() -> UIColor {

@@ -129,6 +129,7 @@ private extension WordView {
     layer.shadowOpacity = 0.5
     layer.shadowRadius = 4
     layer.shadowOffset = CGSize(width: 2, height: 2)
+    layer.cornerRadius = 10;
 
     wordLabel.font = Style.boldFont.withSize(20)
     addButton.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
@@ -155,18 +156,26 @@ private extension WordView {
 
   func updateViews() {
     wordDetailsTableView.layer.cornerRadius = 10;
-    backgroundColor = color
-    wordDetailsTableView.backgroundColor = color.darken(0.95)
-    wordDetailsTableView.tintColor = color.contrastColor()
-    wordDetailsTableView.separatorColor = color.darken(0.8)
+    backgroundColor = color.withAlphaComponent(0.4)
+
+    let blurEffect = UIBlurEffect(style: .light)
+    let blurEffectView = UIVisualEffectView(effect: blurEffect)
+    //always fill the view
+    blurEffectView.frame = self.bounds
+    blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+    insertSubview(blurEffectView, at: 0)
+
+    wordDetailsTableView.backgroundColor = backgroundColor
+    wordDetailsTableView.separatorColor = color.darken(0.7)
     wordDetailsTableView.separatorInset = UIEdgeInsets(top: 50, left: 10, bottom: 50, right: 10)
 
-    wordLabel.textColor = color.contrastColor()
-    closeButton.backgroundColor = color
+    wordLabel.textColor = color.opposite()
+    closeButton.backgroundColor = .clear
     closeButton.setTitleColor(color.opposite(), for: .normal)
     closeButton.layer.cornerRadius = addButton.frame.height / 6
-    addButton.backgroundColor = color.opposite()
-    addButton.setTitleColor(color, for: .normal)
+    addButton.backgroundColor = color
+    addButton.setTitleColor(color.opposite(), for: .normal)
     addButton.layer.cornerRadius = addButton.frame.height / 6
 
     updateImageView()
@@ -274,6 +283,7 @@ extension WordView: UITableViewDataSource {
     }
     cell.wordMeaning = wordMeaningsList[indexPath.row]
     cell.color = color
+    cell.wordDetailsTextView.backgroundColor = .clear
 
     return cell
   }

@@ -23,5 +23,4 @@ public extension UITextView {
     let wordRect = firstRect(for: textRange)
     return Word(text: wordText, range: wordRange, rect: wordRect)
   }
-
 }

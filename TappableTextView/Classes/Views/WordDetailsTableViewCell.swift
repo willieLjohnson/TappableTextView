@@ -62,14 +62,12 @@ private extension WordDetailsTableViewCell {
   }
 
   func updateViews() {
-    backgroundColor = color.darken(0.95)
-    innerView.backgroundColor = color.darken(0.95)
-    wordDetailsTextView.backgroundColor = color.darken(0.95)
-    wordDetailsTextView.textColor = color.darken(0.95).contrastColor()
-    wordDetailsTextView.tintColor = color.darken(0.95).contrastColor()
-    partOfSpeechLabel.textColor = color.darken(0.95).contrastColor()
-    partOfSpeechLabel.tintColor = color.darken(0.95).contrastColor()
-    layer.shadowColor = color.darken(0.95).contrastColor().cgColor
+    backgroundColor = .clear
+    innerView.backgroundColor = backgroundColor
+    wordDetailsTextView.color = color
+    partOfSpeechLabel.textColor = color.opposite()
+    partOfSpeechLabel.tintColor = color.opposite()
+    layer.shadowColor = color.contrastColor().cgColor
     partOfSpeechLabel.text = wordMeaning.getPartOfSpeech()
     wordDetailsTextView.text = ""
     let textViewAttributedText = NSMutableAttributedString()

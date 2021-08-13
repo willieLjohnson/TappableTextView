@@ -19,6 +19,9 @@ open class TappableTextView: UITextView {
     willSet(color) {
       updateViews()
     }
+    didSet(color) {
+      updateViews()
+    }
   }
 
   /// Handles behaviors for the **contentView**.
@@ -80,7 +83,6 @@ private extension TappableTextView {
 
   func updateViews() {
     backgroundColor = color
-    backgroundColor = color
     textColor = color.contrastColor()
     font = Style.normalFont.withSize(20)
   }
@@ -129,8 +131,8 @@ private extension TappableTextView {
     panGesture.delegate = self
     guard let wordView = wordView else { return }
     wordView.addGestureRecognizer(panGesture)
-    wordView.delegate = self
     guard let rootTappableTextView = getRootTappableTextView() else { return }
+    wordView.delegate = rootTappableTextView
     wordView.rootTappableTextView = rootTappableTextView
     rootTappableTextView.addSubview(wordView)
     wordView.openAnimation()
